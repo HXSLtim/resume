@@ -1,21 +1,59 @@
-# Resume · 个人简历
+# Resume · 刘正硕的交互式终端简历
 
-一个纯 HTML / CSS / JavaScript 的单页个人简历网站：
+一个纯 HTML / CSS / JavaScript 的**终端风格交互式简历**：打开是一个仿 zsh 的终端窗口，
+输入命令浏览简历内容。零依赖、零构建，直接部署到 GitHub Pages。
 
-- **零依赖、零构建**：不需要 Node.js 和 npm，代码即产物，天然适配 GitHub Pages
-- **深浅色主题切换**，跟随系统偏好，选择会记住
-- **移动端自适应**，手机上也是完整排版
-- **打印 / 导出 PDF** 样式已优化（点右上角按钮即可存为 PDF 简历）
+```
+┌──────────────────────────────────────────────┐
+│ ● ● ●   lzs@resume: ~/portfolio — zsh        │
+├──────────────────────────────────────────────┤
+│ ✔ resume-terminal v1.0 — 刘正硕 的交互式简历  │
+│ 输入 help 查看全部命令…                       │
+│                                              │
+│ lzs@resume:~$ projects                       │
+│ ## 项目经历 …                                │
+├──────────────────────────────────────────────┤
+│ lzs@resume:~$ ▌                              │
+│ [help][about][skills][projects][resume]…     │
+└──────────────────────────────────────────────┘
+```
 
-线上地址（部署后替换成你自己的）：<https://yourname.github.io/resume/>
+## 特性
+
+- **真·可交互**：命令输入、命令历史（↑/↓）、Tab 补全、中文别名（「简介」「项目」「全部」）、`cat about.md`、点击命令名直接执行
+- **移动端友好**：响应式布局，终端铺满屏幕；底部快捷命令 chips 可点按，免打字；输入框 16px 防 iOS 聚焦缩放
+- **深浅主题**：浅色为极简黑白 + 克莱因蓝 `#002FA7`，深色为 GitHub Dark 终端风；跟随系统偏好并记住选择
+- **打印即完整简历**：`print` 命令 / 右上角按钮 / Ctrl+P，打印预览是排版好的 A4 完整简历（自动切浅色、项目不跨页）
+- **单数据源**：终端展示与打印版共用 `js/data.js` 一份数据，改一处全局生效
+
+## 命令列表
+
+| 命令 | 中文别名 | 作用 |
+| --- | --- | --- |
+| `help` | `帮助` | 全部命令 |
+| `about` | `简介` | 关于我 |
+| `skills` | `技能` | 专业技能 |
+| `projects` | `项目` | 项目经历 |
+| `advantages` | `优势` | 个人优势 |
+| `education` | `教育` | 教育背景 |
+| `contact` | `联系方式` | 联系方式 |
+| `resume` | `全部` | 一键输出完整简历 |
+| `theme` | `主题` | 切换深浅主题 |
+| `clear` | `清空` / `cls` | 清屏 |
+| `print` | `打印` | 打印 / 存为 PDF |
+| `history` | `历史` | 历史命令 |
+| `ls` / `cat about.md` | `目录` | 彩蛋：把分区当文件浏览 |
+| `whoami` | `我是谁` | 一句话自我介绍 |
+| `exit` / `sudo` / `rm` | — | 彩蛋 |
 
 ## 目录结构
 
 ```
 Resume/
-├── index.html      # 简历内容全部在这里
-├── css/style.css   # 样式（主题色在顶部 --accent 变量）
-├── js/main.js      # 主题切换 / 打印 / 滚动动画
+├── index.html      # 页面骨架（终端窗口 + 打印容器）
+├── css/style.css   # 全部样式（主题、响应式、打印）
+├── js/data.js      # ★ 简历内容 —— 改简历只改这个文件
+├── js/main.js      # 终端引擎（命令解析 / 渲染 / 主题）
 └── README.md
 ```
 
@@ -31,10 +69,14 @@ python3 -m http.server 8000
 
 ## 修改内容
 
-1. 打开 `index.html`，搜索「你的名字」「XX」「yourname」等占位内容，替换成自己的真实信息；
-2. 换主题色：改 `css/style.css` 顶部的 `--accent`（如 `#16a34a` 绿色、`#dc2626` 红色）；
-3. 换真实头像：把图片命名 `avatar.jpg` 放到 `assets/` 目录（需自建），然后把
-   `<div class="avatar">简</div>` 换成 `<img class="avatar" src="assets/avatar.jpg" alt="头像" />`。
+1. **简历内容全在 `js/data.js`**：姓名、求职意向、联系方式、简介、技能、项目、优势、教育背景都是结构化字段，按注释改即可；
+2. ✏️ 待补的真实信息：`contacts` 里的手机 / 邮箱 / GitHub（目前是占位）、`education.date` 入学毕业时间（目前是 20XX）；
+3. 换主题色：改 `css/style.css` 顶部的 `--accent`（深色主题的强调色在 `[data-theme="dark"]` 里单独一份）；
+4. 想加命令 / 彩蛋：`js/main.js` 里的 `commands` 和 `ALIASES` 两处各加一行。
+
+> **字体说明**：Inter 与 JetBrains Mono 通过 Google Fonts 的 `<link>` 引入（在 `index.html` 的 `<head>` 里）。
+> 如果目标访客主要在国内、加载慢，直接删掉那三行 `<link>` 即可，页面会自动回退到
+> PingFang SC / SF Mono / Menlo 等系统字体。
 
 ## 部署到 GitHub Pages
 
@@ -71,5 +113,5 @@ gh api -X POST repos/:owner/resume/pages -f 'source[branch]'=main -f 'source[pat
 
 ## 导出 PDF 简历
 
-浏览器打开页面 → 点击右上角「🖨️ 打印 / 存为 PDF」→ 目标打印机选「另存为 PDF」。
-打印样式会自动切回浅色并去掉按钮。
+终端里输入 `print`（或点右上角 print 按钮）→ 目标打印机选「另存为 PDF」。
+打印内容是排版好的 A4 完整简历，与终端里的交互内容互不干扰。
