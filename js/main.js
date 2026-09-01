@@ -89,6 +89,12 @@
       <p class="t-result"><span class="r-label">成果</span>${p.result}</p>
     </div>`;
 
+  const expBlock = (e) => `
+    <div class="t-project">
+      <div class="p-head"><span class="p-name">${e.company} · ${e.role}</span><span class="p-tag">${e.industry}</span><span class="date">${e.date}</span></div>
+      <ul class="t-points">${e.points.map((x) => `<li>${x}</li>`).join('')}</ul>
+    </div>`;
+
   const contactLines = () =>
     D.contacts.map((c) =>
       c.href
@@ -101,6 +107,7 @@
     help: () => [
       `<b>可用命令</b> · 点击命令名可直接执行`,
       `  <span class="cmd-link" data-cmd="about">about</span> / 简介 — 关于我`,
+      `  <span class="cmd-link" data-cmd="experience">experience</span> / 经历 — 工作经历`,
       `  <span class="cmd-link" data-cmd="skills">skills</span> / 技能 — 专业技能`,
       `  <span class="cmd-link" data-cmd="projects">projects</span> / 项目 — 项目经历`,
       `  <span class="cmd-link" data-cmd="advantages">advantages</span> / 优势 — 个人优势`,
@@ -122,6 +129,8 @@
     whoami: () => [`${D.name} — ${D.role}`],
 
     about: () => [secTitle('关于我'), `<p class="desc">${D.about}</p>`],
+
+    experience: () => [secTitle('工作经历'), ...D.experiences.map(expBlock)],
 
     skills: () => [secTitle('专业技能'), kvRows(D.skills)],
 
@@ -145,6 +154,8 @@
 
     resume: () => [
       ...commands.about(),
+      '&nbsp;',
+      ...commands.experience(),
       '&nbsp;',
       ...commands.skills(),
       '&nbsp;',
@@ -195,6 +206,7 @@
     ls: 'ls', 目录: 'ls',
     whoami: 'whoami', 我是谁: 'whoami',
     about: 'about', 简介: 'about', cat: 'about',
+    experience: 'experience', 经历: 'experience', 工作: 'experience', 实习: 'experience', exp: 'experience',
     skills: 'skills', 技能: 'skills',
     projects: 'projects', 项目: 'projects',
     advantages: 'advantages', 优势: 'advantages',
@@ -278,7 +290,7 @@
   });
 
   /* ---------- 快捷命令 chips ---------- */
-  const CHIP_CMDS = ['help', 'about', 'skills', 'projects', 'advantages', 'education', 'contact', 'resume', 'clear'];
+  const CHIP_CMDS = ['help', 'about', 'experience', 'skills', 'projects', 'advantages', 'education', 'contact', 'resume', 'clear'];
   $('#chips').innerHTML = CHIP_CMDS.map(
     (c) => `<button class="chip" type="button" data-cmd="${c}">${c}</button>`
   ).join('');
@@ -305,6 +317,7 @@
         <p class="pr-contact">${D.ageInfo}　·　${D.contacts.map((c) => c.text).join('　·　')}</p>
       </header>
       <section class="pr-sec"><h2>${secTitle('关于我')}</h2><p class="pr-p">${D.about}</p></section>
+      <section class="pr-sec"><h2>${secTitle('工作经历')}</h2>${D.experiences.map(expBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle('专业技能')}</h2>${kvRows(D.skills)}</section>
       <section class="pr-sec"><h2>${secTitle('项目经历')}</h2>${D.projects.map(projectBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle('个人优势')}</h2>${kvRows(D.advantages)}</section>

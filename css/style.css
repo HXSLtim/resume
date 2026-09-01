@@ -309,6 +309,10 @@ a:hover {
   white-space: nowrap;
 }
 
+.p-head .date {
+  margin-left: auto;
+}
+
 .t-points {
   list-style: none;
   margin: 4px 0 4px;
