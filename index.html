@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✏️ 把「你的名字」全部替换成你自己的名字 -->
+  <title>你的名字 · 个人简历</title>
+  <meta name="description" content="你的名字的个人简历 —— 前端开发工程师" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- 右上角工具栏（打印时自动隐藏） -->
+    <div class="toolbar no-print">
+      <button id="theme-toggle" class="tool-btn" type="button">🌓 深浅切换</button>
+      <button id="print-btn" class="tool-btn" type="button">🖨️ 打印 / 存为 PDF</button>
+    </div>
+
+    <main class="resume">
+      <!-- ==================== 侧边栏 ==================== -->
+      <aside class="sidebar">
+        <!-- ✏️ 想用真实头像：把图片放到 assets/avatar.jpg，
+             再把下面这个 div 换成 <img class="avatar" src="assets/avatar.jpg" alt="头像" /> -->
+        <div class="avatar">简</div>
+        <h1 class="name">你的名字</h1>
+        <p class="job">前端开发工程师</p>
+
+        <section class="side-block">
+          <h2>联系方式</h2>
+          <ul class="info-list">
+            <li><span class="icon">📱</span>138-0000-0000</li>
+            <li><span class="icon">📧</span><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><span class="icon">💻</span><a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></li>
+            <li><span class="icon">📍</span>上海</li>
+          </ul>
+        </section>
+
+        <section class="side-block">
+          <h2>专业技能</h2>
+          <ul class="skill-list">
+            <li>HTML5 / CSS3 / JavaScript (ES6+)</li>
+            <li>Vue / React 及主流生态</li>
+            <li>TypeScript / Node.js</li>
+            <li>Webpack / Vite 工程化</li>
+            <li>Git 协作与 CI/CD</li>
+          </ul>
+        </section>
+
+        <section class="side-block">
+          <h2>证书 / 荣誉</h2>
+          <ul class="skill-list">
+            <li>大学英语六级 (CET-6)</li>
+            <li>2024 年度公司优秀员工</li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- ==================== 主内容 ==================== -->
+      <div class="content">
+        <section>
+          <h2>个人简介</h2>
+          <p class="summary">
+            3 年前端开发经验，熟悉现代前端技术栈，参与过多个中大型 Web 项目从 0 到 1 的架构与落地。
+            关注用户体验与工程质量，喜欢用工具和自动化把复杂的事情做简单。
+            目前正在寻找新的机会，期待与优秀的团队一起做出好产品。
+          </p>
+        </section>
+
+        <section>
+          <h2>工作经历</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="head">
+                <div>
+                  <div class="role">前端开发工程师</div>
+                  <div class="org">XX 科技有限公司</div>
+                </div>
+                <div class="date">2023.06 – 至今</div>
+              </div>
+              <ul>
+                <li>负责核心 SaaS 产品的前端开发与性能优化，首屏加载时间缩短 40%</li>
+                <li>搭建团队组件库与前端脚手架，新页面开发效率提升约 50%</li>
+                <li>推动单元测试落地，核心模块覆盖率从 0 提升至 70%</li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="head">
+                <div>
+                  <div class="role">初级前端开发工程师</div>
+                  <div class="org">YY 网络有限公司</div>
+                </div>
+                <div class="date">2021.07 – 2023.05</div>
+              </div>
+              <ul>
+                <li>参与公司官网与运营活动页开发，独立完成 20+ 个 H5 页面</li>
+                <li>封装通用请求库与埋点方案，减少重复代码约 30%</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>项目经历</h2>
+          <div class="projects">
+            <article class="project">
+              <div class="p-title">
+                企业级后台管理系统
+                <span class="p-tag">Vue 3</span>
+              </div>
+              <p>从 0 搭建的内部管理平台，包含权限、审批流、数据看板等 30+ 模块，服务公司 500+ 员工日常使用。</p>
+            </article>
+            <article class="project">
+              <div class="p-title">
+                个人简历网站（本站）
+                <span class="p-tag">原生 JS</span>
+              </div>
+              <p>纯 HTML/CSS/JS 实现的单页简历，支持深浅主题切换与打印导出 PDF，通过 GitHub Pages 自动部署。</p>
+            </article>
+            <article class="project">
+              <div class="p-title">
+                开源组件库贡献
+                <span class="p-tag">开源</span>
+              </div>
+              <p>为某知名 UI 组件库提交 10+ 个 PR，修复组件边界问题并补充单元测试。</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>教育背景</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="head">
+                <div>
+                  <div class="role">XX 大学 · 计算机科学与技术</div>
+                  <div class="org">本科</div>
+                </div>
+                <div class="date">2017.09 – 2021.06</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer no-print">
+      © <span id="year">2026</span> 你的名字 · 部署于 GitHub Pages
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

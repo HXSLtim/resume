@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+
+# 依赖（当前项目无构建，留作将来扩展）
+node_modules/
+
+# 本地预览日志
+*.log
