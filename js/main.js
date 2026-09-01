@@ -46,6 +46,21 @@
 
   $('#print-btn').addEventListener('click', () => window.print());
 
+  /* ---------- 移动端软键盘适配 ----------
+     iOS 键盘弹出时 dvh 不变，输入行会被键盘盖住；
+     用 visualViewport 把真实可视高度写入 --app-h，让终端整体收窄到键盘上方 */
+  if (window.visualViewport) {
+    const setAppHeight = () => {
+      const h = window.visualViewport.height;
+      if (h < window.innerHeight - 24) {
+        document.documentElement.style.setProperty('--app-h', h + 'px');
+      } else {
+        document.documentElement.style.removeProperty('--app-h');
+      }
+    };
+    window.visualViewport.addEventListener('resize', setAppHeight);
+  }
+
   /* ---------- 输出 ---------- */
   function line(html, cls = 'out', delayIdx) {
     const div = document.createElement('div');
