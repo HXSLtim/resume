@@ -31,6 +31,7 @@ window.RESUME_DATA = {
         '独立负责公司游戏陪玩平台的开发与维护，作为公司唯一 IT，全流程承担开发、上线与日常技术保障',
         '主导前端功能开发与页面维护，同时负责后端服务维护与基于业务需求的二次开发',
         '快速响应业务迭代需求，完成功能闭环落地，保障平台稳定运行',
+        '将陪玩平台核心场景沉淀为开源项目 GameLink（Go + React，48 Star / 13 Fork）',
       ],
     },
   ],
@@ -55,6 +56,31 @@ window.RESUME_DATA = {
   ],
 
   projects: [
+    {
+      name: 'GameLink · 游戏陪玩管理平台',
+      tag: '开源 · Go + React',
+      link: 'https://github.com/HXSLtim/GameLink',
+      desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单智能分发、多角色管理、实时通讯、支付结算与数据监控全链路。',
+      points: [
+        '设计智能订单分发机制：自动匹配用户与陪玩师，支持抢单池与客服指派两种模式',
+        '搭建用户 / 陪玩师 / 管理员多角色权限体系，基于 JWT + RBAC 控制访问安全',
+        '基于 WebSocket 实现群聊 / 私聊即时通讯；打通订单支付、退款与收益结算',
+        '实时订单状态、收益统计与系统指标监控看板',
+      ],
+      result: '开源后获 48 Star / 13 Fork：github.com/HXSLtim/GameLink',
+    },
+    {
+      name: 'Nai · 多 Agent AI 小说创作平台',
+      tag: '开源 · Python',
+      link: 'https://github.com/HXSLtim/Nai',
+      desc: '基于多 Agent 协作的智能小说创作平台，支持世界观管理、角色管理、大纲管理与长篇创作一致性保障。',
+      points: [
+        '基于 LangChain 编排多 Agent 协作，覆盖素材整理、大纲规划与正文生成全流程',
+        '使用 ChromaDB 向量库 + RAG 管理设定记忆，保障长篇创作中的世界观与角色一致性',
+        'FastAPI 后端 + Next.js / TypeScript 前端的完整工程化实现',
+      ],
+      result: '开源获 12 Star：github.com/HXSLtim/Nai',
+    },
     {
       name: 'AI Agent 智能应用开发',
       tag: 'AI Agent',
@@ -90,6 +116,14 @@ window.RESUME_DATA = {
         '结合市场需求优化产品逻辑，简化运营流程，提升平台商业模式的可行性与落地性',
       ],
       result: '输出一套完整、合规、可落地的平台商业运营方案，包含会员体系、盈利体系、合规体系三大核心模块。',
+    },
+    {
+      name: 'Resume Terminal · 交互式终端简历（本站）',
+      tag: '开源 · 原生 JS',
+      link: 'https://github.com/HXSLtim/resume',
+      desc: '你正在浏览的这个简历站点：仿 zsh 终端交互，零依赖纯前端实现命令解析、历史与补全、深浅主题与移动端响应式，打印可导出 A4 版简历，通过 GitHub Pages 自动部署。',
+      points: [],
+      result: '在线访问：<a href="https://hxsltim.github.io/resume/" target="_blank" rel="noopener">hxsltim.github.io/resume</a>',
     },
   ],
 

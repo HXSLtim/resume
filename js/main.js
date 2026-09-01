@@ -83,10 +83,10 @@
 
   const projectBlock = (p) => `
     <div class="t-project">
-      <div class="p-head"><span class="p-name">${p.name}</span><span class="p-tag">${p.tag}</span></div>
+      <div class="p-head"><span class="p-name">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">${p.name}</a>` : p.name}</span><span class="p-tag">${p.tag}</span></div>
       <p class="desc">${p.desc}</p>
-      <ul class="t-points">${p.points.map((x) => `<li>${x}</li>`).join('')}</ul>
-      <p class="t-result"><span class="r-label">成果</span>${p.result}</p>
+      ${p.points && p.points.length ? `<ul class="t-points">${p.points.map((x) => `<li>${x}</li>`).join('')}</ul>` : ''}
+      ${p.result ? `<p class="t-result"><span class="r-label">成果</span>${p.result}</p>` : ''}
     </div>`;
 
   const expBlock = (e) => `
