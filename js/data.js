@@ -22,12 +22,23 @@ window.RESUME_DATA = {
     ],
 
     about:
-      '拥有全栈开发落地能力，深耕后端开发、自动化脚本、AI Agent 应用，兼具技术落地、产品构思、项目统筹能力。' +
-      '思维务实严谨，擅长拆解复杂需求、从零搭建可落地的技术项目；熟悉 Linux / macOS 服务部署、数据库优化与自动化程序开发，' +
-      '全程主导多个个人技术项目、量化项目与产品构想项目，擅长规避技术风险、优化程序性能、实现功能闭环落地；' +
+      '全栈开发落地能力 + 安全研究实战背景，深耕后端开发、自动化脚本（RPA）、AI Agent 应用，兼具技术落地、产品构思、项目统筹能力。' +
+      '思维务实严谨，擅长拆解复杂需求、从零搭建可落地的技术项目；熟悉 Linux / macOS 服务部署、数据库优化与自动化程序开发；' +
+      '在企业安全响应平台（SRC）持续产出高危级别漏洞成果，兼具攻防双视角；已有 LLM 结构化输出 + Function Call 驱动 RPA 的 AI 落地成品；' +
       '同时具备文创世界观设定、商业体系设计的多元化创作与规划能力。',
 
     experiences: [
+      {
+        company: '独立开发 · 远程全栈',
+        role: '全栈开发工程师',
+        industry: 'RPA 自动化 / 中后台 / 微信生态',
+        date: '2024 – 2025',
+        points: [
+          '远程交付全栈项目：中后台管理系统、微信生态应用（公众号/SDK 网页应用、微信云开发小程序）、RPA 自动化工具',
+          '开发 AI + RPA 自动上架工具（LLM 结构化输出 + Function Call 驱动执行），将大模型能力引入业务自动化流程',
+          '独立完成 Windows 文件透明加密系统（API Hook + 内存级加解密），从需求分析到工程落地闭环',
+        ],
+      },
       {
         company: '雪机猫传媒有限公司',
         role: '全栈开发工程师',
@@ -53,7 +64,11 @@ window.RESUME_DATA = {
       },
       {
         tag: 'AI 应用开发',
-        desc: '基于 Python 深耕 AI Agent 研发，了解智能代理核心逻辑、功能搭建、场景落地，可结合业务需求开发智能化自动化应用，具备 AI 项目从零搭建的实战思维。',
+        desc: '基于 Python 深耕 AI Agent 研发：LLM 结构化输出（JSON Schema 约束）、Function Calling / 工具调用、RPA 集成落地；熟悉微信生态开发（公众号/小程序 SDK、微信云开发），具备 AI 项目从零搭建到业务落地的完整实战经验。',
+      },
+      {
+        tag: '安全研究',
+        desc: '在企业安全响应平台（SRC）持续进行漏洞挖掘，产出高危级别成果（认证绕过、未授权数据读取类），全程遵循最小化验证与平台报送规范；具备 API Hook 注入、内存级加解密的工程级安全开发能力，攻防双视角。',
       },
       {
         tag: '产品与商业设计',
@@ -88,16 +103,38 @@ window.RESUME_DATA = {
         result: '开源获 12 Star：github.com/HXSLtim/Nai',
       },
       {
-        name: 'AI Agent 智能应用开发',
-        tag: 'AI Agent',
-        desc: '自主从零研发轻量化 AI 智能代理应用，聚焦自动化场景落地，替代重复人工操作，适配日常数据处理、智能响应、自动化执行等多元场景。',
+        name: 'AI 自动上架工具 · LLM + RPA',
+        tag: 'AI 落地 · Python',
+        desc: '电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，实现商品信息从素材到上架的全自动流转，替代纯人工重复操作。',
         points: [
-          '独立完成项目整体架构设计，拆解核心功能模块，搭建稳定的 AI Agent 运行框架，优化程序响应速度与执行效率',
-          '结合实际使用场景优化智能决策逻辑，修复程序运行漏洞，提升自动化任务的精准度与稳定性',
-          '适配多系统运行环境，完成本地环境调试、兼容性优化，实现项目可直接部署、即时可用',
-          '梳理项目开发文档，沉淀可复用的开发逻辑与方案模板',
+          'LLM 结构化输出按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
+          'Function Calling 驱动 RPA 执行层完成各平台填表上架，LLM 做决策、RPA 做执行',
+          '工程可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记留人工，不带病上架；每步结果机器可校验，不过不上传',
+          '梳理字段映射与平台规则沉淀为配置，新增平台只需扩展配置无需改核心流程',
         ],
-        result: '成功落地可用的轻量化 AI Agent 工具，可高效完成批量数据处理、自动化任务执行，大幅降低重复操作成本，具备极强的实用性与拓展性。',
+        result: '在多平台上架场景持续落地使用，将重复性人工上架操作自动化，形成 LLM + RPA 混合架构的可复用实践。',
+      },
+      {
+        name: '企业 SRC 漏洞挖掘 · 安全研究',
+        tag: '安全 · 持续',
+        desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过、未授权数据访问类问题，全程遵循最小化验证原则与平台报送规范。',
+        points: [
+          '高危成果若干：包括会话伪造类认证绕过（服务端验签缺失场景）与内部系统未授权数据读取，均获平台定级确认并推动修复',
+          '方法论闭环：资产测绘 → 前端/小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
+          '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
+        ],
+        result: '多个高危漏洞获企业 SRC 平台定级确认，全部通过官方渠道报送并推动修复。',
+      },
+      {
+        name: '文件透明加密系统 · Windows 安全工程',
+        tag: 'C++ / Hook 注入',
+        desc: '基于 API Hook 注入与内存级加解密实现的文档透明加密系统：授权进程读取时在内存中完成解密，用户全程无感；非授权进程只能获得密文，配套受控读取器进行权限判定。',
+        points: [
+          '通过 Hook 截获文件读写调用，在授权进程的内存数据流中完成加解密，实现落盘即密文、合法使用无感',
+          '注入受控读取器做进程级权限判定，未授权进程与外发渠道均无法获取明文',
+          '覆盖典型防泄密场景：文档在可信环境内正常使用，脱离环境即不可读',
+        ],
+        result: '独立完成从需求分析、方案设计到工程实现的完整闭环，形成可部署的透明加密防护方案。',
       },
       {
         name: '后端数据处理与数据库优化',
@@ -139,6 +176,10 @@ window.RESUME_DATA = {
         desc: '所有项目均为自主从零落地，不局限于理论知识，擅长解决实际开发、运营中的各类问题，实战经验充足。',
       },
       {
+        tag: '攻防双视角',
+        desc: '安全研究实战背景，交付系统时同步考虑权限、数据与内容风险，擅长把安全护栏做进交付流程，而非事后补漏。',
+      },
+      {
         tag: '思维全面多元',
         desc: '兼具硬核技术研发能力、商业产品思维，可兼顾技术开发、产品规划、内容创作多维度工作。',
       },
@@ -174,13 +215,25 @@ window.RESUME_DATA = {
     ],
 
     about:
-      'Full-stack delivery capability with a focus on backend development, automation scripting and AI agent applications, combining hands-on engineering, product thinking and project coordination. ' +
+      'Full-stack delivery capability plus hands-on security research background, focusing on backend development, automation scripting (RPA) and AI agent applications, combining hands-on engineering, product thinking and project coordination. ' +
       'Pragmatic and rigorous; skilled at breaking down complex requirements and building production-ready projects from scratch. ' +
       'Familiar with Linux / macOS service deployment, database optimization and automation tooling. ' +
-      'Have end-to-end owned multiple personal tech projects, quantitative projects and product concepts, with strong risk control, performance tuning and feature-loop delivery. ' +
+      'Continuously producing high-severity findings on corporate SRC (security response) platforms, with both offensive and defensive perspectives. ' +
+      'Shipped a production AI tool combining LLM structured output + Function Call driven RPA. ' +
       'Also experienced in creative worldbuilding and business-system design.',
 
     experiences: [
+      {
+        company: 'Independent Developer · Remote Full-stack',
+        role: 'Full-stack Developer',
+        industry: 'RPA Automation / Admin Systems / WeChat Ecosystem',
+        date: '2024 – 2025',
+        points: [
+          'Delivered full-stack projects remotely: admin/management systems, WeChat-ecosystem apps (official-account/SDK web apps, WeChat Cloud mini-programs) and RPA automation tools',
+          'Built an AI + RPA auto-listing tool (LLM structured output + Function Call driven execution), bringing LLM capabilities into business automation',
+          'Independently delivered a Windows transparent file-encryption system (API Hook + in-memory encryption/decryption), from requirements to engineering closure',
+        ],
+      },
       {
         company: 'Xuejimao Media Co., Ltd.',
         role: 'Full-stack Developer',
@@ -206,7 +259,11 @@ window.RESUME_DATA = {
       },
       {
         tag: 'AI Application Development',
-        desc: 'Deep focus on AI agent development with Python; understands agent core logic, capability building and real-scenario landing; builds intelligent automation apps against real business needs with a from-scratch project mindset.',
+        desc: 'Deep focus on AI agent development with Python: LLM structured output (JSON Schema constraints), Function Calling / tool use, and RPA integration; familiar with WeChat-ecosystem development (official-account / mini-program SDK, WeChat Cloud). End-to-end experience from zero to business landing.',
+      },
+      {
+        tag: 'Security Research',
+        desc: 'Continuously hunting vulnerabilities on corporate SRC (security response) platforms with high-severity findings (authentication bypass, unauthorized data access), following minimal-verification and responsible-disclosure discipline; engineering-grade security skills including API Hook injection and in-memory encryption. Offensive + defensive perspectives.',
       },
       {
         tag: 'Product & Business Design',
@@ -241,16 +298,38 @@ window.RESUME_DATA = {
         result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
       },
       {
-        name: 'AI Agent Application Development',
-        tag: 'AI Agent',
-        desc: 'Built lightweight AI agent applications from scratch, focused on automation scenarios: replacing repetitive manual work across data processing, smart responses and automated execution.',
+        name: 'AI Auto-Listing Tool · LLM + RPA',
+        tag: 'AI Landing · Python',
+        desc: 'An e-commerce multi-platform auto-listing tool: the LLM understands and generates, RPA executes — fully automating the flow from product assets to live listings, replacing repetitive manual work.',
         points: [
-          'Designed the overall architecture independently, decomposed core modules, built a stable agent runtime, and optimized response speed and execution efficiency',
-          'Improved decision logic against real usage scenarios, fixed runtime bugs, and improved the precision and stability of automated tasks',
-          'Adapted to multiple OS environments with local debugging and compatibility work — directly deployable and immediately usable',
-          'Documented the development process into reusable logic and solution templates',
+          'LLM structured output extracts and generates per-platform product fields (title, selling points, specs) under JSON Schema constraints, keeping output stable and parseable',
+          'Function Calling drives the RPA execution layer to fill and submit listings — LLM as the decision head, RPA as the execution hands',
+          'Engineering reliability trio: schema validation + retry against format drift; low-confidence fields flagged for human review; machine-checkable results at every step',
+          'Field mappings and platform rules externalized as configuration — new platforms onboard without touching core flow',
         ],
-        result: 'Delivered a practical lightweight AI agent tool that efficiently handles batch data processing and automated task execution, greatly reducing repetitive work — highly practical and extensible.',
+        result: 'In continuous use for multi-platform listing scenarios; a reusable LLM + RPA hybrid-architecture practice.',
+      },
+      {
+        name: 'Corporate SRC Vulnerability Research · Security',
+        tag: 'Security · Ongoing',
+        desc: 'Continuous vulnerability hunting and disclosure on multiple corporate SRC platforms, focused on authentication bypass and unauthorized data access, with strict minimal-verification and platform-disclosure discipline.',
+        points: [
+          'Multiple high-severity findings: session-forgery authentication bypass (missing server-side signature validation) and unauthorized reads of internal systems — all platform-rated and driving fixes',
+          'Closed-loop methodology: asset mapping → frontend/mini-program reverse engineering → API extraction → no-credential differential testing → fake-value contrast for scoping → platform disclosure',
+          'Testing discipline: read-only minimal verification, ≤5 real records, zero write operations, no submission without impact evidence',
+        ],
+        result: 'Multiple high-severity vulnerabilities confirmed by corporate SRC platforms, all disclosed through official channels and driving fixes.',
+      },
+      {
+        name: 'Transparent File Encryption System · Windows Security Engineering',
+        tag: 'C++ / Hook Injection',
+        desc: 'A transparent document-encryption system built on API Hook injection and in-memory encryption/decryption: authorized processes read decrypted content in memory seamlessly; unauthorized processes only ever see ciphertext, with an injected controlled reader enforcing per-process permissions.',
+        points: [
+          'Intercepted file read/write calls via hooks, performing encryption/decryption in the authorized process’s memory stream — data-at-rest is ciphertext while legitimate use stays transparent',
+          'Injected controlled reader for process-level permission decisions; unauthorized processes and exfiltration channels cannot obtain plaintext',
+          'Covers typical DLP scenarios: documents work normally inside trusted environments, unreadable outside',
+        ],
+        result: 'Independently delivered the full loop from requirements and design through engineering implementation into a deployable protection solution.',
       },
       {
         name: 'Backend Data Processing & Database Optimization',
@@ -290,6 +369,10 @@ window.RESUME_DATA = {
       {
         tag: 'Strong delivery capability',
         desc: 'Every project was built and shipped from zero by myself — not just theory. Skilled at solving real problems in development and operations, with solid hands-on experience.',
+      },
+      {
+        tag: 'Offensive & defensive perspectives',
+        desc: 'Hands-on security research background: delivers systems with permissions, data and content risks designed in, building guardrails into the delivery process instead of patching afterwards.',
       },
       {
         tag: 'Well-rounded thinking',
