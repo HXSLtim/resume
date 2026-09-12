@@ -25,7 +25,7 @@ window.RESUME_DATA = {
       '全栈开发落地能力 + 安全研究实战背景，深耕后端开发、自动化脚本（RPA）、AI Agent 应用，兼具技术落地、产品构思、项目统筹能力。' +
       '思维务实严谨，擅长拆解复杂需求、从零搭建可落地的技术项目；熟悉 Linux / macOS 服务部署、数据库优化与自动化程序开发；' +
       '在企业安全响应平台（SRC）持续产出高危级别漏洞成果，兼具攻防双视角；已有 LLM 结构化输出 + Function Call 驱动 RPA 的 AI 落地成品；' +
-      '同时具备文创世界观设定、商业体系设计的多元化创作与规划能力。',
+      '同时具备文创世界观设定的创作与规划能力。',
 
     experiences: [
       {
@@ -71,8 +71,8 @@ window.RESUME_DATA = {
         desc: '在企业安全响应平台（SRC）持续进行漏洞挖掘，产出高危级别成果（认证绕过、未授权数据读取类），全程遵循最小化验证与平台报送规范；具备 API Hook 注入、内存级加解密的工程级安全开发能力，攻防双视角。',
       },
       {
-        tag: '产品与商业设计',
-        desc: '具备完整的产品思维，可独立设计平台会员积分体系、用户体系、商业运营模式，了解股权合规、平台运营规则，擅长将商业构想转化为可落地的产品方案。',
+        tag: '业务与方案设计',
+        desc: '具备产品与方案思维：在 GameLink 中独立设计会员体系、订单分发、支付结算等业务闭环；擅长需求量化拆解、方案选型与 ROI 论证，能把业务诉求转化为可落地的技术方案。',
       },
     ],
 
@@ -149,18 +149,6 @@ window.RESUME_DATA = {
         result: '实现数据处理全流程自动化，数据库查询效率大幅提升，成功解决海量数据处理卡顿、数据异常等核心问题。',
       },
       {
-        name: '互联网平台商业体系设计',
-        tag: '产品设计',
-        desc: '独立构思并设计综合型服务平台商业模式，涵盖用户体系、会员积分体系、运营规则、股权合规体系，打造完整的平台运营闭环方案。',
-        points: [
-          '搭建平台核心用户体系，设计会员等级、积分获取、积分兑换、权益匹配机制，完善用户留存与激励体系',
-          '研究平台运营合规规则，梳理股权架构、运营风险、合规要点，规避商业运营中的合规漏洞',
-          '完整规划平台业务模块、盈利模式、运营流程，形成从用户引流、留存、变现的全链路商业方案',
-          '结合市场需求优化产品逻辑，简化运营流程，提升平台商业模式的可行性与落地性',
-        ],
-        result: '输出一套完整、合规、可落地的平台商业运营方案，包含会员体系、盈利体系、合规体系三大核心模块。',
-      },
-      {
         name: 'Resume Terminal · 交互式终端简历（本站）',
         tag: '开源 · 原生 JS',
         link: 'https://github.com/HXSLtim/resume',
@@ -220,7 +208,7 @@ window.RESUME_DATA = {
       'Familiar with Linux / macOS service deployment, database optimization and automation tooling. ' +
       'Continuously producing high-severity findings on corporate SRC (security response) platforms, with both offensive and defensive perspectives. ' +
       'Shipped a production AI tool combining LLM structured output + Function Call driven RPA. ' +
-      'Also experienced in creative worldbuilding and business-system design.',
+      'Also experienced in creative worldbuilding.',
 
     experiences: [
       {
@@ -266,8 +254,8 @@ window.RESUME_DATA = {
         desc: 'Continuously hunting vulnerabilities on corporate SRC (security response) platforms with high-severity findings (authentication bypass, unauthorized data access), following minimal-verification and responsible-disclosure discipline; engineering-grade security skills including API Hook injection and in-memory encryption. Offensive + defensive perspectives.',
       },
       {
-        tag: 'Product & Business Design',
-        desc: 'Full product mindset: designs platform membership & points systems, user systems and business operation models; understands equity compliance and platform operation rules; good at turning business ideas into feasible product plans.',
+        tag: 'Business & Solution Design',
+        desc: 'Product and solution mindset: independently designed the membership, order-dispatch and payment-settlement business loops in GameLink; skilled at quantifying requirements, solution selection and ROI reasoning — turning business needs into workable technical plans.',
       },
     ],
 
@@ -342,18 +330,6 @@ window.RESUME_DATA = {
           'Debugged server-side data services for the production environment, keeping them stable and continuously running',
         ],
         result: 'Fully automated the data-processing pipeline and greatly improved query efficiency, resolving massive-data lag and data-anomaly issues.',
-      },
-      {
-        name: 'Internet Platform Business System Design',
-        tag: 'Product Design',
-        desc: 'Independently conceived and designed the business model of a comprehensive service platform, covering the user system, membership & points system, operation rules and equity compliance — a complete closed-loop operation plan.',
-        points: [
-          'Built the core platform user system: membership tiers, points earning / redemption and benefit matching, improving retention and incentives',
-          'Researched platform operation compliance rules, sorted out equity structures, operational risks and compliance points to avoid loopholes',
-          'Planned business modules, monetization models and operation flows into a full-funnel plan from acquisition and retention to monetization',
-          'Refined product logic against market needs, simplified operation flows, and improved the feasibility of the business model',
-        ],
-        result: 'Produced a complete, compliant and actionable platform business operation plan covering three core modules: membership, monetization and compliance.',
       },
       {
         name: 'Resume Terminal · Interactive Terminal Resume (this site)',
