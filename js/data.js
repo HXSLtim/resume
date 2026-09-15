@@ -104,7 +104,8 @@ window.RESUME_DATA = {
       },
       {
         name: 'AI Collab · 多 Agent 协同开发系统',
-        tag: '自研 · tmux / zsh',
+        tag: '开源 · tmux / zsh',
+        link: 'https://github.com/HXSLtim/ai-collab',
         desc: '把 Claude、Codex、Antigravity 三个编码 Agent 编成一支协作队伍的本地工作区：一条命令拉起 tmux 三 pane，并自建消息总线与协作协议，让规划、执行、前端三条线并行推进同一任务。',
         points: [
           '角色分工即编排：Claude 负责规划与任务编排、Codex 负责后端与测试运维、Antigravity 负责前端原型与 UX，三类能力互补而不重复',
@@ -112,7 +113,7 @@ window.RESUME_DATA = {
           '用协作协议抑制消息风暴：每任务每条线最多 ACK + FINAL 两条回复、禁止进度闲聊，把上下文预算留给实际产出',
           '工程权衡：走 CLI 粘贴而非 API —— 复用各 Agent 的交互态与订阅额度，省掉 API 成本与密钥管理；代价是目标 pane 必须处于等待输入状态，以 ai read / ai submit 兜底',
         ],
-        result: '自研并日常使用 ——「AI 负责实现、我负责设计与验收」这套工作方式就是靠它落地的。',
+        result: '已开源并日常使用 ——「AI 负责实现、我负责设计与验收」这套工作方式就是靠它落地的：github.com/HXSLtim/ai-collab',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -309,7 +310,8 @@ window.RESUME_DATA = {
       },
       {
         name: 'AI Collab · Multi-Agent Collaborative Development System',
-        tag: 'Self-built · tmux / zsh',
+        tag: 'Open source · tmux / zsh',
+        link: 'https://github.com/HXSLtim/ai-collab',
         desc: 'A local workspace that turns three coding agents — Claude, Codex and Antigravity — into a collaborating team: one command brings up a three-pane tmux session with a self-built message bus and collaboration protocol, so planning, execution and frontend work advance in parallel on the same task.',
         points: [
           'Role division as orchestration: Claude plans and orchestrates, Codex owns backend, testing and ops, Antigravity owns frontend prototypes and UX — complementary capabilities, not duplicates',
@@ -317,7 +319,7 @@ window.RESUME_DATA = {
           'A protocol that suppresses message storms: at most one ACK and one FINAL per task per line, no progress chatter — keeping the context budget for real output',
           'Trade-off: driving CLIs by paste instead of API reuses each agent’s interactive state and subscription quota, avoiding API cost and key management; the cost is that a target pane must be waiting for input, with ai read / ai submit as fallback',
         ],
-        result: 'Built and used daily — the AI implements, I design and verify workflow runs on this orchestration.',
+        result: 'Open-sourced and used daily — the AI implements, I design and verify workflow runs on this orchestration: github.com/HXSLtim/ai-collab',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
