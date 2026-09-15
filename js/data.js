@@ -66,6 +66,10 @@ window.RESUME_DATA = {
         desc: 'LangChain / LangGraph 状态图编排多 Agent 协作，落地 ReAct 循环与 Function Calling / ToolNode 工具调用链；分层记忆设计（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（统一 MCP 控制中心：能力矩阵声明、调用审计、未实现能力显式失败）。日常研发本身即由 AI Agent 驱动（需求拆解 → 架构约束 → AI 实现 → 验收回归），对 Agent 的能力边界与失败模式有第一手判断。',
       },
       {
+        tag: 'AI 编程 Agent 工具链',
+        desc: '日常主力 Claude Code 与 Codex；常用模型覆盖 GPT 系与 GLM 系，近期以 DeepSeek 为主。用于批量实现、重构与代码审查，并通过验收回归与差分验证约束产出质量。',
+      },
+      {
         tag: 'LLM 工程',
         desc: '结构化输出（JSON Schema / Pydantic 约束）、Prompt 工程与迭代、失败重试与格式漂移防护、低置信字段标记与人工兜底；模型异常分类处理（内容过滤 / 工具调用异常 / 参数解析失败），保证链路可观测、可重试。',
       },
@@ -253,6 +257,10 @@ window.RESUME_DATA = {
       {
         tag: 'AI Agent Development',
         desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs, with ReAct loops and Function Calling / ToolNode tool chains; layered memory design (chapter-level memory + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope-based authorisation); MCP service development (a unified MCP control centre with a declared capability matrix, full call auditing, and explicit failure for unimplemented capabilities). Day-to-day development is itself driven by AI agents (requirement decomposition → architectural constraints → AI implementation → acceptance regression), giving first-hand judgement of where agents break down.',
+      },
+      {
+        tag: 'AI Coding Agent Toolchain',
+        desc: 'Daily drivers Claude Code and Codex; models span the GPT and GLM families, with DeepSeek as the recent primary. Used for bulk implementation, refactoring and code review, with output quality constrained through acceptance regression and differential verification.',
       },
       {
         tag: 'LLM Engineering',
