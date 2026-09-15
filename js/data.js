@@ -75,7 +75,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '后端与系统',
-        desc: 'Go / Python / Node.js；FastAPI + SQLAlchemy / Alembic、PostgreSQL / MySQL、Redis、ChromaDB 向量库、Neo4j 知识图谱；SQL 与索引调优；WebSocket 实时通信；Linux / macOS 服务部署与故障排查；Docker 容器化。',
+        desc: 'Go / Python / Node.js；FastAPI + SQLAlchemy / Alembic、PostgreSQL / MySQL、Redis、ChromaDB 向量库、Neo4j 知识图谱；SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；CSV 批量导入清洗脚本化、任务幂等可重跑；WebSocket 实时通信；Linux / macOS 服务部署与故障排查；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
@@ -85,10 +85,48 @@ window.RESUME_DATA = {
 
     projects: [
       {
+        name: 'Nai · 多 Agent AI 小说创作平台',
+        tag: '开源 · Python',
+        link: 'https://github.com/HXSLtim/Nai',
+        desc: '基于多 Agent 协作的智能小说创作平台，核心解决百万字长篇的世界观与角色一致性。',
+        points: [
+          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent，经 ToolNode 装配工具调用链，条件边控制循环与终止',
+          '分层记忆体系：章级记忆 + 剧情摘要抽取 + 上下文预算与压缩，把长篇一致性从「塞满上下文」变成可调度的记忆',
+          'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
+          'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
+          'FastAPI + PostgreSQL + Redis 后端，Next.js / TypeScript 前端',
+        ],
+        result: '开源获 12 Star：github.com/HXSLtim/Nai',
+      },
+      {
+        name: 'AI 自动上架工具 · LLM + RPA',
+        tag: 'AI 落地 · Python',
+        desc: '电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，商品信息从素材到上架全自动流转。',
+        points: [
+          'LLM 按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
+          'Function Calling 驱动 RPA 执行层完成各平台填表上架 —— LLM 做决策、RPA 做执行',
+          '可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记转人工，不带病上架；每步结果机器可校验，不过不上传',
+          '字段映射与平台规则沉淀为配置，新增平台只扩配置、不改核心流程',
+        ],
+        result: '在多平台上架场景持续落地使用，形成 LLM + RPA 混合架构的可复用实践。',
+      },
+      {
+        name: '企业 SRC 漏洞挖掘 · 安全研究',
+        tag: '安全 · 持续',
+        desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过与未授权数据访问。',
+        points: [
+          '累计 6 个漏洞获平台定级确认（4 高危 / 2 中危），覆盖 6 家企业：含会话伪造类认证绕过（服务端验签缺失）与内部系统未授权数据读取',
+          '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
+          '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
+          '这套方法论本身就是 Agent 架构的判据：接口抽取与差分验证要看响应动态决定下一步，属 ReAct；资产枚举与发包是确定性的，属 Workflow',
+        ],
+        result: '6 个漏洞全部通过官方渠道报送并推动修复，其中 4 个定级高危。',
+      },
+      {
         name: 'GameLink · 游戏陪玩管理平台',
         tag: '开源 · Go + React',
         link: 'https://github.com/HXSLtim/GameLink',
-        desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单智能分发、多角色管理、实时通讯、支付结算与数据监控全链路。',
+        desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
         points: [
           '设计智能订单分发机制：自动匹配用户与陪玩师，支持抢单池与客服指派两种模式',
           '搭建用户 / 陪玩师 / 管理员多角色权限体系，基于 JWT + RBAC 控制访问安全',
@@ -98,72 +136,26 @@ window.RESUME_DATA = {
         result: '开源后获 49 Star / 14 Fork：github.com/HXSLtim/GameLink',
       },
       {
-        name: 'Nai · 多 Agent AI 小说创作平台',
-        tag: '开源 · Python',
-        link: 'https://github.com/HXSLtim/Nai',
-        desc: '基于多 Agent 协作的智能小说创作平台，支持世界观管理、角色管理、大纲管理与长篇创作一致性保障。',
-        points: [
-          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent 协作，经 ToolNode 装配工具调用链',
-          '分层记忆体系：章级记忆 + 剧情摘要抽取 + 上下文预算与压缩，保障百万字长篇的世界观与角色一致性',
-          'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
-          'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
-          'FastAPI + PostgreSQL + Redis 后端，Next.js / TypeScript 前端的完整工程化实现',
-        ],
-        result: '开源获 12 Star：github.com/HXSLtim/Nai',
-      },
-      {
-        name: 'AI 自动上架工具 · LLM + RPA',
-        tag: 'AI 落地 · Python',
-        desc: '电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，实现商品信息从素材到上架的全自动流转，替代纯人工重复操作。',
-        points: [
-          'LLM 结构化输出按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
-          'Function Calling 驱动 RPA 执行层完成各平台填表上架，LLM 做决策、RPA 做执行',
-          '工程可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记留人工，不带病上架；每步结果机器可校验，不过不上传',
-          '梳理字段映射与平台规则沉淀为配置，新增平台只需扩展配置无需改核心流程',
-        ],
-        result: '在多平台上架场景持续落地使用，形成 LLM + RPA 混合架构的可复用实践。',
-      },
-      {
-        name: '企业 SRC 漏洞挖掘 · 安全研究',
-        tag: '安全 · 持续',
-        desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过、未授权数据访问类问题，全程遵循最小化验证原则与平台报送规范。',
-        points: [
-          '累计 6 个漏洞获平台定级确认（4 高危 / 2 中危），覆盖 6 家企业：含会话伪造类认证绕过（服务端验签缺失）与内部系统未授权数据读取',
-          '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
-          '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
-          '这套方法论本身就是 Agent 架构的判据：接口抽取与差分验证必须根据响应动态决定下一步探测方向，属于 ReAct 循环；资产枚举与请求发包是确定性的，属于 Workflow。我在做 Agent 编排时就是按这条边界切分的',
-        ],
-        result: '6 个漏洞全部通过官方渠道报送并推动修复，其中 4 个定级高危。',
-      },
-      {
         name: '文件透明加密系统 · Windows 安全工程',
         tag: 'C++ / Hook 注入',
-        desc: '基于 API Hook 注入与内存级加解密实现的文档透明加密系统：授权进程读取时在内存中完成解密，用户全程无感；非授权进程只能获得密文，配套受控读取器进行权限判定。',
+        desc: '基于 API Hook 注入与内存级加解密实现的文档透明加密系统：授权进程内存中解密、用户无感，非授权进程只得密文。',
         points: [
           '通过 Hook 截获文件读写调用，在授权进程的内存数据流中完成加解密，实现落盘即密文、合法使用无感',
           '注入受控读取器做进程级权限判定，未授权进程与外发渠道均无法获取明文',
           '覆盖典型防泄密场景：文档在可信环境内正常使用，脱离环境即不可读',
         ],
-        result: '独立完成从需求分析、方案设计到工程实现的完整闭环，形成可部署的透明加密防护方案。',
-      },
-      {
-        name: '后端数据处理与数据库优化',
-        tag: 'SQL / 数据',
-        desc: '针对批量数据处理、数据清洗与数据库查询卡顿问题，开发自动化数据处理脚本并完成 SQL 与索引优化。',
-        points: [
-          '编写 CSV 批量导入 / 清洗 / 筛选脚本，把逐条人工操作收敛为一条命令；处理任务幂等可重跑，不产生重复数据',
-          '用执行计划定位全表扫描与冗余排序，补齐复合索引、消除 N+1 查询，并把慢查询固化为可复现的基准用例',
-          '梳理数据处理流程并标准化，规避数据错乱、重复与丢失，保障数据准确性与完整性',
-          '完成服务器端数据服务调试，适配线上运行环境，保障数据处理服务稳定持续运行',
-        ],
-        result: '数据处理全流程自动化，慢查询经索引与 SQL 改写收敛为可复现的基准用例。',
+        result: '独立完成从需求分析、方案设计到工程实现的完整闭环。',
       },
       {
         name: 'Resume Terminal · 交互式终端简历（本站）',
         tag: '开源 · 原生 JS',
         link: 'https://github.com/HXSLtim/resume',
-        desc: '你正在浏览的这个简历站点：仿 zsh 终端交互，零依赖纯前端实现命令解析、历史与补全、深浅主题与移动端响应式，打印可导出 A4 版简历，通过 GitHub Pages 自动部署。',
-        points: [],
+        desc: '你正在浏览的这个站点：仿 zsh 终端交互的简历，零依赖纯前端实现。',
+        points: [
+          '手写命令解析、历史（↑/↓）与 Tab 补全，支持中文别名与点击命令名直接执行',
+          '中英双语 i18n + 深浅主题响应式；打印导出 A4 版完整简历，终端与打印共用同一份数据源',
+          '通过 GitHub Pages 自动部署，改一处内容全局生效',
+        ],
         result: '在线访问：<a href="https://hxsltim.github.io/resume/" target="_blank" rel="noopener">hxsltim.github.io/resume</a>',
       },
     ],
@@ -268,7 +260,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Backend & Systems',
-        desc: 'Go / Python / Node.js; FastAPI + SQLAlchemy / Alembic, PostgreSQL / MySQL, Redis, ChromaDB vector store, Neo4j knowledge graph; SQL and index tuning; WebSocket real-time communication; Linux / macOS service deployment and troubleshooting; Docker containerisation.',
+        desc: 'Go / Python / Node.js; FastAPI + SQLAlchemy / Alembic, PostgreSQL / MySQL, Redis, ChromaDB vector store, Neo4j knowledge graph; SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); CSV batch import and cleaning scripted, with idempotent re-runnable jobs; WebSocket real-time communication; Linux / macOS service deployment and troubleshooting; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
@@ -278,29 +270,16 @@ window.RESUME_DATA = {
 
     projects: [
       {
-        name: 'GameLink · Gaming Companion Management Platform',
-        tag: 'Open source · Go + React',
-        link: 'https://github.com/HXSLtim/GameLink',
-        desc: 'A modern gaming-companion business platform: Go backend + React frontend, covering smart order dispatch, multi-role management, real-time messaging, payment & settlement, and data monitoring end to end.',
-        points: [
-          'Designed a smart order-dispatch mechanism: automatic matching between users and companions, supporting both grab-pool and customer-service assignment modes',
-          'Built a user / companion / admin multi-role permission system with JWT + RBAC access control',
-          'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
-          'Dashboard for real-time order status, revenue statistics and system metrics',
-        ],
-        result: '49 stars / 14 forks since open-sourcing: github.com/HXSLtim/GameLink',
-      },
-      {
         name: 'Nai · Multi-Agent AI Novel Writing Platform',
         tag: 'Open source · Python',
         link: 'https://github.com/HXSLtim/Nai',
-        desc: 'An intelligent novel-writing platform based on multi-agent collaboration, supporting worldview management, character management, outline management and long-form consistency.',
+        desc: 'A multi-agent novel-writing platform whose core problem is keeping worldview and characters consistent across million-word novels.',
         points: [
-          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode',
-          'Layered memory: chapter-level memory + plot digest extraction + context budgeting and compression, keeping worldview and characters consistent across million-word novels',
+          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode and conditional edges controlling the loop and its termination',
+          'Layered memory: chapter-level memory + plot digest extraction + context budgeting and compression — turning long-form consistency from a context-stuffing problem into schedulable memory',
           'Hybrid RAG retrieval: ChromaDB vector store + metadata filtering + lifecycle and author scope authorisation; Neo4j knowledge graph for character-relation extraction and conflict validation',
           'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
-          'Fully engineered with a FastAPI + PostgreSQL + Redis backend and a Next.js / TypeScript frontend',
+          'FastAPI + PostgreSQL + Redis backend, Next.js / TypeScript frontend',
         ],
         result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
       },
@@ -309,8 +288,8 @@ window.RESUME_DATA = {
         tag: 'AI in production · Python',
         desc: 'A multi-platform e-commerce listing tool: the LLM understands and generates, RPA executes — product data flows from raw material to published listing with no manual step.',
         points: [
-          'LLM structured output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
-          'Function Calling drives the RPA execution layer to fill and submit listings on each platform — the LLM decides, RPA executes',
+          'LLM output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
+          'Function Calling drives the RPA execution layer to fill and submit listings — the LLM decides, RPA executes',
           'Reliability triad: schema validation + retries against format drift; low-confidence fields flagged for humans so nothing broken is published; every step machine-verifiable — no pass, no upload',
           'Field mappings and platform rules distilled into configuration, so adding a platform is a config change rather than a core-flow change',
         ],
@@ -319,7 +298,7 @@ window.RESUME_DATA = {
       {
         name: 'Enterprise SRC Vulnerability Research · Security',
         tag: 'Security · Ongoing',
-        desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access, always following minimal-verification principles and platform disclosure rules.',
+        desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access.',
         points: [
           '6 vulnerabilities rated by the platforms (4 high / 2 medium) across 6 companies, including session-forgery authentication bypass (missing server-side signature verification) and unauthorised reads of internal systems',
           'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing → disclosure',
@@ -329,9 +308,22 @@ window.RESUME_DATA = {
         result: 'All 6 disclosed through official channels and driven to fix; 4 rated high severity.',
       },
       {
+        name: 'GameLink · Gaming Companion Management Platform',
+        tag: 'Open source · Go + React',
+        link: 'https://github.com/HXSLtim/GameLink',
+        desc: 'A modern gaming-companion business platform: Go backend + React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
+        points: [
+          'Designed a smart order-dispatch mechanism: automatic matching between users and companions, supporting both grab-pool and customer-service assignment modes',
+          'Built a user / companion / admin multi-role permission system with JWT + RBAC access control',
+          'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
+          'Dashboard for real-time order status, revenue statistics and system metrics',
+        ],
+        result: '49 stars / 14 forks since open-sourcing: github.com/HXSLtim/GameLink',
+      },
+      {
         name: 'Transparent File Encryption System · Windows Security Engineering',
         tag: 'C++ / Hook injection',
-        desc: 'A transparent document-encryption system built on API Hook injection and in-memory crypto: authorised processes decrypt in memory with no user-visible step, while unauthorised processes only ever see ciphertext, backed by a controlled reader that decides access.',
+        desc: 'A transparent document-encryption system built on API Hook injection and in-memory crypto: authorised processes decrypt in memory with no user-visible step, while unauthorised processes only ever see ciphertext.',
         points: [
           'Hooks file I/O calls to encrypt and decrypt inside the authorised process memory stream — ciphertext at rest, transparent in legitimate use',
           'Injects a controlled reader for process-level permission checks; unauthorised processes and exfiltration channels cannot obtain plaintext',
@@ -340,23 +332,15 @@ window.RESUME_DATA = {
         result: 'Independently delivered the full loop from requirements analysis and design through to a deployable implementation.',
       },
       {
-        name: 'Backend Data Processing & Database Optimisation',
-        tag: 'SQL / Data',
-        desc: 'Automated data-processing scripts and SQL / index optimisation for batch processing, data cleaning and slow database queries.',
-        points: [
-          'Wrote CSV batch import / cleaning / filtering scripts that collapse per-row manual work into a single command; jobs are idempotent and re-runnable without creating duplicates',
-          'Used query plans to locate full table scans and redundant sorts, added composite indexes, eliminated N+1 queries, and turned slow queries into reproducible benchmark cases',
-          'Standardised the data-processing workflow to prevent corruption, duplication and loss, ensuring accuracy and integrity',
-          'Debugged server-side data services for the production environment, keeping them stable and continuously running',
-        ],
-        result: 'End-to-end automation of the data pipeline, with slow queries reduced to reproducible benchmark cases through indexing and SQL rewrites.',
-      },
-      {
         name: 'Resume Terminal · Interactive Terminal Resume (this site)',
         tag: 'Open source · Vanilla JS',
         link: 'https://github.com/HXSLtim/resume',
-        desc: 'The site you are browsing: a zsh-style interactive resume. Zero-dependency frontend implementing command parsing, history & completion, light/dark themes and mobile responsiveness; printing exports a well-formatted A4 resume; deployed automatically via GitHub Pages.',
-        points: [],
+        desc: 'The site you are browsing: a zsh-style interactive terminal resume, built with zero dependencies.',
+        points: [
+          'Hand-written command parsing, history (↑/↓) and Tab completion, with Chinese aliases and click-to-run command names',
+          'Bilingual i18n plus light/dark theme and responsive layout; printing exports a formatted A4 resume from the same data source the terminal uses',
+          'Deployed automatically via GitHub Pages — edit one place and the whole site updates',
+        ],
         result: 'Live at: <a href="https://hxsltim.github.io/resume/" target="_blank" rel="noopener">hxsltim.github.io/resume</a>',
       },
     ],
