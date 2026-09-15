@@ -126,7 +126,7 @@ window.RESUME_DATA = {
           '插件市场：NestJS 模块与 React 页面以 dynamic import + importmap 共享依赖动态装载，插件安装 / 卸载 / 更新均无需重新部署',
           '工程化基线：6 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / 镜像）；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测；Socket.IO 实时层经压测支持 1 万并发连接',
         ],
-        result: '公开仓库（MIT），本人为主要作者：265 次提交中 256 次由我完成，2026.02 起持续维护至今 —— github.com/DistroCore/nodeAdmin',
+        result: '公开仓库（MIT）：254 次提交全部由我完成，2026.02 起开发 —— github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -345,7 +345,7 @@ window.RESUME_DATA = {
           'Plugin marketplace: NestJS modules and React pages load dynamically via import() with importmap-shared dependencies, so plugins install, uninstall and update without a redeploy',
           'Engineering baseline: six-job CI (static / unit / audit / build / integration / docker); an audit-ci gate that blocks high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability; a Socket.IO realtime layer load-tested to 10,000 concurrent connections',
         ],
-        result: 'Public repo (MIT); primary author with 256 of 265 commits, maintained continuously since Feb 2026 — github.com/DistroCore/nodeAdmin',
+        result: 'Public repo (MIT): all 254 commits authored by me, in development since Feb 2026 — github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
