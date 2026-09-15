@@ -67,7 +67,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'AI 编程 Agent 工具链',
-        desc: '日常主力 Claude Code 与 Codex；常用模型覆盖 GPT 系与 GLM 系，近期以 DeepSeek 为主。用于批量实现、重构与代码审查，并通过验收回归与差分验证约束产出质量。',
+        desc: '日常主力 Claude Code 与 Codex；常用模型覆盖 GPT 系与 GLM 系，近期以 DeepSeek 为主。自建 tmux 多 Agent 协同工作区（见项目经历），按规划 / 执行 / 前端分工协作；产出通过验收回归与差分验证约束质量。',
       },
       {
         tag: 'LLM 工程',
@@ -101,6 +101,18 @@ window.RESUME_DATA = {
           'FastAPI + PostgreSQL + Redis 后端，Next.js / TypeScript 前端',
         ],
         result: '开源获 12 Star：github.com/HXSLtim/Nai',
+      },
+      {
+        name: 'AI Collab · 多 Agent 协同开发系统',
+        tag: '自研 · tmux / zsh',
+        desc: '把 Claude、Codex、Antigravity 三个编码 Agent 编成一支协作队伍的本地工作区：一条命令拉起 tmux 三 pane，并自建消息总线与协作协议，让规划、执行、前端三条线并行推进同一任务。',
+        points: [
+          '角色分工即编排：Claude 负责规划与任务编排、Codex 负责后端与测试运维、Antigravity 负责前端原型与 UX，三类能力互补而不重复',
+          '自建 Agent 间消息总线：tmux set-buffer + bracketed paste 投递、延迟补发提交键，消息带 [sender → target] 时间戳帧并全量落盘为可回溯的协作日志',
+          '用协作协议抑制消息风暴：每任务每条线最多 ACK + FINAL 两条回复、禁止进度闲聊，把上下文预算留给实际产出',
+          '工程权衡：走 CLI 粘贴而非 API —— 复用各 Agent 的交互态与订阅额度，省掉 API 成本与密钥管理；代价是目标 pane 必须处于等待输入状态，以 ai read / ai submit 兜底',
+        ],
+        result: '自研并日常使用 ——「AI 负责实现、我负责设计与验收」这套工作方式就是靠它落地的。',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -260,7 +272,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'AI Coding Agent Toolchain',
-        desc: 'Daily drivers Claude Code and Codex; models span the GPT and GLM families, with DeepSeek as the recent primary. Used for bulk implementation, refactoring and code review, with output quality constrained through acceptance regression and differential verification.',
+        desc: 'Daily drivers Claude Code and Codex; models span the GPT and GLM families, with DeepSeek as the recent primary. I built a tmux-based multi-agent workspace (see Projects) that splits planning, execution and frontend work across agents; output quality is constrained through acceptance regression and differential verification.',
       },
       {
         tag: 'LLM Engineering',
@@ -294,6 +306,18 @@ window.RESUME_DATA = {
           'FastAPI + PostgreSQL + Redis backend, Next.js / TypeScript frontend',
         ],
         result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
+      },
+      {
+        name: 'AI Collab · Multi-Agent Collaborative Development System',
+        tag: 'Self-built · tmux / zsh',
+        desc: 'A local workspace that turns three coding agents — Claude, Codex and Antigravity — into a collaborating team: one command brings up a three-pane tmux session with a self-built message bus and collaboration protocol, so planning, execution and frontend work advance in parallel on the same task.',
+        points: [
+          'Role division as orchestration: Claude plans and orchestrates, Codex owns backend, testing and ops, Antigravity owns frontend prototypes and UX — complementary capabilities, not duplicates',
+          'Self-built inter-agent message bus: delivers via tmux set-buffer + bracketed paste with a delayed submit key, frames every message with a [sender → target] timestamp, and logs it all into a reviewable collaboration log',
+          'A protocol that suppresses message storms: at most one ACK and one FINAL per task per line, no progress chatter — keeping the context budget for real output',
+          'Trade-off: driving CLIs by paste instead of API reuses each agent’s interactive state and subscription quota, avoiding API cost and key management; the cost is that a target pane must be waiting for input, with ai read / ai submit as fallback',
+        ],
+        result: 'Built and used daily — the AI implements, I design and verify workflow runs on this orchestration.',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
