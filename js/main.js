@@ -40,7 +40,7 @@
       secExperience: '工作经历',
       secSkills: '专业技能',
       secProjects: '项目经历',
-      secAdvantages: '个人优势',
+      secAdvantages: '核心优势',
       secEducation: '教育背景',
       secContact: '联系方式',
       resultLabel: '成果',
@@ -68,10 +68,10 @@
       help: [
         `<b>可用命令</b> · 点击命令名可直接执行`,
         `  <span class="cmd-link" data-cmd="about">about</span> / 简介 — 关于我`,
+        `  <span class="cmd-link" data-cmd="advantages">advantages</span> / 优势 — 核心优势`,
         `  <span class="cmd-link" data-cmd="experience">experience</span> / 经历 — 工作经历`,
         `  <span class="cmd-link" data-cmd="skills">skills</span> / 技能 — 专业技能`,
         `  <span class="cmd-link" data-cmd="projects">projects</span> / 项目 — 项目经历`,
-        `  <span class="cmd-link" data-cmd="advantages">advantages</span> / 优势 — 个人优势`,
         `  <span class="cmd-link" data-cmd="education">education</span> / 教育 — 教育背景`,
         `  <span class="cmd-link" data-cmd="contact">contact</span> / 联系方式 — 联系我`,
         `  <span class="cmd-link" data-cmd="resume">resume</span> / 全部 — 一键输出完整简历`,
@@ -100,7 +100,7 @@
       secExperience: 'Work Experience',
       secSkills: 'Skills',
       secProjects: 'Projects',
-      secAdvantages: 'Strengths',
+      secAdvantages: 'Core Strengths',
       secEducation: 'Education',
       secContact: 'Contact',
       resultLabel: 'Result',
@@ -128,10 +128,10 @@
       help: [
         `<b>Available commands</b> · click a command name to run it`,
         `  <span class="cmd-link" data-cmd="about">about</span> — About me`,
+        `  <span class="cmd-link" data-cmd="advantages">advantages</span> — Core strengths`,
         `  <span class="cmd-link" data-cmd="experience">experience</span> — Work experience`,
         `  <span class="cmd-link" data-cmd="skills">skills</span> — Skills`,
         `  <span class="cmd-link" data-cmd="projects">projects</span> — Projects`,
-        `  <span class="cmd-link" data-cmd="advantages">advantages</span> — Strengths`,
         `  <span class="cmd-link" data-cmd="education">education</span> — Education`,
         `  <span class="cmd-link" data-cmd="contact">contact</span> — Contact`,
         `  <span class="cmd-link" data-cmd="resume">resume</span> — Output the full resume in one shot`,
@@ -318,6 +318,11 @@
     education: () => [
       secTitle(S.secEducation),
       `  ${D.education.school} · ${D.education.major} · ${D.education.degree}　<span class="date">${D.education.date}</span>`,
+      ...(D.education.note ? [`  <span class="dim">${D.education.note}</span>`] : []),
+      ...(D.education.verify && D.education.verify.code
+        ? [`  <span class="dim">🔎 ${D.education.verify.label}：</span><b>${D.education.verify.code}</b>` +
+           `　<span class="dim">验证入口 <a href="${D.education.verify.url}" target="_blank" rel="noopener">chsi.com.cn/xlcx/bgcx.jsp</a></span>`]
+        : []),
     ],
 
     contact: () => [secTitle(S.secContact), `  <span class="dim">🎂</span> ${D.ageInfo}`, ...contactLines()],
@@ -325,13 +330,13 @@
     resume: () => [
       ...commands.about(),
       '&nbsp;',
+      ...commands.advantages(),
+      '&nbsp;',
       ...commands.experience(),
       '&nbsp;',
       ...commands.skills(),
       '&nbsp;',
       ...commands.projects(),
-      '&nbsp;',
-      ...commands.advantages(),
       '&nbsp;',
       ...commands.education(),
       '&nbsp;',
@@ -489,12 +494,16 @@
         <p class="pr-contact">${D.ageInfo}　·　${D.contacts.map((c) => c.text).join('　·　')}</p>
       </header>
       <section class="pr-sec"><h2>${secTitle(S.secAbout)}</h2><p class="pr-p">${D.about}</p></section>
+      <section class="pr-sec"><h2>${secTitle(S.secAdvantages)}</h2>${kvRows(D.advantages)}</section>
       <section class="pr-sec"><h2>${secTitle(S.secExperience)}</h2>${D.experiences.map(expBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle(S.secSkills)}</h2>${kvRows(D.skills)}</section>
       <section class="pr-sec"><h2>${secTitle(S.secProjects)}</h2>${D.projects.map(projectBlock).join('')}</section>
-      <section class="pr-sec"><h2>${secTitle(S.secAdvantages)}</h2>${kvRows(D.advantages)}</section>
       <section class="pr-sec"><h2>${secTitle(S.secEducation)}</h2>
         <p class="pr-p">${D.education.school} · ${D.education.major} · ${D.education.degree}　<span class="pr-date">${D.education.date}</span></p>
+        ${D.education.note ? `<p class="pr-note">${D.education.note}</p>` : ''}
+        ${D.education.verify && D.education.verify.code
+          ? `<p class="pr-note">🔎 ${D.education.verify.label}：${D.education.verify.code}　验证入口 ${D.education.verify.url}</p>`
+          : ''}
       </section>`;
   }
 

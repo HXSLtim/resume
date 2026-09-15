@@ -5,13 +5,20 @@
    i18n：数据按语言分包 —— zh（中文）与 en（英文）。
    两份字段完全一致，改内容时记得两份同步改；
    页面语言可用 lang 命令 / 右上角按钮切换，或加 ?lang=en。
+
+   写作口径（重要，改之前先读）：
+   1. 技能按目标岗位权重排序：AI Agent → LLM 工程 → 安全 → 后端系统 → 业务。
+   2. 只写能当场被面试官追问到底的事实，不写「大幅提升」这类无法验证的副词。
+      没有实测数字就写机制（能讲清怎么做到的），不编量级。
+   3. education.note 用于说明 13 岁入学 / 17 岁毕业——这不是笔误，
+      必须写明，否则面试官会按算术错误处理。
    ========================================================= */
 
 window.RESUME_DATA = {
   /* ---------------- 中文 ---------------- */
   zh: {
     name: '刘正硕',
-    role: '后端开发工程师 · AI 应用开发工程师 · 产品技术研发',
+    role: 'AI Agent 工程师 · 全栈 / 后端开发 · 安全研究',
 
     ageInfo: '19 岁 · 2007.04',
     contacts: [
@@ -22,57 +29,57 @@ window.RESUME_DATA = {
     ],
 
     about:
-      '全栈开发落地能力 + 安全研究实战背景，深耕后端开发、自动化脚本（RPA）、AI Agent 应用，兼具技术落地、产品构思、项目统筹能力。' +
-      '思维务实严谨，擅长拆解复杂需求、从零搭建可落地的技术项目；熟悉 Linux / macOS 服务部署、数据库优化与自动化程序开发；' +
-      '在企业安全响应平台（SRC）持续产出高危级别漏洞成果，兼具攻防双视角；已有 LLM 结构化输出 + Function Call 驱动 RPA 的 AI 落地成品；' +
-      '同时具备文创世界观设定的创作与规划能力。',
+      'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
+      '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
+      '企业 SRC 累计 6 个已定级漏洞（4 个高危），攻防双视角让我把权限与数据护栏做进交付流程。' +
+      'Go / Python / Node.js 全栈交付，熟悉 Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
 
     experiences: [
       {
-        company: '独立开发 · 远程全栈',
+        company: '独立交付 · 远程全栈（自由职业）',
         role: '全栈开发工程师',
         industry: 'RPA 自动化 / 中后台 / 微信生态',
         date: '2024 – 2025',
         points: [
-          '远程交付全栈项目：中后台管理系统、微信生态应用（公众号/SDK 网页应用、微信云开发小程序）、RPA 自动化工具',
-          '开发 AI + RPA 自动上架工具（LLM 结构化输出 + Function Call 驱动执行），将大模型能力引入业务自动化流程',
-          '独立完成 Windows 文件透明加密系统（API Hook + 内存级加解密），从需求分析到工程落地闭环',
+          '以项目制远程交付三类系统：中后台管理系统、微信生态应用（公众号 / SDK 网页应用、微信云开发小程序）、RPA 自动化工具',
+          '开发 AI + RPA 多平台自动上架工具：LLM 按 JSON Schema 约束抽取与生成各平台商品字段，Function Calling 驱动 RPA 执行层完成填表上架；Schema 校验 + 失败重试防格式漂移，低置信字段标记转人工，不带病上架',
+          '独立完成 Windows 文件透明加密系统（API Hook 截获文件读写调用 + 内存级加解密）：授权进程无感拿到明文，非授权进程只得密文',
         ],
       },
       {
         company: '雪机猫传媒有限公司',
         role: '全栈开发工程师',
         industry: '游戏陪玩',
-        date: '2025 – 2026.07', // ✏️ 如需精确到起始月份可再改
+        date: '2025 – 2026.07',
         points: [
-          '独立负责公司游戏陪玩平台的开发与维护，作为公司唯一 IT，全流程承担开发、上线与日常技术保障',
+          '公司唯一 IT：独立承担游戏陪玩平台的开发、上线与日常技术保障全流程',
           '主导前端功能开发与页面维护，同时负责后端服务维护与基于业务需求的二次开发',
-          '快速响应业务迭代需求，完成功能闭环落地，保障平台稳定运行',
-          '将陪玩平台核心场景沉淀为开源项目 GameLink（Go + React，48 Star / 13 Fork）',
+          '将平台核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
+          '独立完成服务器部署、环境配置与线上故障排查，保障平台持续稳定运行',
         ],
       },
     ],
 
     skills: [
       {
-        tag: '后端与脚本开发',
-        desc: '熟练使用 Go / Python / Node.js 编写自动化脚本、业务逻辑代码，精通 SQL 语句编写与数据库性能优化，可独立完成数据清洗、CSV 数据处理、接口逻辑开发，具备完整的后端功能开发与问题排查能力。',
+        tag: 'AI Agent 开发',
+        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作，落地 ReAct 循环与 Function Calling / ToolNode 工具调用链；分层记忆设计（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（统一 MCP 控制中心：能力矩阵声明、调用审计、未实现能力显式失败）。',
       },
       {
-        tag: '服务器与运维',
-        desc: '熟悉 Linux、macOS 系统环境，掌握服务器部署、环境配置、故障排查，可独立完成项目上线、服务维护、稳定性优化工作。',
-      },
-      {
-        tag: 'AI 应用开发',
-        desc: '基于 Python 深耕 AI Agent 研发：LLM 结构化输出（JSON Schema 约束）、Function Calling / 工具调用、RPA 集成落地；熟悉微信生态开发（公众号/小程序 SDK、微信云开发），具备 AI 项目从零搭建到业务落地的完整实战经验。',
+        tag: 'LLM 工程',
+        desc: '结构化输出（JSON Schema / Pydantic 约束）、Prompt 工程与迭代、失败重试与格式漂移防护、低置信字段标记与人工兜底；模型异常分类处理（内容过滤 / 工具调用异常 / 参数解析失败），保证链路可观测、可重试。',
       },
       {
         tag: '安全研究',
-        desc: '在企业安全响应平台（SRC）持续进行漏洞挖掘，产出高危级别成果（认证绕过、未授权数据读取类），全程遵循最小化验证与平台报送规范；具备 API Hook 注入、内存级加解密的工程级安全开发能力，攻防双视角。',
+        desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问（累计 6 个已定级、4 个高危）：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；具备 API Hook 注入与内存级加解密的工程级安全开发能力，攻防双视角。',
+      },
+      {
+        tag: '后端与系统',
+        desc: 'Go / Python / Node.js；FastAPI + SQLAlchemy / Alembic、PostgreSQL / MySQL、Redis、ChromaDB 向量库、Neo4j 知识图谱；SQL 与索引调优；WebSocket 实时通信；Linux / macOS 服务部署与故障排查；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
-        desc: '具备产品与方案思维：在 GameLink 中独立设计会员体系、订单分发、支付结算等业务闭环；擅长需求量化拆解、方案选型与 ROI 论证，能把业务诉求转化为可落地的技术方案。',
+        desc: '在 GameLink 中独立设计会员体系、订单分发、支付结算等业务闭环；擅长需求量化拆解、方案选型与 ROI 论证，能把业务诉求转化为可落地的技术方案。',
       },
     ],
 
@@ -88,7 +95,7 @@ window.RESUME_DATA = {
           '基于 WebSocket 实现群聊 / 私聊即时通讯；打通订单支付、退款与收益结算',
           '实时订单状态、收益统计与系统指标监控看板',
         ],
-        result: '开源后获 48 Star / 13 Fork：github.com/HXSLtim/GameLink',
+        result: '开源后获 49 Star / 14 Fork：github.com/HXSLtim/GameLink',
       },
       {
         name: 'Nai · 多 Agent AI 小说创作平台',
@@ -96,9 +103,11 @@ window.RESUME_DATA = {
         link: 'https://github.com/HXSLtim/Nai',
         desc: '基于多 Agent 协作的智能小说创作平台，支持世界观管理、角色管理、大纲管理与长篇创作一致性保障。',
         points: [
-          '基于 LangChain 编排多 Agent 协作，覆盖素材整理、大纲规划与正文生成全流程',
-          '使用 ChromaDB 向量库 + RAG 管理设定记忆，保障长篇创作中的世界观与角色一致性',
-          'FastAPI 后端 + Next.js / TypeScript 前端的完整工程化实现',
+          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent 协作，经 ToolNode 装配工具调用链',
+          '分层记忆体系：章级记忆 + 剧情摘要抽取 + 上下文预算与压缩，保障百万字长篇的世界观与角色一致性',
+          'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
+          'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
+          'FastAPI + PostgreSQL + Redis 后端，Next.js / TypeScript 前端的完整工程化实现',
         ],
         result: '开源获 12 Star：github.com/HXSLtim/Nai',
       },
@@ -112,18 +121,19 @@ window.RESUME_DATA = {
           '工程可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记留人工，不带病上架；每步结果机器可校验，不过不上传',
           '梳理字段映射与平台规则沉淀为配置，新增平台只需扩展配置无需改核心流程',
         ],
-        result: '在多平台上架场景持续落地使用，将重复性人工上架操作自动化，形成 LLM + RPA 混合架构的可复用实践。',
+        result: '在多平台上架场景持续落地使用，形成 LLM + RPA 混合架构的可复用实践。',
       },
       {
         name: '企业 SRC 漏洞挖掘 · 安全研究',
         tag: '安全 · 持续',
         desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过、未授权数据访问类问题，全程遵循最小化验证原则与平台报送规范。',
         points: [
-          '高危成果若干：包括会话伪造类认证绕过（服务端验签缺失场景）与内部系统未授权数据读取，均获平台定级确认并推动修复',
-          '方法论闭环：资产测绘 → 前端/小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
+          '累计 6 个漏洞获平台定级确认（4 高危 / 2 中危），覆盖 6 家企业：含会话伪造类认证绕过（服务端验签缺失）与内部系统未授权数据读取',
+          '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
           '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
+          '这套方法论本身就是 Agent 架构的判据：接口抽取与差分验证必须根据响应动态决定下一步探测方向，属于 ReAct 循环；资产枚举与请求发包是确定性的，属于 Workflow。我在做 Agent 编排时就是按这条边界切分的',
         ],
-        result: '多个高危漏洞获企业 SRC 平台定级确认，全部通过官方渠道报送并推动修复。',
+        result: '6 个漏洞全部通过官方渠道报送并推动修复，其中 4 个定级高危。',
       },
       {
         name: '文件透明加密系统 · Windows 安全工程',
@@ -139,14 +149,14 @@ window.RESUME_DATA = {
       {
         name: '后端数据处理与数据库优化',
         tag: 'SQL / 数据',
-        desc: '针对批量数据处理、数据清洗、数据库卡顿等问题，开发自动化数据处理脚本并完成 SQL 性能优化，解决海量数据处理效率低、数据库响应慢的问题。',
+        desc: '针对批量数据处理、数据清洗与数据库查询卡顿问题，开发自动化数据处理脚本并完成 SQL 与索引优化。',
         points: [
-          '自主编写自动化脚本，实现 CSV 批量数据导入、清洗、筛选、整理，替代人工手动操作，大幅提升数据处理效率',
-          '深度优化 SQL 查询语句、索引结构与查询逻辑，解决数据库查询卡顿、冗余数据过多等问题，提升数据库响应速度',
-          '梳理数据处理流程，标准化数据处理规范，规避数据错乱、丢失、重复等问题，保障数据准确性与完整性',
+          '编写 CSV 批量导入 / 清洗 / 筛选脚本，把逐条人工操作收敛为一条命令；处理任务幂等可重跑，不产生重复数据',
+          '用执行计划定位全表扫描与冗余排序，补齐复合索引、消除 N+1 查询，并把慢查询固化为可复现的基准用例',
+          '梳理数据处理流程并标准化，规避数据错乱、重复与丢失，保障数据准确性与完整性',
           '完成服务器端数据服务调试，适配线上运行环境，保障数据处理服务稳定持续运行',
         ],
-        result: '实现数据处理全流程自动化，数据库查询效率大幅提升，成功解决海量数据处理卡顿、数据异常等核心问题。',
+        result: '数据处理全流程自动化，慢查询经索引与 SQL 改写收敛为可复现的基准用例。',
       },
       {
         name: 'Resume Terminal · 交互式终端简历（本站）',
@@ -160,20 +170,20 @@ window.RESUME_DATA = {
 
     advantages: [
       {
-        tag: '技术落地能力强',
-        desc: '所有项目均为自主从零落地，不局限于理论知识，擅长解决实际开发、运营中的各类问题，实战经验充足。',
+        tag: 'AI Agent 工程能力',
+        desc: '不止会调 API：多 Agent 编排、工具调用链、分层记忆、RAG 检索与 MCP 服务都在真实项目里落地过，清楚每个环节会在哪里失败、怎么兜底。',
       },
       {
         tag: '攻防双视角',
         desc: '安全研究实战背景，交付系统时同步考虑权限、数据与内容风险，擅长把安全护栏做进交付流程，而非事后补漏。',
       },
       {
-        tag: '思维全面多元',
-        desc: '兼具硬核技术研发能力、商业产品思维，可兼顾技术开发、产品规划、内容创作多维度工作。',
+        tag: '全栈落地能力',
+        desc: '从后端服务、数据库、前端到服务器部署全部独立承担，所有项目均为自主从零落地，不局限于理论知识。',
       },
       {
         tag: '严谨务实自律',
-        desc: '做事注重细节、追求精准，规避虚假与冗余，擅长长期迭代优化项目，具备极强的问题排查能力与复盘能力。',
+        desc: '只写能被追问到底的事实，不做无法验证的承诺；擅长长期迭代优化项目，具备极强的问题排查能力与复盘能力。',
       },
       {
         tag: '学习适配性高',
@@ -186,13 +196,22 @@ window.RESUME_DATA = {
       major: '网络工程专业',
       degree: '本科',
       date: '2020.09 – 2024.06',
+      note: '13 岁入学、17 岁本科毕业（早期入学）；17 岁起独立交付全栈项目，非笔误',
+      // ✏️ 学信网在线验证码：学信档案 → 在线验证报告 → 教育部学历证书电子注册备案表
+      //    申请时有效期选 6 个月（最长），把「在线验证码」填进 code；留空则整行不显示。
+      //    ⚠️ 验证码 6 个月后失效，投递前必须重新申请——详见 README「学历可验证」一节。
+      verify: {
+        label: '学信网在线验证码',
+        code: '',
+        url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
+      },
     },
   },
 
   /* ---------------- English ---------------- */
   en: {
     name: 'Liu Zhengshuo',
-    role: 'Backend Developer · AI Application Developer · Product R&D',
+    role: 'AI Agent Engineer · Full-stack / Backend · Security Research',
 
     ageInfo: '19 y/o · Apr 2007',
     contacts: [
@@ -203,23 +222,21 @@ window.RESUME_DATA = {
     ],
 
     about:
-      'Full-stack delivery capability plus hands-on security research background, focusing on backend development, automation scripting (RPA) and AI agent applications, combining hands-on engineering, product thinking and project coordination. ' +
-      'Pragmatic and rigorous; skilled at breaking down complex requirements and building production-ready projects from scratch. ' +
-      'Familiar with Linux / macOS service deployment, database optimization and automation tooling. ' +
-      'Continuously producing high-severity findings on corporate SRC (security response) platforms, with both offensive and defensive perspectives. ' +
-      'Shipped a production AI tool combining LLM structured output + Function Call driven RPA. ' +
-      'Also experienced in creative worldbuilding.',
+      'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
+      'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
+      '6 platform-rated vulnerabilities on enterprise SRC programs (4 high severity); an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
+      'Full-stack delivery in Go / Python / Node.js, comfortable with Linux deployment, SQL tuning and WebSocket real-time communication.',
 
     experiences: [
       {
-        company: 'Independent Developer · Remote Full-stack',
+        company: 'Independent Delivery · Remote Full-stack (Freelance)',
         role: 'Full-stack Developer',
-        industry: 'RPA Automation / Admin Systems / WeChat Ecosystem',
+        industry: 'RPA automation / Admin systems / WeChat ecosystem',
         date: '2024 – 2025',
         points: [
-          'Delivered full-stack projects remotely: admin/management systems, WeChat-ecosystem apps (official-account/SDK web apps, WeChat Cloud mini-programs) and RPA automation tools',
-          'Built an AI + RPA auto-listing tool (LLM structured output + Function Call driven execution), bringing LLM capabilities into business automation',
-          'Independently delivered a Windows transparent file-encryption system (API Hook + in-memory encryption/decryption), from requirements to engineering closure',
+          'Delivered three classes of systems on a project basis: admin/back-office systems, WeChat ecosystem apps (official-account / SDK web apps, WeChat Cloud Development mini programs) and RPA automation tooling',
+          'Built an AI + RPA multi-platform listing tool: the LLM extracts and generates per-platform product fields under a JSON Schema contract, and Function Calling drives the RPA execution layer to fill and submit forms; schema validation + retries prevent format drift, and low-confidence fields are flagged for humans so nothing broken gets published',
+          'Independently built a Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto): authorised processes read plaintext transparently, unauthorised ones only ever get ciphertext',
         ],
       },
       {
@@ -228,34 +245,34 @@ window.RESUME_DATA = {
         industry: 'Gaming companion services',
         date: '2025 – 2026.07',
         points: [
-          'Solely responsible for developing and maintaining the company’s gaming-companion platform; as the only IT staff, owned the full cycle of development, launch and daily technical support',
-          'Led frontend feature development and page maintenance, while maintaining backend services and building secondary development on business needs',
-          'Delivered fast iteration on business requirements with complete feature loops, keeping the platform stable',
-          'Distilled the core platform scenarios into the open-source project GameLink (Go + React, 48 stars / 13 forks)',
+          'Sole IT staff: owned the gaming-companion platform end to end — development, launch and day-to-day technical support',
+          'Led frontend feature development and page maintenance while maintaining backend services and building secondary development on business needs',
+          'Distilled the core business scenarios into the open-source project GameLink (Go + React, 49 stars / 14 forks)',
+          'Handled server deployment, environment setup and production troubleshooting independently, keeping the platform stable',
         ],
       },
     ],
 
     skills: [
       {
-        tag: 'Backend & Scripting',
-        desc: 'Proficient in Go / Python / Node.js for automation scripts and business logic; strong SQL writing and database performance tuning; independently handle data cleaning, CSV processing and API logic — complete backend development and troubleshooting capability.',
+        tag: 'AI Agent Development',
+        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs, with ReAct loops and Function Calling / ToolNode tool chains; layered memory design (chapter-level memory + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope-based authorisation); MCP service development (a unified MCP control centre with a declared capability matrix, full call auditing, and explicit failure for unimplemented capabilities).',
       },
       {
-        tag: 'Servers & Ops',
-        desc: 'Familiar with Linux and macOS environments; server deployment, environment setup and fault diagnosis; can independently ship projects, maintain services and improve stability.',
-      },
-      {
-        tag: 'AI Application Development',
-        desc: 'Deep focus on AI agent development with Python: LLM structured output (JSON Schema constraints), Function Calling / tool use, and RPA integration; familiar with WeChat-ecosystem development (official-account / mini-program SDK, WeChat Cloud). End-to-end experience from zero to business landing.',
+        tag: 'LLM Engineering',
+        desc: 'Structured output (JSON Schema / Pydantic constraints), prompt engineering and iteration, retry and format-drift protection, low-confidence field flagging with human fallback; typed handling of model failures (content filtering / malformed tool calls / argument parse errors) so the chain stays observable and retryable.',
       },
       {
         tag: 'Security Research',
-        desc: 'Continuously hunting vulnerabilities on corporate SRC (security response) platforms with high-severity findings (authentication bypass, unauthorized data access), following minimal-verification and responsible-disclosure discipline; engineering-grade security skills including API Hook injection and in-memory encryption. Offensive + defensive perspectives.',
+        desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access (6 rated, 4 high severity): asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing. Also hands-on security engineering: API Hook injection and in-memory encryption, attacker-defender dual perspective.',
+      },
+      {
+        tag: 'Backend & Systems',
+        desc: 'Go / Python / Node.js; FastAPI + SQLAlchemy / Alembic, PostgreSQL / MySQL, Redis, ChromaDB vector store, Neo4j knowledge graph; SQL and index tuning; WebSocket real-time communication; Linux / macOS service deployment and troubleshooting; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
-        desc: 'Product and solution mindset: independently designed the membership, order-dispatch and payment-settlement business loops in GameLink; skilled at quantifying requirements, solution selection and ROI reasoning — turning business needs into workable technical plans.',
+        desc: 'Designed the membership, order-dispatch and payment-settlement loops end to end in GameLink; strong at decomposing requirements into measurable terms, choosing between options and arguing ROI — turning business needs into buildable technical plans.',
       },
     ],
 
@@ -271,7 +288,7 @@ window.RESUME_DATA = {
           'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
           'Dashboard for real-time order status, revenue statistics and system metrics',
         ],
-        result: '48 stars / 13 forks since open-sourcing: github.com/HXSLtim/GameLink',
+        result: '49 stars / 14 forks since open-sourcing: github.com/HXSLtim/GameLink',
       },
       {
         name: 'Nai · Multi-Agent AI Novel Writing Platform',
@@ -279,57 +296,60 @@ window.RESUME_DATA = {
         link: 'https://github.com/HXSLtim/Nai',
         desc: 'An intelligent novel-writing platform based on multi-agent collaboration, supporting worldview management, character management, outline management and long-form consistency.',
         points: [
-          'Orchestrates multi-agent collaboration with LangChain across material organizing, outline planning and draft generation',
-          'Uses ChromaDB vector store + RAG to manage setting memory, keeping worldview and characters consistent in long-form writing',
-          'Fully engineered with a FastAPI backend and a Next.js / TypeScript frontend',
+          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode',
+          'Layered memory: chapter-level memory + plot digest extraction + context budgeting and compression, keeping worldview and characters consistent across million-word novels',
+          'Hybrid RAG retrieval: ChromaDB vector store + metadata filtering + lifecycle and author scope authorisation; Neo4j knowledge graph for character-relation extraction and conflict validation',
+          'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
+          'Fully engineered with a FastAPI + PostgreSQL + Redis backend and a Next.js / TypeScript frontend',
         ],
         result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
       },
       {
-        name: 'AI Auto-Listing Tool · LLM + RPA',
-        tag: 'AI Landing · Python',
-        desc: 'An e-commerce multi-platform auto-listing tool: the LLM understands and generates, RPA executes — fully automating the flow from product assets to live listings, replacing repetitive manual work.',
+        name: 'AI Listing Automation · LLM + RPA',
+        tag: 'AI in production · Python',
+        desc: 'A multi-platform e-commerce listing tool: the LLM understands and generates, RPA executes — product data flows from raw material to published listing with no manual step.',
         points: [
-          'LLM structured output extracts and generates per-platform product fields (title, selling points, specs) under JSON Schema constraints, keeping output stable and parseable',
-          'Function Calling drives the RPA execution layer to fill and submit listings — LLM as the decision head, RPA as the execution hands',
-          'Engineering reliability trio: schema validation + retry against format drift; low-confidence fields flagged for human review; machine-checkable results at every step',
-          'Field mappings and platform rules externalized as configuration — new platforms onboard without touching core flow',
+          'LLM structured output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
+          'Function Calling drives the RPA execution layer to fill and submit listings on each platform — the LLM decides, RPA executes',
+          'Reliability triad: schema validation + retries against format drift; low-confidence fields flagged for humans so nothing broken is published; every step machine-verifiable — no pass, no upload',
+          'Field mappings and platform rules distilled into configuration, so adding a platform is a config change rather than a core-flow change',
         ],
-        result: 'In continuous use for multi-platform listing scenarios; a reusable LLM + RPA hybrid-architecture practice.',
+        result: 'Continuously used for multi-platform listing, forming a reusable LLM + RPA hybrid pattern.',
       },
       {
-        name: 'Corporate SRC Vulnerability Research · Security',
+        name: 'Enterprise SRC Vulnerability Research · Security',
         tag: 'Security · Ongoing',
-        desc: 'Continuous vulnerability hunting and disclosure on multiple corporate SRC platforms, focused on authentication bypass and unauthorized data access, with strict minimal-verification and platform-disclosure discipline.',
+        desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access, always following minimal-verification principles and platform disclosure rules.',
         points: [
-          'Multiple high-severity findings: session-forgery authentication bypass (missing server-side signature validation) and unauthorized reads of internal systems — all platform-rated and driving fixes',
-          'Closed-loop methodology: asset mapping → frontend/mini-program reverse engineering → API extraction → no-credential differential testing → fake-value contrast for scoping → platform disclosure',
-          'Testing discipline: read-only minimal verification, ≤5 real records, zero write operations, no submission without impact evidence',
+          '6 vulnerabilities rated by the platforms (4 high / 2 medium) across 6 companies, including session-forgery authentication bypass (missing server-side signature verification) and unauthorised reads of internal systems',
+          'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing → disclosure',
+          'Testing discipline: read-only minimal verification, at most 5 real records, zero write operations, and nothing reported without proof of impact',
+          'This methodology is itself the criterion for agent architecture: endpoint extraction and differential verification must decide the next probe from live responses, so they belong in a ReAct loop, while asset enumeration and request dispatch are deterministic and belong in a workflow — the same boundary I use when splitting orchestration in agent projects',
         ],
-        result: 'Multiple high-severity vulnerabilities confirmed by corporate SRC platforms, all disclosed through official channels and driving fixes.',
+        result: 'All 6 disclosed through official channels and driven to fix; 4 rated high severity.',
       },
       {
         name: 'Transparent File Encryption System · Windows Security Engineering',
-        tag: 'C++ / Hook Injection',
-        desc: 'A transparent document-encryption system built on API Hook injection and in-memory encryption/decryption: authorized processes read decrypted content in memory seamlessly; unauthorized processes only ever see ciphertext, with an injected controlled reader enforcing per-process permissions.',
+        tag: 'C++ / Hook injection',
+        desc: 'A transparent document-encryption system built on API Hook injection and in-memory crypto: authorised processes decrypt in memory with no user-visible step, while unauthorised processes only ever see ciphertext, backed by a controlled reader that decides access.',
         points: [
-          'Intercepted file read/write calls via hooks, performing encryption/decryption in the authorized process’s memory stream — data-at-rest is ciphertext while legitimate use stays transparent',
-          'Injected controlled reader for process-level permission decisions; unauthorized processes and exfiltration channels cannot obtain plaintext',
-          'Covers typical DLP scenarios: documents work normally inside trusted environments, unreadable outside',
+          'Hooks file I/O calls to encrypt and decrypt inside the authorised process memory stream — ciphertext at rest, transparent in legitimate use',
+          'Injects a controlled reader for process-level permission checks; unauthorised processes and exfiltration channels cannot obtain plaintext',
+          'Covers the typical DLP scenario: documents work normally inside the trusted environment and become unreadable outside it',
         ],
-        result: 'Independently delivered the full loop from requirements and design through engineering implementation into a deployable protection solution.',
+        result: 'Independently delivered the full loop from requirements analysis and design through to a deployable implementation.',
       },
       {
-        name: 'Backend Data Processing & Database Optimization',
+        name: 'Backend Data Processing & Database Optimisation',
         tag: 'SQL / Data',
-        desc: 'For batch data processing, data cleaning and database lag issues: developed automated data-processing scripts and optimized SQL performance, solving slow massive-data processing and sluggish database responses.',
+        desc: 'Automated data-processing scripts and SQL / index optimisation for batch processing, data cleaning and slow database queries.',
         points: [
-          'Wrote automation scripts for batch CSV import, cleaning, filtering and organizing — replacing manual work and greatly improving data-processing efficiency',
-          'Deeply optimized SQL query statements, index structures and query logic to fix query lag and redundant data, improving database response speed',
-          'Standardized data-processing workflows to prevent data corruption, loss and duplication, ensuring accuracy and integrity',
+          'Wrote CSV batch import / cleaning / filtering scripts that collapse per-row manual work into a single command; jobs are idempotent and re-runnable without creating duplicates',
+          'Used query plans to locate full table scans and redundant sorts, added composite indexes, eliminated N+1 queries, and turned slow queries into reproducible benchmark cases',
+          'Standardised the data-processing workflow to prevent corruption, duplication and loss, ensuring accuracy and integrity',
           'Debugged server-side data services for the production environment, keeping them stable and continuously running',
         ],
-        result: 'Fully automated the data-processing pipeline and greatly improved query efficiency, resolving massive-data lag and data-anomaly issues.',
+        result: 'End-to-end automation of the data pipeline, with slow queries reduced to reproducible benchmark cases through indexing and SQL rewrites.',
       },
       {
         name: 'Resume Terminal · Interactive Terminal Resume (this site)',
@@ -343,24 +363,24 @@ window.RESUME_DATA = {
 
     advantages: [
       {
-        tag: 'Strong delivery capability',
-        desc: 'Every project was built and shipped from zero by myself — not just theory. Skilled at solving real problems in development and operations, with solid hands-on experience.',
+        tag: 'AI agent engineering',
+        desc: 'Not just API calls: multi-agent orchestration, tool chains, layered memory, RAG retrieval and MCP services all landed in real projects — I know where each stage fails and how to catch it.',
       },
       {
-        tag: 'Offensive & defensive perspectives',
-        desc: 'Hands-on security research background: delivers systems with permissions, data and content risks designed in, building guardrails into the delivery process instead of patching afterwards.',
+        tag: 'Attacker-defender perspective',
+        desc: 'Hands-on security research background; I think about permission, data and content risk while building, and bake guardrails into the delivery pipeline rather than patching afterwards.',
       },
       {
-        tag: 'Well-rounded thinking',
-        desc: 'Combines hardcore engineering with commercial product thinking; can cover technical development, product planning and content creation at the same time.',
+        tag: 'Full-stack delivery',
+        desc: 'Backend services, databases, frontend and server deployment all owned personally; every project built and shipped from zero, not just theory.',
       },
       {
         tag: 'Rigorous & self-disciplined',
-        desc: 'Detail-oriented and precision-driven, avoiding fluff and redundancy; skilled at long-term project iteration, with strong debugging and retrospective ability.',
+        desc: 'I only state what can survive follow-up questioning and make no unverifiable claims; strong at long-term iteration, debugging and retrospectives.',
       },
       {
         tag: 'Fast learner',
-        desc: 'Continuously digging into new technologies and logic; adapts quickly to different role requirements, new frameworks and business logic.',
+        desc: 'Continuing into new technologies and logic; adapts quickly to different role requirements, new frameworks and business logic.',
       },
     ],
 
@@ -369,6 +389,13 @@ window.RESUME_DATA = {
       major: 'Network Engineering',
       degree: 'Bachelor',
       date: '2020.09 – 2024.06',
+      note: 'Entered university at 13, graduated at 17 (early entry); independently delivering full-stack projects since 17 — this is not a typo',
+      // See the zh block for the 6-month expiry caveat on the CHSI verification code.
+      verify: {
+        label: 'CHSI online verification code',
+        code: '',
+        url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
+      },
     },
   },
 };
