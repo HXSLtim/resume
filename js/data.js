@@ -32,7 +32,7 @@ window.RESUME_DATA = {
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
       '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
       '企业 SRC 累计 6 个已定级漏洞（4 个高危），攻防双视角让我把权限与数据护栏做进交付流程。' +
-      'Go / Python / C#（.NET Core）/ Node.js 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
+      'Go / Node.js（TypeScript）/ Python 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
 
     experiences: [
       {
@@ -53,7 +53,7 @@ window.RESUME_DATA = {
         date: '2025 – 2026.07',
         points: [
           '工作室唯一 IT：常驻重庆远程负责金华陪玩工作室的全部技术 —— 后台管理系统、Web 前端、微信小程序，全栈一人承担',
-          '技术栈：前端 Vue、后端 .NET Core、数据库 SQL Server、部署 Windows IIS + Nginx 反向代理',
+          '前端 Vue 由我主力开发；后端为存量 .NET Core（C#）系统，由我维护并按业务需求做二次开发；部署 Windows IIS + Nginx 反向代理，数据库 SQL Server',
           '按业务迭代需求完成前后端功能开发与页面维护，独立完成部署、环境配置与线上故障排查',
           '将平台核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
         ],
@@ -75,7 +75,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '全栈与系统',
-        desc: '后端 Go / Python / C#（.NET Core）/ Node.js；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
+        desc: '后端 Go / Node.js（TypeScript）/ Python；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
@@ -124,10 +124,11 @@ window.RESUME_DATA = {
       },
       {
         name: 'GameLink · 游戏陪玩管理平台',
-        tag: '开源 · Go + React',
+        tag: '开源 · Python → Go → TypeScript',
         link: 'https://github.com/HXSLtim/GameLink',
-        desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
+        desc: '现代化游戏陪玩业务平台，React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
         points: [
+          '后端技术栈历经 Python → Go → TypeScript/Node.js 三代演进；最终选 TypeScript 是冲着 AI Agent 生态（MCP SDK / LangChain.js）原生在 TS，而非语言偏好',
           '设计智能订单分发机制：自动匹配用户与陪玩师，支持抢单池与客服指派两种模式',
           '搭建用户 / 陪玩师 / 管理员多角色权限体系，基于 JWT + RBAC 控制访问安全',
           '基于 WebSocket 实现群聊 / 私聊即时通讯；打通订单支付、退款与收益结算',
@@ -217,7 +218,7 @@ window.RESUME_DATA = {
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
       'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
       '6 platform-rated vulnerabilities on enterprise SRC programs (4 high severity); an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
-      'Full-stack delivery in Go / Python / C# (.NET Core) / Node.js, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
+      'Full-stack delivery in Go / Node.js (TypeScript) / Python, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
 
     experiences: [
       {
@@ -238,7 +239,7 @@ window.RESUME_DATA = {
         date: '2025 – 2026.07',
         points: [
           'Sole IT for the studio: based in Chongqing, remotely owned everything for a Jinhua gaming-companion studio — admin backend, web frontend and WeChat mini program, full-stack and solo',
-          'Stack: Vue frontend, .NET Core backend, SQL Server data, deployed on Windows IIS behind an Nginx reverse proxy',
+          'Frontend Vue developed by me; the backend is a legacy .NET Core (C#) system that I maintain and extend on business demand; deployed on Windows IIS behind an Nginx reverse proxy with SQL Server',
           'Delivered frontend and backend feature development and page maintenance against business iterations, plus deployment, environment setup and production troubleshooting',
           'Distilled the core business scenarios into the open-source project GameLink (Go + React, 49 stars / 14 forks)',
         ],
@@ -260,7 +261,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Full-stack & Systems',
-        desc: 'Backend: Go / Python / C# (.NET Core) / Node.js. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
+        desc: 'Backend: Go / Node.js (TypeScript) / Python, plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
@@ -309,10 +310,11 @@ window.RESUME_DATA = {
       },
       {
         name: 'GameLink · Gaming Companion Management Platform',
-        tag: 'Open source · Go + React',
+        tag: 'Open source · Python → Go → TypeScript',
         link: 'https://github.com/HXSLtim/GameLink',
-        desc: 'A modern gaming-companion business platform: Go backend + React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
+        desc: 'A modern gaming-companion business platform with a React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
         points: [
+          'Backend stack evolved through three generations — Python → Go → TypeScript/Node.js; TypeScript was chosen last because the AI agent ecosystem (MCP SDK, LangChain.js) is native to it, not out of language preference',
           'Designed a smart order-dispatch mechanism: automatic matching between users and companions, supporting both grab-pool and customer-service assignment modes',
           'Built a user / companion / admin multi-role permission system with JWT + RBAC access control',
           'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
