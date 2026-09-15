@@ -32,7 +32,7 @@ window.RESUME_DATA = {
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
       '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
       '企业 SRC 累计 6 个已定级漏洞（4 个高危），攻防双视角让我把权限与数据护栏做进交付流程。' +
-      'Go / Python / Node.js 全栈交付，熟悉 Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
+      'Go / Python / C#（.NET Core）/ Node.js 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
 
     experiences: [
       {
@@ -47,14 +47,14 @@ window.RESUME_DATA = {
         ],
       },
       {
-        company: '雪机猫传媒有限公司',
+        company: '雪姬猫工作室',
         role: '全栈开发工程师',
         industry: '游戏陪玩 · 浙江金华 · 远程',
         date: '2025 – 2026.07',
         points: [
           '工作室唯一 IT：常驻重庆远程负责金华陪玩工作室的全部技术 —— 后台管理系统、Web 前端、微信小程序',
-          '独立承担开发、上线、服务器部署与线上故障排查，覆盖从写代码到运维的完整闭环',
-          '按业务迭代需求二次开发后端服务与前端页面，快速完成功能闭环落地',
+          '技术栈：前端 Vue，后端 .NET Core，部署 Windows IIS + Nginx 反向代理，数据库 SQL Server；前端开发与后端维护、二次开发均由我独立承担',
+          '按业务迭代需求完成功能开发与页面维护，并独立完成部署、环境配置与线上故障排查',
           '将平台核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
         ],
       },
@@ -74,8 +74,8 @@ window.RESUME_DATA = {
         desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问（累计 6 个已定级、4 个高危）：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；具备 API Hook 注入与内存级加解密的工程级安全开发能力，攻防双视角。',
       },
       {
-        tag: '后端与系统',
-        desc: 'Go / Python / Node.js；FastAPI + SQLAlchemy / Alembic、PostgreSQL / MySQL、Redis、ChromaDB 向量库、Neo4j 知识图谱；SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；CSV 批量导入清洗脚本化、任务幂等可重跑；WebSocket 实时通信；Linux / macOS 服务部署与故障排查；Docker 容器化。',
+        tag: '全栈与系统',
+        desc: '后端 Go / Python / C#（.NET Core）/ Node.js；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
@@ -217,7 +217,7 @@ window.RESUME_DATA = {
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
       'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
       '6 platform-rated vulnerabilities on enterprise SRC programs (4 high severity); an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
-      'Full-stack delivery in Go / Python / Node.js, comfortable with Linux deployment, SQL tuning and WebSocket real-time communication.',
+      'Full-stack delivery in Go / Python / C# (.NET Core) / Node.js, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
 
     experiences: [
       {
@@ -232,14 +232,14 @@ window.RESUME_DATA = {
         ],
       },
       {
-        company: 'Xuejimao Media Co., Ltd.',
+        company: 'Xuejimao Studio',
         role: 'Full-stack Developer',
         industry: 'Gaming companion services · Jinhua, Zhejiang · Remote',
         date: '2025 – 2026.07',
         points: [
           'Sole IT for the studio: based in Chongqing, remotely owned the entire stack of a Jinhua gaming-companion studio — admin backend, web frontend and WeChat mini program',
-          'Owned the full loop from development and launch through server deployment and production troubleshooting',
-          'Built secondary development on backend services and frontend pages against business needs, closing feature loops fast',
+          'Stack: Vue frontend, .NET Core backend, deployed on Windows IIS behind an Nginx reverse proxy with SQL Server for data; handled frontend development plus backend maintenance and secondary development independently',
+          'Delivered feature development and page maintenance against business iterations, plus deployment, environment setup and production troubleshooting',
           'Distilled the core business scenarios into the open-source project GameLink (Go + React, 49 stars / 14 forks)',
         ],
       },
@@ -259,8 +259,8 @@ window.RESUME_DATA = {
         desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access (6 rated, 4 high severity): asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing. Also hands-on security engineering: API Hook injection and in-memory encryption, attacker-defender dual perspective.',
       },
       {
-        tag: 'Backend & Systems',
-        desc: 'Go / Python / Node.js; FastAPI + SQLAlchemy / Alembic, PostgreSQL / MySQL, Redis, ChromaDB vector store, Neo4j knowledge graph; SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); CSV batch import and cleaning scripted, with idempotent re-runnable jobs; WebSocket real-time communication; Linux / macOS service deployment and troubleshooting; Docker containerisation.',
+        tag: 'Full-stack & Systems',
+        desc: 'Backend: Go / Python / C# (.NET Core) / Node.js. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
