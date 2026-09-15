@@ -38,11 +38,11 @@ window.RESUME_DATA = {
       {
         company: '独立交付 · 远程全栈（自由职业）',
         role: '全栈开发工程师',
-        industry: 'RPA 自动化 / 中后台 / 微信生态',
+        industry: 'AI + RPA 自动化 / 中后台 / 微信生态',
         date: '2024 – 2025',
         points: [
-          '以项目制远程交付三类系统：中后台管理系统、微信生态应用（公众号 / SDK 网页应用、微信云开发小程序）、RPA 自动化工具',
-          '开发 AI + RPA 多平台自动上架工具：LLM 按 JSON Schema 约束抽取与生成各平台商品字段，Function Calling 驱动 RPA 执行层完成填表上架；Schema 校验 + 失败重试防格式漂移，低置信字段标记转人工，不带病上架',
+          '2024 年起独自开发 AI + RPA 多平台自动上架工具（技术细节见项目经历）：LLM 负责理解与生成、RPA 负责执行，替代纯人工重复上架',
+          '以项目制远程交付中后台管理系统、微信生态应用（公众号 / SDK 网页应用、微信云开发小程序）',
           '独立完成 Windows 文件透明加密系统（API Hook 截获文件读写调用 + 内存级加解密）：授权进程无感拿到明文，非授权进程只得密文',
         ],
       },
@@ -101,7 +101,7 @@ window.RESUME_DATA = {
       {
         name: 'AI 自动上架工具 · LLM + RPA',
         tag: 'AI 落地 · Python',
-        desc: '电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，商品信息从素材到上架全自动流转。',
+        desc: '2024 年起独立开发的电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，商品信息从素材到上架全自动流转。',
         points: [
           'LLM 按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
           'Function Calling 驱动 RPA 执行层完成各平台填表上架 —— LLM 做决策、RPA 做执行',
@@ -223,11 +223,11 @@ window.RESUME_DATA = {
       {
         company: 'Independent Delivery · Remote Full-stack (Freelance)',
         role: 'Full-stack Developer',
-        industry: 'RPA automation / Admin systems / WeChat ecosystem',
+        industry: 'AI + RPA automation / Admin systems / WeChat ecosystem',
         date: '2024 – 2025',
         points: [
-          'Delivered three classes of systems on a project basis: admin/back-office systems, WeChat ecosystem apps (official-account / SDK web apps, WeChat Cloud Development mini programs) and RPA automation tooling',
-          'Built an AI + RPA multi-platform listing tool: the LLM extracts and generates per-platform product fields under a JSON Schema contract, and Function Calling drives the RPA execution layer to fill and submit forms; schema validation + retries prevent format drift, and low-confidence fields are flagged for humans so nothing broken gets published',
+          'From 2024, built an AI + RPA multi-platform listing tool solo (technical detail under Projects): the LLM understands and generates, RPA executes — replacing fully manual listing work',
+          'Delivered admin/back-office systems and WeChat ecosystem apps (official-account / SDK web apps, WeChat Cloud Development mini programs) on a project basis',
           'Independently built a Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto): authorised processes read plaintext transparently, unauthorised ones only ever get ciphertext',
         ],
       },
@@ -286,7 +286,7 @@ window.RESUME_DATA = {
       {
         name: 'AI Listing Automation · LLM + RPA',
         tag: 'AI in production · Python',
-        desc: 'A multi-platform e-commerce listing tool: the LLM understands and generates, RPA executes — product data flows from raw material to published listing with no manual step.',
+        desc: 'A multi-platform e-commerce listing tool built solo from 2024: the LLM understands and generates, RPA executes — product data flows from raw material to published listing with no manual step.',
         points: [
           'LLM output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
           'Function Calling drives the RPA execution layer to fill and submit listings — the LLM decides, RPA executes',
