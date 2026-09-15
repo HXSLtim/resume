@@ -43,7 +43,7 @@ window.RESUME_DATA = {
         points: [
           '2024 年起独自开发 AI + RPA 多平台自动上架工具（技术细节见项目经历）：LLM 负责理解与生成、RPA 负责执行，替代纯人工重复上架',
           '以项目制远程交付中后台管理系统、微信生态应用（公众号 / SDK 网页应用、微信云开发小程序）',
-          '独立完成 Windows 文件透明加密系统（API Hook 截获文件读写调用 + 内存级加解密）：授权进程无感拿到明文，非授权进程只得密文',
+          'Windows 文件透明加密系统（API Hook 截获文件读写调用 + 内存级加解密）：授权进程无感拿到明文，非授权进程只得密文',
         ],
       },
       {
@@ -54,7 +54,7 @@ window.RESUME_DATA = {
         points: [
           '工作室唯一 IT：常驻重庆远程负责金华陪玩工作室的全部技术 —— 后台管理系统、Web 前端、微信小程序，全栈一人承担',
           '前端 Vue 由我主力开发；后端为存量 .NET Core（C#）系统，由我维护并按业务需求做二次开发；部署 Windows IIS + Nginx 反向代理，数据库 SQL Server',
-          '按业务迭代需求完成前后端功能开发与页面维护，独立完成部署、环境配置与线上故障排查',
+          '按业务迭代需求完成前后端功能开发与页面维护，独立负责部署、环境配置与线上故障排查',
           '将平台核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
         ],
       },
@@ -63,7 +63,7 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent 开发',
-        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作，落地 ReAct 循环与 Function Calling / ToolNode 工具调用链；分层记忆设计（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（统一 MCP 控制中心：能力矩阵声明、调用审计、未实现能力显式失败）。',
+        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作，落地 ReAct 循环与 Function Calling / ToolNode 工具调用链；分层记忆设计（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（统一 MCP 控制中心：能力矩阵声明、调用审计、未实现能力显式失败）。日常研发本身即由 AI Agent 驱动（需求拆解 → 架构约束 → AI 实现 → 验收回归），对 Agent 的能力边界与失败模式有第一手判断。',
       },
       {
         tag: 'LLM 工程',
@@ -75,7 +75,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '全栈与系统',
-        desc: '后端 Go / Node.js（TypeScript）/ Python；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
+        desc: '后端 Go / Node.js（TypeScript）/ Python（技术栈随项目演进：Python → Go → TypeScript，转向 TS 是为对齐 AI Agent 生态）；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
@@ -124,11 +124,10 @@ window.RESUME_DATA = {
       },
       {
         name: 'GameLink · 游戏陪玩管理平台',
-        tag: '开源 · Python → Go → TypeScript',
+        tag: '开源 · Go + React',
         link: 'https://github.com/HXSLtim/GameLink',
-        desc: '现代化游戏陪玩业务平台，React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
+        desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
         points: [
-          '后端技术栈历经 Python → Go → TypeScript/Node.js 三代演进；最终选 TypeScript 是冲着 AI Agent 生态（MCP SDK / LangChain.js）原生在 TS，而非语言偏好',
           '设计智能订单分发机制：自动匹配用户与陪玩师，支持抢单池与客服指派两种模式',
           '搭建用户 / 陪玩师 / 管理员多角色权限体系，基于 JWT + RBAC 控制访问安全',
           '基于 WebSocket 实现群聊 / 私聊即时通讯；打通订单支付、退款与收益结算',
@@ -145,7 +144,7 @@ window.RESUME_DATA = {
           '注入受控读取器做进程级权限判定，未授权进程与外发渠道均无法获取明文',
           '覆盖典型防泄密场景：文档在可信环境内正常使用，脱离环境即不可读',
         ],
-        result: '独立完成从需求分析、方案设计到工程实现的完整闭环。',
+        result: '从需求分析、方案设计到工程落地完整闭环交付。',
       },
       {
         name: 'Resume Terminal · 交互式终端简历（本站）',
@@ -163,6 +162,10 @@ window.RESUME_DATA = {
 
     advantages: [
       {
+        tag: 'Agent 驱动开发',
+        desc: '日常研发本身即由 AI 编程 Agent 主导实现，我负责需求拆解、架构设计、约束给定与验收回归；因为做过安全研究，验收时习惯用差分验证、边界对照主动去证伪 AI 的产出，而不是「能跑就算过」。',
+      },
+      {
         tag: 'AI Agent 工程能力',
         desc: '不止会调 API：多 Agent 编排、工具调用链、分层记忆、RAG 检索与 MCP 服务都在真实项目里落地过，清楚每个环节会在哪里失败、怎么兜底。',
       },
@@ -172,7 +175,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '全栈落地能力',
-        desc: '从后端服务、数据库、前端到服务器部署全部独立承担，所有项目均为自主从零落地，不局限于理论知识。',
+        desc: '从后端服务、数据库、前端到服务器部署全链路都能自己动手，需求、架构、验收一个人闭环，不局限于理论知识。',
       },
       {
         tag: '严谨务实自律',
@@ -229,7 +232,7 @@ window.RESUME_DATA = {
         points: [
           'From 2024, built an AI + RPA multi-platform listing tool solo (technical detail under Projects): the LLM understands and generates, RPA executes — replacing fully manual listing work',
           'Delivered admin/back-office systems and WeChat ecosystem apps (official-account / SDK web apps, WeChat Cloud Development mini programs) on a project basis',
-          'Independently built a Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto): authorised processes read plaintext transparently, unauthorised ones only ever get ciphertext',
+          'Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto): authorised processes read plaintext transparently, unauthorised ones only ever get ciphertext',
         ],
       },
       {
@@ -240,7 +243,7 @@ window.RESUME_DATA = {
         points: [
           'Sole IT for the studio: based in Chongqing, remotely owned everything for a Jinhua gaming-companion studio — admin backend, web frontend and WeChat mini program, full-stack and solo',
           'Frontend Vue developed by me; the backend is a legacy .NET Core (C#) system that I maintain and extend on business demand; deployed on Windows IIS behind an Nginx reverse proxy with SQL Server',
-          'Delivered frontend and backend feature development and page maintenance against business iterations, plus deployment, environment setup and production troubleshooting',
+          'Delivered frontend and backend feature development and page maintenance against business iterations, and personally owned deployment, environment setup and production troubleshooting',
           'Distilled the core business scenarios into the open-source project GameLink (Go + React, 49 stars / 14 forks)',
         ],
       },
@@ -249,7 +252,7 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent Development',
-        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs, with ReAct loops and Function Calling / ToolNode tool chains; layered memory design (chapter-level memory + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope-based authorisation); MCP service development (a unified MCP control centre with a declared capability matrix, full call auditing, and explicit failure for unimplemented capabilities).',
+        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs, with ReAct loops and Function Calling / ToolNode tool chains; layered memory design (chapter-level memory + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope-based authorisation); MCP service development (a unified MCP control centre with a declared capability matrix, full call auditing, and explicit failure for unimplemented capabilities). Day-to-day development is itself driven by AI agents (requirement decomposition → architectural constraints → AI implementation → acceptance regression), giving first-hand judgement of where agents break down.',
       },
       {
         tag: 'LLM Engineering',
@@ -261,7 +264,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Full-stack & Systems',
-        desc: 'Backend: Go / Node.js (TypeScript) / Python, plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
+        desc: 'Backend: Go / Node.js (TypeScript) / Python — my stack evolved Python → Go → TypeScript, moving to TS to align with the AI agent ecosystem — plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
@@ -310,11 +313,10 @@ window.RESUME_DATA = {
       },
       {
         name: 'GameLink · Gaming Companion Management Platform',
-        tag: 'Open source · Python → Go → TypeScript',
+        tag: 'Open source · Go + React',
         link: 'https://github.com/HXSLtim/GameLink',
-        desc: 'A modern gaming-companion business platform with a React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
+        desc: 'A modern gaming-companion business platform: Go backend + React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
         points: [
-          'Backend stack evolved through three generations — Python → Go → TypeScript/Node.js; TypeScript was chosen last because the AI agent ecosystem (MCP SDK, LangChain.js) is native to it, not out of language preference',
           'Designed a smart order-dispatch mechanism: automatic matching between users and companions, supporting both grab-pool and customer-service assignment modes',
           'Built a user / companion / admin multi-role permission system with JWT + RBAC access control',
           'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
@@ -331,7 +333,7 @@ window.RESUME_DATA = {
           'Injects a controlled reader for process-level permission checks; unauthorised processes and exfiltration channels cannot obtain plaintext',
           'Covers the typical DLP scenario: documents work normally inside the trusted environment and become unreadable outside it',
         ],
-        result: 'Independently delivered the full loop from requirements analysis and design through to a deployable implementation.',
+        result: 'Delivered the full loop from requirements analysis and design through to a deployable implementation.',
       },
       {
         name: 'Resume Terminal · Interactive Terminal Resume (this site)',
@@ -349,6 +351,10 @@ window.RESUME_DATA = {
 
     advantages: [
       {
+        tag: 'Agent-driven development',
+        desc: 'My day-to-day development is led by AI coding agents; I own requirement decomposition, architecture, constraints and acceptance regression. Coming from security research, I verify by trying to falsify the output — differential checks, boundary controls — rather than accepting whatever happens to run.',
+      },
+      {
         tag: 'AI agent engineering',
         desc: 'Not just API calls: multi-agent orchestration, tool chains, layered memory, RAG retrieval and MCP services all landed in real projects — I know where each stage fails and how to catch it.',
       },
@@ -358,7 +364,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Full-stack delivery',
-        desc: 'Backend services, databases, frontend and server deployment all owned personally; every project built and shipped from zero, not just theory.',
+        desc: 'Hands-on across backend services, databases, frontend and server deployment; requirements, architecture and acceptance closed by one person, not just theory.',
       },
       {
         tag: 'Rigorous & self-disciplined',
