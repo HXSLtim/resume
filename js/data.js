@@ -126,7 +126,7 @@ window.RESUME_DATA = {
           '插件市场：NestJS 模块与 React 页面以 dynamic import + importmap 共享依赖动态装载，插件安装 / 卸载 / 更新均无需重新部署',
           '工程化基线：6 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / 镜像）；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测；Socket.IO 实时层经压测支持 1 万并发连接',
         ],
-        result: '公开仓库（MIT）：254 次提交全部由我完成，2026.02 起开发 —— github.com/DistroCore/nodeAdmin',
+        result: '公开仓库（MIT）：271 次提交全部由我完成，2026.02 起持续开发至今 —— github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -164,29 +164,6 @@ window.RESUME_DATA = {
           '实时订单状态、收益统计与系统指标监控看板',
         ],
         result: '开源后获 49 Star / 14 Fork：github.com/HXSLtim/GameLink',
-      },
-      {
-        name: '文件透明加密系统 · Windows 安全工程',
-        tag: 'C++ / Hook 注入',
-        desc: '基于 API Hook 注入与内存级加解密实现的文档透明加密系统：授权进程内存中解密、用户无感，非授权进程只得密文。',
-        points: [
-          '通过 Hook 截获文件读写调用，在授权进程的内存数据流中完成加解密，实现落盘即密文、合法使用无感',
-          '注入受控读取器做进程级权限判定，未授权进程与外发渠道均无法获取明文',
-          '覆盖典型防泄密场景：文档在可信环境内正常使用，脱离环境即不可读',
-        ],
-        result: '从需求分析、方案设计到工程落地完整闭环交付。',
-      },
-      {
-        name: 'Resume Terminal · 交互式终端简历（本站）',
-        tag: '开源 · 原生 JS',
-        link: 'https://github.com/HXSLtim/resume',
-        desc: '你正在浏览的这个站点：仿 zsh 终端交互的简历，零依赖纯前端实现。',
-        points: [
-          '手写命令解析、历史（↑/↓）与 Tab 补全，支持中文别名与点击命令名直接执行',
-          '中英双语 i18n + 深浅主题响应式；打印导出 A4 版完整简历，终端与打印共用同一份数据源',
-          '通过 GitHub Pages 自动部署，改一处内容全局生效',
-        ],
-        result: '在线访问：<a href="https://hxsltim.github.io/resume/" target="_blank" rel="noopener">hxsltim.github.io/resume</a>',
       },
     ],
 
@@ -345,7 +322,7 @@ window.RESUME_DATA = {
           'Plugin marketplace: NestJS modules and React pages load dynamically via import() with importmap-shared dependencies, so plugins install, uninstall and update without a redeploy',
           'Engineering baseline: six-job CI (static / unit / audit / build / integration / docker); an audit-ci gate that blocks high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability; a Socket.IO realtime layer load-tested to 10,000 concurrent connections',
         ],
-        result: 'Public repo (MIT): all 254 commits authored by me, in development since Feb 2026 — github.com/DistroCore/nodeAdmin',
+        result: 'Public repo (MIT): all 271 commits authored by me, in continuous development since Feb 2026 — github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
@@ -383,29 +360,6 @@ window.RESUME_DATA = {
           'Dashboard for real-time order status, revenue statistics and system metrics',
         ],
         result: '49 stars / 14 forks since open-sourcing: github.com/HXSLtim/GameLink',
-      },
-      {
-        name: 'Transparent File Encryption System · Windows Security Engineering',
-        tag: 'C++ / Hook injection',
-        desc: 'A transparent document-encryption system built on API Hook injection and in-memory crypto: authorised processes decrypt in memory with no user-visible step, while unauthorised processes only ever see ciphertext.',
-        points: [
-          'Hooks file I/O calls to encrypt and decrypt inside the authorised process memory stream — ciphertext at rest, transparent in legitimate use',
-          'Injects a controlled reader for process-level permission checks; unauthorised processes and exfiltration channels cannot obtain plaintext',
-          'Covers the typical DLP scenario: documents work normally inside the trusted environment and become unreadable outside it',
-        ],
-        result: 'Delivered the full loop from requirements analysis and design through to a deployable implementation.',
-      },
-      {
-        name: 'Resume Terminal · Interactive Terminal Resume (this site)',
-        tag: 'Open source · Vanilla JS',
-        link: 'https://github.com/HXSLtim/resume',
-        desc: 'The site you are browsing: a zsh-style interactive terminal resume, built with zero dependencies.',
-        points: [
-          'Hand-written command parsing, history (↑/↓) and Tab completion, with Chinese aliases and click-to-run command names',
-          'Bilingual i18n plus light/dark theme and responsive layout; printing exports a formatted A4 resume from the same data source the terminal uses',
-          'Deployed automatically via GitHub Pages — edit one place and the whole site updates',
-        ],
-        result: 'Live at: <a href="https://hxsltim.github.io/resume/" target="_blank" rel="noopener">hxsltim.github.io/resume</a>',
       },
     ],
 
