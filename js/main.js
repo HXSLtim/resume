@@ -321,7 +321,10 @@
       ...(D.education.note ? [`  <span class="dim">${D.education.note}</span>`] : []),
       ...(D.education.verify && D.education.verify.code
         ? [`  <span class="dim">🔎 ${D.education.verify.label}：</span><b>${D.education.verify.code}</b>` +
-           `　<span class="dim">验证入口 <a href="${D.education.verify.url}" target="_blank" rel="noopener">chsi.com.cn/xlcx/bgcx.jsp</a></span>`]
+           (D.education.verify.reportUrl
+             ? `　<a href="${D.education.verify.reportUrl}" target="_blank" rel="noopener">查看验证报告</a>`
+             : '') +
+           `　<span class="dim">查验入口 <a href="${D.education.verify.url}" target="_blank" rel="noopener">chsi.com.cn/xlcx/bgcx.jsp</a></span>`]
         : []),
     ],
 
@@ -502,7 +505,7 @@
         <p class="pr-p">${D.education.school} · ${D.education.major} · ${D.education.degree}　<span class="pr-date">${D.education.date}</span></p>
         ${D.education.note ? `<p class="pr-note">${D.education.note}</p>` : ''}
         ${D.education.verify && D.education.verify.code
-          ? `<p class="pr-note">🔎 ${D.education.verify.label}：${D.education.verify.code}　验证入口 ${D.education.verify.url}</p>`
+          ? `<p class="pr-note">🔎 ${D.education.verify.label}：${D.education.verify.code}　查验入口 ${D.education.verify.url}</p>`
           : ''}
       </section>`;
   }

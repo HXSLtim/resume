@@ -200,13 +200,14 @@ window.RESUME_DATA = {
       degree: '本科',
       date: '2020.09 – 2024.06',
       note: '13 岁入学、17 岁本科毕业（早期入学）；17 岁起独立交付全栈项目，非笔误',
-      // ✏️ 学信网在线验证码：学信档案 → 在线验证报告 → 教育部学历证书电子注册备案表
-      //    申请时有效期选 6 个月（最长），把「在线验证码」填进 code；留空则整行不显示。
-      //    ⚠️ 验证码 6 个月后失效，投递前必须重新申请——详见 README「学历可验证」一节。
+      // 学信网在线验证：code 是在线验证码，url 是官方查验入口，reportUrl 是学信档案直链。
+      // ⚠️ 备案表最长只能设 6 个月有效期，到期后 HR 会看到「验证码无效」——比不附更糟。
+      //    续期流程与风险说明见 README「学历可验证」一节。
       verify: {
         label: '学信网在线验证码',
-        code: '',
+        code: 'AQMFGXA77C3ZSJ1K',
         url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
+        reportUrl: 'https://www.chsi.com.cn/xlcx/bg.do?vcode=AQMFGXA77C3ZSJ1K&trnd=15413612734840586422214423162101&srcid=archive',
       },
     },
   },
@@ -399,8 +400,9 @@ window.RESUME_DATA = {
       // See the zh block for the 6-month expiry caveat on the CHSI verification code.
       verify: {
         label: 'CHSI online verification code',
-        code: '',
+        code: 'AQMFGXA77C3ZSJ1K',
         url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
+        reportUrl: 'https://www.chsi.com.cn/xlcx/bg.do?vcode=AQMFGXA77C3ZSJ1K&trnd=15413612734840586422214423162101&srcid=archive',
       },
     },
   },
