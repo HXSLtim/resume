@@ -79,7 +79,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '全栈与系统',
-        desc: '后端 Go / Node.js（TypeScript）/ Python（技术栈随项目演进：Python → Go → TypeScript，转向 TS 是为对齐 AI Agent 生态）；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 MySQL / SQL Server / PostgreSQL，SQL 与索引调优（执行计划定位全表扫描、补齐复合索引、消除 N+1）；Redis、ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、环境配置与故障排查；WebSocket 实时通信；Docker 容器化。',
+        desc: '后端 Go / Node.js（TypeScript：NestJS + Fastify + Drizzle）/ Python（技术栈随项目演进 Python → Go → TypeScript）；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 PostgreSQL（含 RLS 多租户隔离）/ MySQL / SQL Server，SQL 与索引调优（执行计划、复合索引、消除 N+1）；Redis / PgBouncer / Kafka（Outbox 模式）；OpenTelemetry + Prometheus + Grafana 可观测；ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、故障排查；WebSocket / Socket.IO；Docker 容器化。',
       },
       {
         tag: '业务与方案设计',
@@ -114,6 +114,19 @@ window.RESUME_DATA = {
           '工程权衡：走 CLI 粘贴而非 API —— 复用各 Agent 的交互态与订阅额度，省掉 API 成本与密钥管理；代价是目标 pane 必须处于等待输入状态，以 ai read / ai submit 兜底',
         ],
         result: '已开源并日常使用 ——「AI 负责实现、我负责设计与验收」这套工作方式就是靠它落地的：github.com/HXSLtim/ai-collab',
+      },
+      {
+        name: 'nodeAdmin · 多租户中后台框架',
+        tag: '开源 · NestJS + React',
+        link: 'https://github.com/DistroCore/nodeAdmin',
+        desc: '面向企业内部平台的多租户中后台框架：NestJS 11 + Fastify 后端、React 18 + Vite 前端、PostgreSQL 16 + Drizzle ORM，把鉴权、审计、异步消息、实时通信、可观测性与插件体系一次做齐。',
+        points: [
+          '多租户隔离下沉到数据库：由 PostgreSQL RLS 强制租户边界，而非只靠应用层；同一套代码经 TenantContext + SINGLE_TENANT_MODE 同时支持单租户与多租户部署',
+          '事件一致性用 Outbox 模式：业务写入与 outbox 行在同一事务落库，Kafka 消费端按 eventId 幂等消费 —— 不双写、不丢消息',
+          '插件市场：NestJS 模块与 React 页面以 dynamic import + importmap 共享依赖动态装载，插件安装 / 卸载 / 更新均无需重新部署',
+          '工程化基线：6 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / 镜像）；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测；Socket.IO 实时层经压测支持 1 万并发连接',
+        ],
+        result: '公开仓库（MIT），本人为主要作者：265 次提交中 256 次由我完成，2026.02 起持续维护至今 —— github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -285,7 +298,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Full-stack & Systems',
-        desc: 'Backend: Go / Node.js (TypeScript) / Python — my stack evolved Python → Go → TypeScript, moving to TS to align with the AI agent ecosystem — plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases MySQL / SQL Server / PostgreSQL with SQL and index tuning (query plans to locate full table scans, composite indexes, eliminating N+1); Redis, ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment, configuration and troubleshooting; WebSocket real-time communication; Docker containerisation.',
+        desc: 'Backend: Go / Node.js (TypeScript: NestJS + Fastify + Drizzle) / Python — my stack evolved Python → Go → TypeScript — plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases PostgreSQL (with RLS multi-tenant isolation) / MySQL / SQL Server, with SQL and index tuning; Redis / PgBouncer / Kafka (outbox pattern); OpenTelemetry + Prometheus + Grafana observability; ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment; WebSocket / Socket.IO; Docker containerisation.',
       },
       {
         tag: 'Business & Solution Design',
@@ -320,6 +333,19 @@ window.RESUME_DATA = {
           'Trade-off: driving CLIs by paste instead of API reuses each agent’s interactive state and subscription quota, avoiding API cost and key management; the cost is that a target pane must be waiting for input, with ai read / ai submit as fallback',
         ],
         result: 'Open-sourced and used daily — the AI implements, I design and verify workflow runs on this orchestration: github.com/HXSLtim/ai-collab',
+      },
+      {
+        name: 'nodeAdmin · Multi-Tenant Back-Office Framework',
+        tag: 'Open source · NestJS + React',
+        link: 'https://github.com/DistroCore/nodeAdmin',
+        desc: 'A multi-tenant back-office framework for internal enterprise platforms: NestJS 11 + Fastify backend, React 18 + Vite frontend, PostgreSQL 16 + Drizzle ORM — covering auth, audit, async messaging, realtime, observability and a plugin system in one foundation.',
+        points: [
+          'Tenant isolation pushed down into the database: PostgreSQL RLS enforces tenant boundaries in the DB rather than relying on the application layer alone; one codebase serves both single- and multi-tenant deployments via TenantContext + SINGLE_TENANT_MODE',
+          'Event consistency via the outbox pattern: business writes and the outbox row commit in one transaction, and Kafka consumers are idempotent by eventId — no double writes, no lost messages',
+          'Plugin marketplace: NestJS modules and React pages load dynamically via import() with importmap-shared dependencies, so plugins install, uninstall and update without a redeploy',
+          'Engineering baseline: six-job CI (static / unit / audit / build / integration / docker); an audit-ci gate that blocks high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability; a Socket.IO realtime layer load-tested to 10,000 concurrent connections',
+        ],
+        result: 'Public repo (MIT); primary author with 256 of 265 commits, maintained continuously since Feb 2026 — github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
