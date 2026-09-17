@@ -12,6 +12,10 @@
       没有实测数字就写机制（能讲清怎么做到的），不编量级。
    3. 年龄以真实出生年份为准（2002）。身份证登记为 2007，属户籍晚报，
       二者差 5 岁——被问到时按 interview/ 里的口径解释，不要写进简历。
+   4. 【SRC 口径 · 不要改回去】漏洞数量写作「报送」，不写「定级」。
+      Hunt/reports/ 里 6 份报告的「漏洞等级」是自评，不是平台给的；
+      补天平台实际定级的只有 1 个（中危）。写「获平台定级确认（4 高危）」
+      属于可被查证的虚假陈述。要写就写技术事实（JWT alg=none 会话伪造）。
    ========================================================= */
 
 window.RESUME_DATA = {
@@ -31,7 +35,7 @@ window.RESUME_DATA = {
     about:
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
       '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
-      '企业 SRC 累计 6 个已定级漏洞（4 个高危），攻防双视角让我把权限与数据护栏做进交付流程。' +
+      '企业 SRC 向 5 家企业报送过 6 个安全漏洞，含服务端验签缺失导致的会话伪造与内部系统未授权数据读取；攻防双视角让我把权限与数据护栏做进交付流程。' +
       'Go / Node.js（TypeScript）/ Python 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
 
     experiences: [
@@ -75,7 +79,7 @@ window.RESUME_DATA = {
       },
       {
         tag: '安全研究',
-        desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问（累计 6 个已定级、4 个高危）：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；具备 API Hook 注入与内存级加解密的工程级安全开发能力，攻防双视角。',
+        desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问（向 5 家企业报送 6 个漏洞）：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none），无需账号即可伪造管理员身份；具备 API Hook 注入与内存级加解密的工程级安全开发能力，攻防双视角。',
       },
       {
         tag: '全栈与系统',
@@ -145,12 +149,12 @@ window.RESUME_DATA = {
         tag: '安全 · 持续',
         desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过与未授权数据访问。',
         points: [
-          '累计 6 个漏洞获平台定级确认（4 高危 / 2 中危），覆盖 6 家企业：含会话伪造类认证绕过（服务端验签缺失）与内部系统未授权数据读取',
+          '向 5 家企业累计报送 6 个安全漏洞；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台并读取员工数据',
           '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
           '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
           '这套方法论本身就是 Agent 架构的判据：接口抽取与差分验证要看响应动态决定下一步，属 ReAct；资产枚举与发包是确定性的，属 Workflow',
         ],
-        result: '6 个漏洞全部通过官方渠道报送并推动修复，其中 4 个定级高危。',
+        result: '所有发现均通过官方渠道按 SRC 纪律完成报送：只读最小化验证、真实数据 ≤5 组、写操作零触碰。',
       },
       {
         name: 'GameLink · 游戏陪玩管理平台',
@@ -227,7 +231,7 @@ window.RESUME_DATA = {
     about:
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
       'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
-      '6 platform-rated vulnerabilities on enterprise SRC programs (4 high severity); an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
+      'Six vulnerabilities disclosed to five companies on enterprise SRC programs, including session forgery from missing server-side signature verification and unauthorised reads of internal systems; an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
       'Full-stack delivery in Go / Node.js (TypeScript) / Python, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
 
     experiences: [
@@ -271,7 +275,7 @@ window.RESUME_DATA = {
       },
       {
         tag: 'Security Research',
-        desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access (6 rated, 4 high severity): asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing. Also hands-on security engineering: API Hook injection and in-memory encryption, attacker-defender dual perspective.',
+        desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access (six vulnerabilities disclosed across five companies): asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing. Also hands-on security engineering: API Hook injection and in-memory encryption, attacker-defender dual perspective.',
       },
       {
         tag: 'Full-stack & Systems',
@@ -341,12 +345,12 @@ window.RESUME_DATA = {
         tag: 'Security · Ongoing',
         desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access.',
         points: [
-          '6 vulnerabilities rated by the platforms (4 high / 2 medium) across 6 companies, including session-forgery authentication bypass (missing server-side signature verification) and unauthorised reads of internal systems',
+          'Six vulnerabilities disclosed across five companies; signature case is session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged and employee data read with no account at all',
           'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing → disclosure',
           'Testing discipline: read-only minimal verification, at most 5 real records, zero write operations, and nothing reported without proof of impact',
           'This methodology is itself the criterion for agent architecture: endpoint extraction and differential verification must decide the next probe from live responses, so they belong in a ReAct loop, while asset enumeration and request dispatch are deterministic and belong in a workflow — the same boundary I use when splitting orchestration in agent projects',
         ],
-        result: 'All 6 disclosed through official channels and driven to fix; 4 rated high severity.',
+        result: 'All findings disclosed through official channels under SRC discipline: read-only minimal verification, at most 5 real records, zero write operations.',
       },
       {
         name: 'GameLink · Gaming Companion Management Platform',
