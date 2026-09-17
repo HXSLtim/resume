@@ -10,8 +10,8 @@
    1. 技能按目标岗位权重排序：AI Agent → LLM 工程 → 安全 → 后端系统 → 业务。
    2. 只写能当场被面试官追问到底的事实，不写「大幅提升」这类无法验证的副词。
       没有实测数字就写机制（能讲清怎么做到的），不编量级。
-   3. education.note 用于说明 13 岁入学 / 17 岁毕业——这不是笔误，
-      必须写明，否则面试官会按算术错误处理。
+   3. 年龄以真实出生年份为准（2002）。身份证登记为 2007，属户籍晚报，
+      二者差 5 岁——被问到时按 interview/ 里的口径解释，不要写进简历。
    ========================================================= */
 
 window.RESUME_DATA = {
@@ -20,7 +20,7 @@ window.RESUME_DATA = {
     name: '刘正硕',
     role: 'AI Agent 工程师 · 全栈 / 后端开发 · 安全研究',
 
-    ageInfo: '19 岁 · 2007.04',
+    ageInfo: '24 岁 · 2002',
     contacts: [
       { icon: '📱', text: '191-9581-9124' },
       { icon: '📧', text: 'a2778978136@163.com', href: 'mailto:a2778978136@163.com' },
@@ -199,7 +199,6 @@ window.RESUME_DATA = {
       major: '网络工程专业',
       degree: '本科',
       date: '2020.09 – 2024.06',
-      note: '13 岁入学、17 岁本科毕业（早期入学）；17 岁起独立交付全栈项目，非笔误',
       // 学信网在线验证：code 是在线验证码，url 是官方查验入口，reportUrl 是学信档案直链。
       // ⚠️ 备案表最长只能设 6 个月有效期，到期后 HR 会看到「验证码无效」——比不附更糟。
       //    续期流程与风险说明见 README「学历可验证」一节。
@@ -217,7 +216,7 @@ window.RESUME_DATA = {
     name: 'Liu Zhengshuo',
     role: 'AI Agent Engineer · Full-stack / Backend · Security Research',
 
-    ageInfo: '19 y/o · Apr 2007',
+    ageInfo: '24 y/o · 2002',
     contacts: [
       { icon: '📱', text: '191-9581-9124' },
       { icon: '📧', text: 'a2778978136@163.com', href: 'mailto:a2778978136@163.com' },
@@ -396,7 +395,6 @@ window.RESUME_DATA = {
       major: 'Network Engineering',
       degree: 'Bachelor',
       date: '2020.09 – 2024.06',
-      note: 'Entered university at 13, graduated at 17 (early entry); independently delivering full-stack projects since 17 — this is not a typo',
       // See the zh block for the 6-month expiry caveat on the CHSI verification code.
       verify: {
         label: 'CHSI online verification code',
