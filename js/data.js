@@ -35,7 +35,7 @@ window.RESUME_DATA = {
     about:
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
       '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
-      'Go / Node.js（TypeScript）/ Python 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
+      '企业 SRC 向 5 家企业报送过 6 个安全漏洞，含服务端验签缺失导致的会话伪造与内部系统未授权数据读取；攻防双视角让我把权限与数据护栏做进交付流程。',
 
     experiences: [
       {
@@ -207,7 +207,7 @@ window.RESUME_DATA = {
     about:
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
       'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
-      'Full-stack delivery in Go / Node.js (TypeScript) / Python, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
+      'Six vulnerabilities disclosed to five companies on enterprise SRC programs, including session forgery from missing server-side signature verification and unauthorised reads of internal systems; an attacker-defender mindset means I build permission and data guardrails into delivery.',
 
     experiences: [
       {
