@@ -546,14 +546,14 @@ a:hover {
 }
 
 .pr-contact {
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--muted);
 }
 
 .pr-sec {
-  margin-top: 26px;
+  margin-top: 13px;
 }
 
 .pr-sec h2 {
@@ -561,7 +561,7 @@ a:hover {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .pr-p {
@@ -582,7 +582,7 @@ a:hover {
 
 @page {
   size: A4;
-  margin: 14mm;
+  margin: 12mm;
 }
 
 @media print {
@@ -608,6 +608,8 @@ a:hover {
 
   #print-resume {
     display: block !important;
+    /* 打印时整体缩 9%：不删内容的前提下把页数压下来 */
+    zoom: 0.91;
   }
 
   a {

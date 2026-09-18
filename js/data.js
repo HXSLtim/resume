@@ -35,7 +35,6 @@ window.RESUME_DATA = {
     about:
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
       '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
-      '企业 SRC 向 5 家企业报送过 6 个安全漏洞，含服务端验签缺失导致的会话伪造与内部系统未授权数据读取；攻防双视角让我把权限与数据护栏做进交付流程。' +
       'Go / Node.js（TypeScript）/ Python 全栈交付，熟悉 IIS / Linux 服务部署、SQL 调优与 WebSocket 实时通信。',
 
     experiences: [
@@ -46,8 +45,7 @@ window.RESUME_DATA = {
         date: '2024 – 2025',
         points: [
           '2024 年起独自开发 AI + RPA 多平台自动上架工具（技术细节见项目经历）：LLM 负责理解与生成、RPA 负责执行，替代纯人工重复上架',
-          '以项目制远程交付中后台管理系统、微信生态应用（公众号 / SDK 网页应用、微信云开发小程序）',
-          'Windows 文件透明加密系统（API Hook 截获文件读写调用 + 内存级加解密）：授权进程无感拿到明文，非授权进程只得密文',
+          '以项目制远程交付中后台管理系统与微信生态应用；并交付 Windows 文件透明加密系统（API Hook + 内存级加解密）',
         ],
       },
       {
@@ -56,10 +54,8 @@ window.RESUME_DATA = {
         industry: '游戏陪玩 · 浙江金华 · 远程',
         date: '2025 – 2026.07',
         points: [
-          '工作室唯一 IT：常驻重庆远程负责金华陪玩工作室的全部技术 —— 后台管理系统、Web 前端、微信小程序，全栈一人承担',
-          '前端 Vue 由我主力开发；后端为存量 .NET Core（C#）系统，由我维护并按业务需求做二次开发；部署 Windows IIS + Nginx 反向代理，数据库 SQL Server',
-          '按业务迭代需求完成前后端功能开发与页面维护，独立负责部署、环境配置与线上故障排查',
-          '将平台核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
+          '工作室唯一 IT：远程承担全部技术 —— 后台管理系统、Web 前端、微信小程序，全栈一人负责；前端 Vue 主力开发，后端为存量 .NET Core（C#）系统，由我维护并二次开发',
+          '部署 Windows IIS + Nginx，数据库 SQL Server，独立负责环境配置与线上故障排查；将核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
         ],
       },
     ],
@@ -67,27 +63,23 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent 开发',
-        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作，落地 ReAct 循环与 Function Calling / ToolNode 工具调用链；分层记忆设计（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（统一 MCP 控制中心：能力矩阵声明、调用审计、未实现能力显式失败）。日常研发本身即由 AI Agent 驱动（需求拆解 → 架构约束 → AI 实现 → 验收回归），对 Agent 的能力边界与失败模式有第一手判断。',
-      },
-      {
-        tag: 'AI 编程 Agent 工具链',
-        desc: '日常主力 Claude Code 与 Codex；常用模型覆盖 GPT 系与 GLM 系，近期以 DeepSeek 为主。自建 tmux 多 Agent 协同工作区（见项目经历），按规划 / 执行 / 前端分工协作；产出通过验收回归与差分验证约束质量。',
+        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作；ReAct 循环 + Function Calling / ToolNode 工具调用链；分层记忆（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（能力矩阵声明 + 调用审计）',
       },
       {
         tag: 'LLM 工程',
-        desc: '结构化输出（JSON Schema / Pydantic 约束）、Prompt 工程与迭代、失败重试与格式漂移防护、低置信字段标记与人工兜底；模型异常分类处理（内容过滤 / 工具调用异常 / 参数解析失败），保证链路可观测、可重试。',
+        desc: 'JSON Schema / Pydantic 结构化输出、Prompt 迭代、失败重试与格式漂移防护、低置信字段转人工；日常主力 Claude Code / Codex，并自建 tmux 多 Agent 协同工作区（见项目经历）',
       },
       {
         tag: '安全研究',
-        desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问（向 5 家企业报送 6 个漏洞）：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none），无需账号即可伪造管理员身份；具备 API Hook 注入与内存级加解密的工程级安全开发能力，攻防双视角。',
+        desc: '企业 SRC 漏洞挖掘，聚焦认证绕过与未授权数据访问：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；具备 API Hook 注入与内存级加解密能力',
       },
       {
         tag: '全栈与系统',
-        desc: '后端 Go / Node.js（TypeScript：NestJS + Fastify + Drizzle）/ Python（技术栈随项目演进 Python → Go → TypeScript）；可接手存量 C#（.NET Core）系统做维护与二次开发；前端 Vue / React / Next.js / TypeScript / 微信小程序；数据库 PostgreSQL（含 RLS 多租户隔离）/ MySQL / SQL Server，SQL 与索引调优（执行计划、复合索引、消除 N+1）；Redis / PgBouncer / Kafka（Outbox 模式）；OpenTelemetry + Prometheus + Grafana 可观测；ChromaDB 向量库、Neo4j 知识图谱；Windows IIS + Nginx 反向代理与 Linux 服务部署、故障排查；WebSocket / Socket.IO；Docker 容器化。',
+        desc: '后端 Go / Node.js（NestJS + Fastify + Drizzle）/ Python，可接手存量 .NET Core；前端 Vue / React / Next.js / 微信小程序；数据库 PostgreSQL（含 RLS 多租户隔离）/ MySQL / SQL Server；Redis / Kafka（Outbox）/ PgBouncer；OpenTelemetry + Prometheus + Grafana；Docker / IIS / Nginx',
       },
       {
         tag: '业务与方案设计',
-        desc: '在 GameLink 中独立设计会员体系、订单分发、支付结算等业务闭环；擅长需求量化拆解、方案选型与 ROI 论证，能把业务诉求转化为可落地的技术方案。',
+        desc: '在 GameLink 中独立设计会员体系、订单分发、支付结算的业务闭环；擅长需求量化拆解、方案选型与 ROI 论证',
       },
     ],
 
@@ -98,11 +90,8 @@ window.RESUME_DATA = {
         link: 'https://github.com/HXSLtim/Nai',
         desc: '基于多 Agent 协作的智能小说创作平台，核心解决百万字长篇的世界观与角色一致性。',
         points: [
-          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent，经 ToolNode 装配工具调用链，条件边控制循环与终止',
+          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent，经 ToolNode 装配工具调用链',
           '分层记忆体系：章级记忆 + 剧情摘要抽取 + 上下文预算与压缩，把长篇一致性从「塞满上下文」变成可调度的记忆',
-          'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
-          'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
-          'FastAPI + PostgreSQL + Redis 后端，Next.js / TypeScript 前端',
         ],
         result: '开源获 12 Star：github.com/HXSLtim/Nai',
       },
@@ -110,12 +99,10 @@ window.RESUME_DATA = {
         name: 'AI Collab · 多 Agent 协同开发系统',
         tag: '开源 · tmux / zsh',
         link: 'https://github.com/HXSLtim/ai-collab',
-        desc: '把 Claude、Codex、Antigravity 三个编码 Agent 编成一支协作队伍的本地工作区：一条命令拉起 tmux 三 pane，并自建消息总线与协作协议，让规划、执行、前端三条线并行推进同一任务。',
+        desc: '把 Claude、Codex、Antigravity 三个编码 Agent 编成一支协作队伍的本地工作区 —— Claude 规划、Codex 后端、Antigravity 前端，三条线并行推进同一任务。',
         points: [
-          '角色分工即编排：Claude 负责规划与任务编排、Codex 负责后端与测试运维、Antigravity 负责前端原型与 UX，三类能力互补而不重复',
-          '自建 Agent 间消息总线：tmux set-buffer + bracketed paste 投递、延迟补发提交键，消息带 [sender → target] 时间戳帧并全量落盘为可回溯的协作日志',
-          '用协作协议抑制消息风暴：每任务每条线最多 ACK + FINAL 两条回复、禁止进度闲聊，把上下文预算留给实际产出',
-          '工程权衡：走 CLI 粘贴而非 API —— 复用各 Agent 的交互态与订阅额度，省掉 API 成本与密钥管理；代价是目标 pane 必须处于等待输入状态，以 ai read / ai submit 兜底',
+          '自建 Agent 间消息总线：tmux set-buffer + bracketed paste 投递、延迟补发提交键、[sender → target] 时间戳帧，全量落盘为可回溯的协作日志',
+          '协作协议抑制消息风暴：每任务每条线最多 ACK + FINAL 两条回复，把上下文预算留给实际产出',
         ],
         result: '已开源并日常使用 ——「AI 负责实现、我负责设计与验收」这套工作方式就是靠它落地的：github.com/HXSLtim/ai-collab',
       },
@@ -125,22 +112,19 @@ window.RESUME_DATA = {
         link: 'https://github.com/DistroCore/nodeAdmin',
         desc: '面向企业内部平台的多租户中后台框架：NestJS 11 + Fastify 后端、React 18 + Vite 前端、PostgreSQL 16 + Drizzle ORM，把鉴权、审计、异步消息、实时通信、可观测性与插件体系一次做齐。',
         points: [
-          '多租户隔离下沉到数据库：由 PostgreSQL RLS 强制租户边界，而非只靠应用层；同一套代码经 TenantContext + SINGLE_TENANT_MODE 同时支持单租户与多租户部署',
-          '事件一致性用 Outbox 模式：业务写入与 outbox 行在同一事务落库，Kafka 消费端按 eventId 幂等消费 —— 不双写、不丢消息',
-          '插件市场：NestJS 模块与 React 页面以 dynamic import + importmap 共享依赖动态装载，插件安装 / 卸载 / 更新均无需重新部署',
-          '工程化基线：6 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / 镜像）；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测；Socket.IO 实时层经压测支持 1 万并发连接',
+          '多租户隔离下沉到数据库：PostgreSQL RLS 强制租户边界，而非只靠应用层；同一套代码同时支持单租户与多租户部署',
+          '事件一致性用 Outbox 模式：业务写入与 outbox 行同事务落库，Kafka 按 eventId 幂等消费 —— 不双写、不丢消息',
         ],
         result: '公开仓库（MIT）：271 次提交全部由我完成，2026.02 起持续开发至今 —— github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
         tag: 'AI 落地 · Python',
-        desc: '2024 年起独立开发的电商多平台自动上架工具：大模型负责理解与生成，RPA 负责执行，商品信息从素材到上架全自动流转。',
+        desc: '2024 年起独立开发的电商多平台自动上架工具：LLM 理解与生成 + Function Calling 驱动 RPA 执行，商品信息从素材到上架全自动流转。',
         points: [
           'LLM 按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
           'Function Calling 驱动 RPA 执行层完成各平台填表上架 —— LLM 做决策、RPA 做执行',
-          '可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记转人工，不带病上架；每步结果机器可校验，不过不上传',
-          '字段映射与平台规则沉淀为配置，新增平台只扩配置、不改核心流程',
+          '可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记转人工；每步机器可校验，不过不上传',
         ],
         result: '在多平台上架场景持续落地使用，形成 LLM + RPA 混合架构的可复用实践。',
       },
@@ -149,10 +133,8 @@ window.RESUME_DATA = {
         tag: '安全 · 持续',
         desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过与未授权数据访问。',
         points: [
-          '向 5 家企业累计报送 6 个安全漏洞；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台并读取员工数据',
-          '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
-          '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
-          '这套方法论本身就是 Agent 架构的判据：接口抽取与差分验证要看响应动态决定下一步，属 ReAct；资产枚举与发包是确定性的，属 Workflow',
+          '向 5 家企业累计报送 6 个安全漏洞；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台',
+          '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界；纪律：只读最小化、真实数据 ≤5 组、写操作零触碰',
         ],
         result: '所有发现均通过官方渠道按 SRC 纪律完成报送：只读最小化验证、真实数据 ≤5 组、写操作零触碰。',
       },
@@ -163,9 +145,7 @@ window.RESUME_DATA = {
         desc: '现代化游戏陪玩业务平台，Go 后端 + React 前端，覆盖订单分发、多角色管理、实时通讯、支付结算与监控全链路。',
         points: [
           '设计智能订单分发机制：自动匹配用户与陪玩师，支持抢单池与客服指派两种模式',
-          '搭建用户 / 陪玩师 / 管理员多角色权限体系，基于 JWT + RBAC 控制访问安全',
-          '基于 WebSocket 实现群聊 / 私聊即时通讯；打通订单支付、退款与收益结算',
-          '实时订单状态、收益统计与系统指标监控看板',
+          '用户 / 陪玩师 / 管理员多角色权限体系（JWT + RBAC）；WebSocket 群聊 / 私聊即时通讯',
         ],
         result: '开源后获 49 Star / 14 Fork：github.com/HXSLtim/GameLink',
       },
@@ -231,7 +211,6 @@ window.RESUME_DATA = {
     about:
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
       'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
-      'Six vulnerabilities disclosed to five companies on enterprise SRC programs, including session forgery from missing server-side signature verification and unauthorised reads of internal systems; an attacker-defender mindset means I build permission and data guardrails into delivery. ' +
       'Full-stack delivery in Go / Node.js (TypeScript) / Python, comfortable with IIS and Linux deployment, SQL tuning and WebSocket real-time communication.',
 
     experiences: [
@@ -242,8 +221,7 @@ window.RESUME_DATA = {
         date: '2024 – 2025',
         points: [
           'From 2024, built an AI + RPA multi-platform listing tool solo (technical detail under Projects): the LLM understands and generates, RPA executes — replacing fully manual listing work',
-          'Delivered admin/back-office systems and WeChat ecosystem apps (official-account / SDK web apps, WeChat Cloud Development mini programs) on a project basis',
-          'Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto): authorised processes read plaintext transparently, unauthorised ones only ever get ciphertext',
+          'Delivered admin/back-office systems and WeChat ecosystem apps on a project basis; also built a Windows transparent file-encryption system (API Hook on file I/O + in-memory crypto)',
         ],
       },
       {
@@ -252,10 +230,8 @@ window.RESUME_DATA = {
         industry: 'Gaming companion services · Jinhua, Zhejiang · Remote',
         date: '2025 – 2026.07',
         points: [
-          'Sole IT for the studio: based in Chongqing, remotely owned everything for a Jinhua gaming-companion studio — admin backend, web frontend and WeChat mini program, full-stack and solo',
-          'Frontend Vue developed by me; the backend is a legacy .NET Core (C#) system that I maintain and extend on business demand; deployed on Windows IIS behind an Nginx reverse proxy with SQL Server',
-          'Delivered frontend and backend feature development and page maintenance against business iterations, and personally owned deployment, environment setup and production troubleshooting',
-          'Distilled the core business scenarios into the open-source project GameLink (Go + React, 49 stars / 14 forks)',
+          'Sole IT for the studio: remotely owned everything — admin backend, web frontend and WeChat mini program; I led the Vue frontend and maintain/extend the legacy .NET Core (C#) backend',
+          'Deployed on Windows IIS behind an Nginx reverse proxy with SQL Server, owning environment setup and production troubleshooting; distilled the core business scenarios into the open-source GameLink (Go + React, 49 stars / 14 forks)',
         ],
       },
     ],
@@ -263,27 +239,23 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent Development',
-        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs, with ReAct loops and Function Calling / ToolNode tool chains; layered memory design (chapter-level memory + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope-based authorisation); MCP service development (a unified MCP control centre with a declared capability matrix, full call auditing, and explicit failure for unimplemented capabilities). Day-to-day development is itself driven by AI agents (requirement decomposition → architectural constraints → AI implementation → acceptance regression), giving first-hand judgement of where agents break down.',
-      },
-      {
-        tag: 'AI Coding Agent Toolchain',
-        desc: 'Daily drivers Claude Code and Codex; models span the GPT and GLM families, with DeepSeek as the recent primary. I built a tmux-based multi-agent workspace (see Projects) that splits planning, execution and frontend work across agents; output quality is constrained through acceptance regression and differential verification.',
+        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs; ReAct loops and Function Calling / ToolNode tool chains; layered memory (chapter-level + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope authorisation); MCP service development with capability-matrix declarations and full call auditing',
       },
       {
         tag: 'LLM Engineering',
-        desc: 'Structured output (JSON Schema / Pydantic constraints), prompt engineering and iteration, retry and format-drift protection, low-confidence field flagging with human fallback; typed handling of model failures (content filtering / malformed tool calls / argument parse errors) so the chain stays observable and retryable.',
+        desc: 'JSON Schema / Pydantic structured output, prompt iteration, retry and format-drift protection, low-confidence fields routed to humans; daily drivers Claude Code and Codex, plus a self-built tmux multi-agent workspace (see Projects)',
       },
       {
         tag: 'Security Research',
-        desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access (six vulnerabilities disclosed across five companies): asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing. Also hands-on security engineering: API Hook injection and in-memory encryption, attacker-defender dual perspective.',
+        desc: 'Vulnerability research on enterprise SRC programs, focused on authentication bypass and unauthorised data access: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing; hands-on API Hook injection and in-memory encryption',
       },
       {
         tag: 'Full-stack & Systems',
-        desc: 'Backend: Go / Node.js (TypeScript: NestJS + Fastify + Drizzle) / Python — my stack evolved Python → Go → TypeScript — plus able to take over and extend legacy C# (.NET Core) systems. Frontend: Vue / React / Next.js / TypeScript / WeChat mini programs. Databases PostgreSQL (with RLS multi-tenant isolation) / MySQL / SQL Server, with SQL and index tuning; Redis / PgBouncer / Kafka (outbox pattern); OpenTelemetry + Prometheus + Grafana observability; ChromaDB vector store, Neo4j knowledge graph; Windows IIS + Nginx reverse proxy and Linux service deployment; WebSocket / Socket.IO; Docker containerisation.',
+        desc: 'Backend Go / Node.js (NestJS + Fastify + Drizzle) / Python, comfortable taking over legacy .NET Core; frontend Vue / React / Next.js / WeChat mini-programs; databases PostgreSQL (incl. RLS multi-tenancy) / MySQL / SQL Server; Redis / Kafka (outbox) / PgBouncer; OpenTelemetry + Prometheus + Grafana; Docker / IIS / Nginx',
       },
       {
         tag: 'Business & Solution Design',
-        desc: 'Designed the membership, order-dispatch and payment-settlement loops end to end in GameLink; strong at decomposing requirements into measurable terms, choosing between options and arguing ROI — turning business needs into buildable technical plans.',
+        desc: 'Independently designed the membership, order-dispatch and payment-settlement loops in GameLink; strong at quantifying requirements, evaluating options and arguing ROI',
       },
     ],
 
@@ -294,11 +266,8 @@ window.RESUME_DATA = {
         link: 'https://github.com/HXSLtim/Nai',
         desc: 'A multi-agent novel-writing platform whose core problem is keeping worldview and characters consistent across million-word novels.',
         points: [
-          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode and conditional edges controlling the loop and its termination',
+          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode',
           'Layered memory: chapter-level memory + plot digest extraction + context budgeting and compression — turning long-form consistency from a context-stuffing problem into schedulable memory',
-          'Hybrid RAG retrieval: ChromaDB vector store + metadata filtering + lifecycle and author scope authorisation; Neo4j knowledge graph for character-relation extraction and conflict validation',
-          'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
-          'FastAPI + PostgreSQL + Redis backend, Next.js / TypeScript frontend',
         ],
         result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
       },
@@ -306,12 +275,10 @@ window.RESUME_DATA = {
         name: 'AI Collab · Multi-Agent Collaborative Development System',
         tag: 'Open source · tmux / zsh',
         link: 'https://github.com/HXSLtim/ai-collab',
-        desc: 'A local workspace that turns three coding agents — Claude, Codex and Antigravity — into a collaborating team: one command brings up a three-pane tmux session with a self-built message bus and collaboration protocol, so planning, execution and frontend work advance in parallel on the same task.',
+        desc: 'A local workspace that turns three coding agents — Claude, Codex and Antigravity — into a collaborating team: Claude plans, Codex owns backend, Antigravity owns frontend, all advancing in parallel on the same task.',
         points: [
-          'Role division as orchestration: Claude plans and orchestrates, Codex owns backend, testing and ops, Antigravity owns frontend prototypes and UX — complementary capabilities, not duplicates',
-          'Self-built inter-agent message bus: delivers via tmux set-buffer + bracketed paste with a delayed submit key, frames every message with a [sender → target] timestamp, and logs it all into a reviewable collaboration log',
-          'A protocol that suppresses message storms: at most one ACK and one FINAL per task per line, no progress chatter — keeping the context budget for real output',
-          'Trade-off: driving CLIs by paste instead of API reuses each agent’s interactive state and subscription quota, avoiding API cost and key management; the cost is that a target pane must be waiting for input, with ai read / ai submit as fallback',
+          'Self-built inter-agent message bus: tmux set-buffer + bracketed paste delivery, delayed submit key, [sender → target] timestamp frames, logged into a reviewable collaboration log',
+          'A protocol that suppresses message storms: at most one ACK and one FINAL per task per line, keeping the context budget for real output',
         ],
         result: 'Open-sourced and used daily — the AI implements, I design and verify workflow runs on this orchestration: github.com/HXSLtim/ai-collab',
       },
@@ -321,22 +288,19 @@ window.RESUME_DATA = {
         link: 'https://github.com/DistroCore/nodeAdmin',
         desc: 'A multi-tenant back-office framework for internal enterprise platforms: NestJS 11 + Fastify backend, React 18 + Vite frontend, PostgreSQL 16 + Drizzle ORM — covering auth, audit, async messaging, realtime, observability and a plugin system in one foundation.',
         points: [
-          'Tenant isolation pushed down into the database: PostgreSQL RLS enforces tenant boundaries in the DB rather than relying on the application layer alone; one codebase serves both single- and multi-tenant deployments via TenantContext + SINGLE_TENANT_MODE',
-          'Event consistency via the outbox pattern: business writes and the outbox row commit in one transaction, and Kafka consumers are idempotent by eventId — no double writes, no lost messages',
-          'Plugin marketplace: NestJS modules and React pages load dynamically via import() with importmap-shared dependencies, so plugins install, uninstall and update without a redeploy',
-          'Engineering baseline: six-job CI (static / unit / audit / build / integration / docker); an audit-ci gate that blocks high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability; a Socket.IO realtime layer load-tested to 10,000 concurrent connections',
+          'Tenant isolation pushed down into the database: PostgreSQL RLS enforces tenant boundaries rather than relying on the application layer; one codebase serves both single- and multi-tenant deployments',
+          'Event consistency via the outbox pattern: business writes and the outbox row commit in one transaction, with Kafka consumers idempotent by eventId — no double writes, no lost messages',
         ],
         result: 'Public repo (MIT): all 271 commits authored by me, in continuous development since Feb 2026 — github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
         tag: 'AI in production · Python',
-        desc: 'A multi-platform e-commerce listing tool built solo from 2024: the LLM understands and generates, RPA executes — product data flows from raw material to published listing with no manual step.',
+        desc: 'A multi-platform e-commerce listing tool built solo from 2024: LLM understanding and generation plus Function Calling-driven RPA execution — raw material to published listing with no manual step.',
         points: [
-          'LLM output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
+          'LLM output constrained by JSON Schema extracts and generates per-platform product fields, keeping output stable and parseable',
           'Function Calling drives the RPA execution layer to fill and submit listings — the LLM decides, RPA executes',
-          'Reliability triad: schema validation + retries against format drift; low-confidence fields flagged for humans so nothing broken is published; every step machine-verifiable — no pass, no upload',
-          'Field mappings and platform rules distilled into configuration, so adding a platform is a config change rather than a core-flow change',
+          'Reliability triad: schema validation + retries against format drift; low-confidence fields flagged for humans; every step machine-verifiable — no pass, no upload',
         ],
         result: 'Continuously used for multi-platform listing, forming a reusable LLM + RPA hybrid pattern.',
       },
@@ -345,10 +309,8 @@ window.RESUME_DATA = {
         tag: 'Security · Ongoing',
         desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access.',
         points: [
-          'Six vulnerabilities disclosed across five companies; signature case is session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged and employee data read with no account at all',
-          'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing → disclosure',
-          'Testing discipline: read-only minimal verification, at most 5 real records, zero write operations, and nothing reported without proof of impact',
-          'This methodology is itself the criterion for agent architecture: endpoint extraction and differential verification must decide the next probe from live responses, so they belong in a ReAct loop, while asset enumeration and request dispatch are deterministic and belong in a workflow — the same boundary I use when splitting orchestration in agent projects',
+          'Six vulnerabilities disclosed across five companies; signature case is session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged with no account at all',
+          'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing; discipline: read-only, at most 5 real records, zero writes',
         ],
         result: 'All findings disclosed through official channels under SRC discipline: read-only minimal verification, at most 5 real records, zero write operations.',
       },
@@ -359,9 +321,7 @@ window.RESUME_DATA = {
         desc: 'A modern gaming-companion business platform: Go backend + React frontend, covering order dispatch, multi-role management, real-time messaging, payment & settlement, and monitoring end to end.',
         points: [
           'Designed a smart order-dispatch mechanism: automatic matching between users and companions, supporting both grab-pool and customer-service assignment modes',
-          'Built a user / companion / admin multi-role permission system with JWT + RBAC access control',
-          'Real-time group & private chat over WebSocket; integrated order payment, refunds and revenue settlement',
-          'Dashboard for real-time order status, revenue statistics and system metrics',
+          'Multi-role permission system for users / companions / admins (JWT + RBAC); real-time group and private chat over WebSocket',
         ],
         result: '49 stars / 14 forks since open-sourcing: github.com/HXSLtim/GameLink',
       },

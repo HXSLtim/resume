@@ -61,6 +61,25 @@
         `<span class="err">zsh: command not found: ${name}</span> — 输入 <span class="cmd-link" data-cmd="help">help</span> 查看可用命令`,
       welcome: (name) => `resume-terminal v1.0 — ${name} 的交互式简历`,
       bootHint: `输入 <span class="cmd-link" data-cmd="help">help</span> 查看全部命令，<span class="cmd-link" data-cmd="resume">resume</span> 一键输出完整简历，也可以点击下方按钮。`,
+      // 启动横幅：HR 打开第一屏就能看到全部关键信息（不要求他先输入命令）
+      banner: (d) => {
+        const edu = d.education || {};
+        const contacts = (d.contacts || []).map((c) => esc(c.text)).join(' · ');
+        return [
+          `<b>${esc(d.name)}</b> · ${esc(d.role)}`,
+          `<span class="dim">${esc(edu.school || '')} ${esc(edu.degree || '')}（${esc(edu.major || '')}）· ${esc(edu.date || '')} · ${esc(d.ageInfo || '')}</span>`,
+          `<span class="dim">${contacts}</span>`,
+          '',
+          `<b>代表成果</b>`,
+          `  <span class="ok">ai-collab</span>    多 Agent 协同开发工作区 —— 开源，我每天都在用`,
+          `  <span class="ok">nodeAdmin</span>    多租户中后台框架 —— <b>271 次提交全部由我完成</b>`,
+          `  <span class="ok">GameLink</span>     游戏陪玩平台 —— 开源 <b>49 star</b> / 14 fork`,
+          `  <span class="ok">Nai</span>          多 Agent 小说创作平台 —— 开源 <b>12 star</b>`,
+          `  <span class="ok">企业 SRC</span>     向 5 家企业报送 6 个安全漏洞（含 JWT 会话伪造）`,
+          '',
+          `输入 <span class="cmd-link" data-cmd="resume">resume</span> 查看完整简历，或点击下方按钮 / <span class="cmd-link" data-cmd="help">help</span> 查看全部命令。`,
+        ];
+      },
       langUsage: '用法：lang en / lang zh（或不带参数，直接切换）',
       langSwitched: (name) =>
         `语言已切换为 <b>${name}</b> — 输入 <span class="cmd-link" data-cmd="resume">resume</span> 查看完整简历`,
@@ -497,10 +516,9 @@
         <p class="pr-contact">${D.ageInfo}　·　${D.contacts.map((c) => c.text).join('　·　')}</p>
       </header>
       <section class="pr-sec"><h2>${secTitle(S.secAbout)}</h2><p class="pr-p">${D.about}</p></section>
-      <section class="pr-sec"><h2>${secTitle(S.secAdvantages)}</h2>${kvRows(D.advantages)}</section>
+      <section class="pr-sec"><h2>${secTitle(S.secProjects)}</h2>${D.projects.map(projectBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle(S.secExperience)}</h2>${D.experiences.map(expBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle(S.secSkills)}</h2>${kvRows(D.skills)}</section>
-      <section class="pr-sec"><h2>${secTitle(S.secProjects)}</h2>${D.projects.map(projectBlock).join('')}</section>
       <section class="pr-sec"><h2>${secTitle(S.secEducation)}</h2>
         <p class="pr-p">${D.education.school} · ${D.education.major} · ${D.education.degree}　<span class="pr-date">${D.education.date}</span></p>
         ${D.education.note ? `<p class="pr-note">${D.education.note}</p>` : ''}
