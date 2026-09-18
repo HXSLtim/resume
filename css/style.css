@@ -609,18 +609,39 @@ a:hover {
   #print-resume {
     display: block !important;
     /* 打印时整体缩 9%：不删内容的前提下把页数压下来 */
-    zoom: 0.91;
+    zoom: 0.88;
   }
 
   a {
     color: inherit;
   }
 
+  /* 项目允许跨页（否则整块被推到下一页，2 页放不下）；
+     但项目标题不能与内容分离 */
   .t-project {
+    break-inside: auto;
+  }
+
+  .t-head {
+    break-after: avoid;
+  }
+
+  #print-resume li {
     break-inside: avoid;
+  }
+
+  /* 段落不在页面底部/顶部留下孤行 */
+  #print-resume p {
+    orphans: 2;
+    widows: 2;
   }
 
   .pr-sec h2 {
     break-after: avoid;
+  }
+
+  /* 打印版去掉 Markdown 的 ## 装饰（网页版保留） */
+  #print-resume .hash {
+    display: none;
   }
 }
