@@ -87,6 +87,7 @@ window.RESUME_DATA = {
       {
         name: 'Nai · 多 Agent AI 小说创作平台',
         tag: '开源 · Python',
+        date: '2025.11 – 至今',
         link: 'https://github.com/HXSLtim/Nai',
         desc: '基于多 Agent 协作的智能小说创作平台，核心解决百万字长篇的世界观与角色一致性。',
         points: [
@@ -100,6 +101,7 @@ window.RESUME_DATA = {
       {
         name: 'AI Collab · 多 Agent 协同开发系统',
         tag: '开源 · tmux / zsh',
+        date: '2026.09 – 至今',
         link: 'https://github.com/HXSLtim/ai-collab',
         desc: '把 Claude、Codex、Antigravity 三个编码 Agent 编成一支协作队伍的本地工作区 —— Claude 规划、Codex 后端、Antigravity 前端，三条线并行推进同一任务。',
         points: [
@@ -113,6 +115,7 @@ window.RESUME_DATA = {
       {
         name: 'nodeAdmin · 多租户中后台框架',
         tag: '开源 · NestJS + React',
+        date: '2026.02 – 至今',
         link: 'https://github.com/DistroCore/nodeAdmin',
         desc: '面向企业内部平台的多租户中后台框架：NestJS 11 + Fastify 后端、React 18 + Vite 前端、PostgreSQL 16 + Drizzle ORM，把鉴权、审计、异步消息、实时通信、可观测性与插件体系一次做齐。',
         points: [
@@ -126,6 +129,7 @@ window.RESUME_DATA = {
       {
         name: 'AI 自动上架工具 · LLM + RPA',
         tag: 'AI 落地 · Python',
+        date: '2024 – 2025',
         desc: '2024 年起独立开发的电商多平台自动上架工具：LLM 理解与生成 + Function Calling 驱动 RPA 执行，商品信息从素材到上架全自动流转。',
         points: [
           'LLM 按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
@@ -136,7 +140,8 @@ window.RESUME_DATA = {
       },
       {
         name: '企业 SRC 漏洞挖掘 · 安全研究',
-        tag: '安全 · 持续',
+        tag: '安全 · 漏洞报送',
+        date: '2026.09',
         desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过与未授权数据访问。',
         points: [
           '向 5 家企业累计报送 6 个安全漏洞；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台并读取员工数据',
@@ -259,6 +264,7 @@ window.RESUME_DATA = {
       {
         name: 'Nai · Multi-Agent AI Novel Writing Platform',
         tag: 'Open source · Python',
+        date: 'Nov 2025 – Present',
         link: 'https://github.com/HXSLtim/Nai',
         desc: 'A multi-agent novel-writing platform whose core problem is keeping worldview and characters consistent across million-word novels.',
         points: [
@@ -272,6 +278,7 @@ window.RESUME_DATA = {
       {
         name: 'AI Collab · Multi-Agent Collaborative Development System',
         tag: 'Open source · tmux / zsh',
+        date: 'Sep 2026 – Present',
         link: 'https://github.com/HXSLtim/ai-collab',
         desc: 'A local workspace that turns three coding agents — Claude, Codex and Antigravity — into a collaborating team: Claude plans, Codex owns backend, Antigravity owns frontend, all advancing in parallel on the same task.',
         points: [
@@ -285,6 +292,7 @@ window.RESUME_DATA = {
       {
         name: 'nodeAdmin · Multi-Tenant Back-Office Framework',
         tag: 'Open source · NestJS + React',
+        date: 'Feb 2026 – Present',
         link: 'https://github.com/DistroCore/nodeAdmin',
         desc: 'A multi-tenant back-office framework for internal enterprise platforms: NestJS 11 + Fastify backend, React 18 + Vite frontend, PostgreSQL 16 + Drizzle ORM — covering auth, audit, async messaging, realtime, observability and a plugin system in one foundation.',
         points: [
@@ -298,6 +306,7 @@ window.RESUME_DATA = {
       {
         name: 'AI Listing Automation · LLM + RPA',
         tag: 'AI in production · Python',
+        date: '2024 – 2025',
         desc: 'A multi-platform e-commerce listing tool built solo from 2024: LLM understanding and generation plus Function Calling-driven RPA execution — raw material to published listing with no manual step.',
         points: [
           'LLM output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
@@ -308,7 +317,8 @@ window.RESUME_DATA = {
       },
       {
         name: 'Enterprise SRC Vulnerability Research · Security',
-        tag: 'Security · Ongoing',
+        tag: 'Security · Disclosure',
+        date: 'Sep 2026',
         desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access.',
         points: [
           'Six vulnerabilities disclosed across five companies; signature case is session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged and employee data read with no account at all',
