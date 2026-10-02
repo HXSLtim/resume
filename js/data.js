@@ -85,10 +85,10 @@ window.RESUME_DATA = {
 
     projects: [
       {
-        name: 'Nai · 多 Agent AI 小说创作平台',
+        name: '墨枢 · 多 Agent AI 小说创作平台',
         tag: '开源 · Python',
         date: '2025.11 – 至今',
-        link: 'https://github.com/HXSLtim/Nai',
+        link: 'https://github.com/HXSLtim/Moshu',
         desc: '基于多 Agent 协作的智能小说创作平台，核心解决百万字长篇的世界观与角色一致性。',
         points: [
           '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent，经 ToolNode 装配工具调用链，条件边控制循环与终止',
@@ -96,7 +96,7 @@ window.RESUME_DATA = {
           'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
           'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
         ],
-        result: '开源获 12 Star：github.com/HXSLtim/Nai',
+        result: '开源获 12 Star：github.com/HXSLtim/Moshu',
       },
       {
         name: 'AI Collab · 多 Agent 协同开发系统',
@@ -262,10 +262,10 @@ window.RESUME_DATA = {
 
     projects: [
       {
-        name: 'Nai · Multi-Agent AI Novel Writing Platform',
+        name: 'Moshu · Multi-Agent AI Novel Writing Platform',
         tag: 'Open source · Python',
         date: 'Nov 2025 – Present',
-        link: 'https://github.com/HXSLtim/Nai',
+        link: 'https://github.com/HXSLtim/Moshu',
         desc: 'A multi-agent novel-writing platform whose core problem is keeping worldview and characters consistent across million-word novels.',
         points: [
           'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode and conditional edges controlling the loop and its termination',
@@ -273,7 +273,7 @@ window.RESUME_DATA = {
           'Hybrid RAG retrieval: ChromaDB vector store + metadata filtering + lifecycle and author scope authorisation; Neo4j knowledge graph for character-relation extraction and conflict validation',
           'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
         ],
-        result: '12 stars since open-sourcing: github.com/HXSLtim/Nai',
+        result: '12 stars since open-sourcing: github.com/HXSLtim/Moshu',
       },
       {
         name: 'AI Collab · Multi-Agent Collaborative Development System',
