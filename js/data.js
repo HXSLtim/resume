@@ -28,6 +28,14 @@
       两者都会把在线验证码原文写进公开仓库与 GitHub Pages；备案表「出生日期」
       栏可能显示 2007，与简历的「24 岁 · 2002」当场冲突。投递需要时临时填入 →
       导出 PDF → 立即清空，且不要把带码的版本提交进 Git。
+   8. 【分层记忆口径 · 不要写回「精确召回」】四层不是同一种取用方式，分两条路径：
+      · 精确读取（确定性）：L0 原文 + L3 主角/物品状态、世界规则——按写作位置取
+        「当时有效」的那一份（valid_from/valid_to + source_refs），细节不足才按
+        出处下钻 L0 小片段。状态不能靠相似度或出现频次决定，否则写第 8 章会被
+        第 12 章的转交、第 30 章的遗失污染。
+      · 召回（相关性/有界窗口）：只有情节——L1 简介按实体/关键词/时间范围 + 向量
+        检索选块，L2 大纲按当前卷章选结构。
+      依据 Moshu/docs/design/记忆分层设计.md §7「召回与预算」的取用顺序。
    ========================================================= */
 
 window.RESUME_DATA = {
@@ -104,8 +112,9 @@ window.RESUME_DATA = {
         desc: '面向百万字长篇的 AI 辅助创作系统，核心解决长篇世界观与角色一致性。',
         points: [
           'LangGraph 编排三阶段生成工作流（统一上下文预算 + 有限重试）；常驻创作对话 Agent 经 ToolNode 装配只读检索工具与提案制能力工具，稿件类产出一律先出候选、经作者裁决后才落库',
-          '分层记忆（L0 原文 / L1 章节简介 / L2 结构化大纲 / L3 高频状态）：每层都是带来源元数据的记忆块（章节版本 + 起止偏移 + SHA-256 引用），可按目标章精确召回（L1 预算 最近 3 章 × 700 字符，历史总量 8000 字符 / 最近 20 轮），需要细节时再顺着出处回读原文',
-          '选型理由：数量、归属这类事实必须能引用 L0 原文或作者设定，不能靠多次摘要推断——所以刻意不做单表 memory(text, embedding)；事实 / 计划 / 讨论分域，跨层召回再加记忆快照版本栅栏，防止模型等待期间读到过期状态',
+          '分层记忆（L0 原文 / L1 章节简介 / L2 结构化大纲 / L3 高频状态）分两条取用路径：原文与主角 / 物品状态按写作位置精确读取——L3 状态带 valid_from / valid_to 生效区间与来源出处，只取目标章「当时有效」的那一份，细节不足时再按出处下钻 L0 小片段',
+          '情节才走召回：L1 简介按实体 / 关键词 / 时间范围 + 向量检索选块（最近 3 章 × 700 字符、总预算 2400 字符、候选窗口 ≤50 条），L2 大纲按当前卷章选相关剧情结构，被预算省略的项全部记入 manifest',
+          '选型理由：状态「哪一条是真的」不能由相似度或出现频次决定——写第 8 章必须取「主角持有青霜剑，来源第 3 章」，不能被第 12 章的转交、第 30 章的遗失污染；所以原文与状态精确、按章生效，只有情节适合召回。三道门把关：来源（版本 + 字符区间 + SHA-256）、时态（计划与已发生分开）、作者（AI 只写候选）',
           '检索为 Chroma 向量 + 元数据过滤（作品 / 作者 / 生命周期 / 章号边界），派生索引可重建、目标章之后不可见；当前未接 BM25 混合分支与图数据库，对外口径与实现保持一致',
           'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
           '自建记忆质量评测集：12 例合成中文任务（续写 / 改写 / 事实查询 / 简介提取各 3 例）+ 2 例长章用例，固定输入与逐段 SHA-256、来源边界与 0/1/2 人工判据；已在真实模型上跑通 5 例简介提取，作者盲评与四组对照尚未执行',
@@ -287,8 +296,9 @@ window.RESUME_DATA = {
         desc: 'An AI-assisted writing system for million-word novels, built around one problem: keeping worldview and characters consistent across the whole book.',
         points: [
           'LangGraph orchestrates a three-stage generation workflow (shared context budget, bounded retries); the resident writing agent assembles read-only retrieval tools and proposal-based capability tools through ToolNode, and every draft is returned as a candidate for the author to accept or reject before it is persisted',
-          'Layered memory (L0 raw text / L1 chapter digests / L2 structured outline / L3 high-frequency state): every layer is a memory block carrying source metadata (chapter version, character offsets, SHA-256 reference), so recall is precise by target chapter (L1 budget: latest 3 chapters × 700 characters; 8,000 characters of history across the latest 20 turns) and details can be read back from the original text along that reference',
-          'Why this design: facts such as quantities and ownership must cite L0 text or author-confirmed settings rather than being inferred from repeated summaries — which is why there is deliberately no single memory(text, embedding) table; facts, plans and discussion live in separate domains, and cross-layer recall adds a memory snapshot version fence so a waiting model cannot read state that has already gone stale',
+          'Layered memory (L0 raw text / L1 chapter digests / L2 structured outline / L3 high-frequency state) uses two distinct access paths: raw text and protagonist / item state are read deterministically by writing position — L3 carries valid_from / valid_to intervals plus source references, so only the state in effect at the target chapter is loaded, and raw text is drilled into as small fragments along those references when detail is missing',
+          'Plot is what gets retrieved: L1 digests are selected by entity / keyword / time range plus vector search (latest 3 chapters × 700 characters, a 2,400-character digest budget, candidate window ≤50), L2 outline selects structure for the current volume and chapter, and everything dropped by the budget is recorded in the manifest',
+          'Why the split: which state is true cannot be decided by similarity or how often it appears — writing chapter 8 must load "the protagonist holds the sword, sourced from chapter 3" and must not be polluted by the handover in chapter 12 or the loss in chapter 30; so raw text and state stay exact and chapter-effective while only plot is retrieved. Three gates: source (version + offsets + SHA-256), tense (planned vs. occurred kept apart), author (AI only writes candidates)',
           'Retrieval is Chroma vector search plus metadata filtering (novel / author / lifecycle / chapter boundary); the index is rebuildable derived data and anything past the target chapter stays invisible — no BM25 branch and no graph database are wired in, so the public wording matches the implementation',
           'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
           'Self-built memory-quality evaluation set: 12 synthetic Chinese tasks (3 each for continuation, rewrite, fact query and digest extraction) plus 2 long-chapter cases, with fixed inputs, per-segment SHA-256, source boundaries and a 0/1/2 human rubric; 5 digest runs completed on a real model, while author blind review and the four comparison groups are not done yet',

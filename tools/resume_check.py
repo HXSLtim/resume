@@ -96,6 +96,14 @@ GUARDS: list[tuple[str, re.Pattern, str, str]] = [
     ),
     (
         "error",
+        re.compile(r"精确召回|每层都是带来源元数据的记忆块"),
+        "分层记忆口径：四层不是同一种取用方式，不能统称「精确召回」。原文 + 主角/物品状态"
+        "是按写作位置「精确读取」（valid_from/valid_to + source_refs，状态不能靠相似度或"
+        "出现频次决定）；只有情节（L1 简介 / L2 大纲）才是召回。"
+        "依据 Moshu/docs/design/记忆分层设计.md §7。",
+    ),
+    (
+        "error",
         re.compile(r"\b19\s*岁|2007"),
         "年龄口径：简历只写「24 岁 · 2002」。身份证 2007 属户籍晚报，"
         "按 interview/01 的 30 秒口径口头解释，不写进简历。",
