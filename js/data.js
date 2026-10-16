@@ -14,8 +14,9 @@
       二者差 5 岁——被问到时按 interview/ 里的口径解释，不要写进简历。
    4. 【SRC 口径 · 不要改回去】漏洞数量写作「报送」，不写「定级」。
       Hunt/reports/ 里 6 份报告的「漏洞等级」是自评，不是平台给的；
-      补天平台实际定级的只有 1 个（中危）。写「获平台定级确认（4 高危）」
-      属于可被查证的虚假陈述。要写就写技术事实（JWT alg=none 会话伪造）。
+      **平台认证/定级的只有 1 个 —— 就是那个 JWT alg=none 会话伪造（越权读员工数据）**，
+      其余 5 个是「已报送、未定级」，不要写成 6 个都被认可。
+      写「获平台定级确认（4 高危）」属于可被查证的虚假陈述。
    5. 【墨枢口径 · 不要改回去】不写「RAG 混合检索」，也不写「Neo4j 知识图谱」：
       当前实现是 Chroma 向量 + 元数据过滤（rag_service.hybrid_search 没有 BM25 分支），
       Neo4j 属可选演进方向、仓库代码 0 引用。依据 Moshu/ARCHITECTURE.md 第 9、10 节
@@ -168,7 +169,7 @@ window.RESUME_DATA = {
         date: '2026.09',
         desc: '在多个企业安全响应平台（SRC）持续进行漏洞挖掘与报送，聚焦认证绕过与未授权数据访问。',
         points: [
-          '向 5 家企业累计报送 6 个安全漏洞；代表案例为服务端验签缺失导致的会话伪造（JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台并读取员工数据',
+          '向 5 家企业累计报送 6 个安全漏洞，其中 1 个获平台认证（服务端验签缺失导致的会话伪造，JWT alg=none）—— 无需任何账号即可伪造管理员身份进入后台并读取员工数据；其余为已报送、平台未定级',
           '方法论闭环：资产测绘 → 前端 / 小程序逆向 → 接口抽取 → 无凭证差分验证 → 假值对照定界 → 平台报送',
           '测试纪律：只读最小化验证、真实数据 ≤5 组、写操作零触碰、无效果证据不报送',
         ],
@@ -352,7 +353,7 @@ window.RESUME_DATA = {
         date: 'Sep 2026',
         desc: 'Continuous vulnerability research and disclosure across multiple enterprise SRC programs, focused on authentication bypass and unauthorised data access.',
         points: [
-          'Six vulnerabilities disclosed across five companies; signature case is session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged and employee data read with no account at all',
+          'Six vulnerabilities disclosed across five companies, one of them platform-certified: session forgery from missing server-side signature verification (JWT alg=none) — admin identity forged and employee data read with no account at all; the rest were disclosed but never graded',
           'Closed methodology loop: asset mapping → frontend / mini-program reverse engineering → endpoint extraction → credential-free differential verification → decoy-value boundary testing → disclosure',
           'Testing discipline: read-only minimal verification, at most 5 real records, zero write operations, and nothing reported without proof of impact',
         ],
