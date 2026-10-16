@@ -66,6 +66,26 @@ Resume/
 > **投递用的两版 PDF 不在本仓库**：源文件是 `documents/interview/resume-aiagent.html`
 > 与 `resume-fullstack.html`，改完 `data.js` 必须同步它们并重导 PDF（脚本会查漂移）。
 
+### 投递 PDF 的排版规范（改 HTML 时不要破坏）
+
+一页 A4 靠三重强调制造扫读层次，**只有这三类可以加粗**，其余一律不动：
+
+| 标记 | 含义 | 样式 |
+| --- | --- | --- |
+| `<b class="lb">` | bullet 左标签（第一个「：」之前 ≤16 字），形成可扫读的左边缘 | 加粗黑色 |
+| `<b class="n">` | 关键数字与指标（`94.7%`、`18/19`、`285 commits`、`24 条 ADR`、`7 段 CI`…） | 加粗 + 克莱因蓝 |
+| `<b>` | 句中技术锚点（`PostgreSQL RLS`、`Outbox 模式`、`JWT alg=none`…） | 加粗 |
+
+- 自动加粗只认「数字 + 单位」，日期（`2026.02`）与版本号不动；`L1 章节简介` 这类要人工排除；
+- 每条 bullet 的强调点控制在 1–3 处 —— 全页都是重点等于没有重点；
+- 导出（本机 Chrome，无头、无页眉页脚；改完务必确认仍是 1 页）：
+
+```bash
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+"$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf="刘正硕-AI Agent开发.pdf" "file://$PWD/resume-aiagent.html"
+```
+
 ## 本地预览
 
 直接双击 `index.html` 用浏览器打开即可；或起一个本地服务：
