@@ -356,6 +356,26 @@ def check_online(rep: Report, raw: str) -> None:
     rep.notes["online"] = {"repos": repos, "actual": sorted(actual), "claimed": sorted(claimed)}
 
 
+def check_pdf_fonts(rep: Report, blobs: dict[str, str]) -> None:
+    """投递版字体栈守卫：Arial/PingFang 等苹果受限字体被 Chrome 导出时会退化成 Type3 轮廓，
+    反向映射把「用 / 工 / 生 / 自」等常用字映射到康熙部首码位（⽤ ⼯ ⽣ ⾃），
+    结果是 ATS 搜不到「应用开发」「工程师」这类关键词 —— 实测 10 个 JD 关键词只中 1 个。
+    STHeiti 可被正常内嵌为 TrueType 子集，抽取干净。"""
+    for name, text in blobs.items():
+        if not name.endswith(".html"):
+            continue
+        m = re.search(r"font-family:\s*([^;]+);", text)
+        if not m:
+            continue
+        stack = m.group(1)
+        if "PingFang" in stack and ("STHeiti" not in stack or stack.index("PingFang") < stack.index("STHeiti")):
+            rep.error(
+                f"{name} 的字体栈把 PingFang 排在 STHeiti 前面 —— 导出 PDF 会退化成 Type3，"
+                "常用字被映射成康熙部首码位，ATS 关键词（应用开发 / 工程师 / 项目…）搜不到。"
+                "改成 font-family: \"STHeiti\", \"PingFang SC\", …"
+            )
+
+
 def run_resume(rep: Report, online: bool) -> None:
     raw = DATA_JS.read_text(encoding="utf-8")
     blobs = {"data.js": raw}
@@ -364,6 +384,7 @@ def run_resume(rep: Report, online: bool) -> None:
             blobs[path.name] = path.read_text(encoding="utf-8")
 
     check_guards(rep, blobs)
+    check_pdf_fonts(rep, blobs)
     for lang in ("zh", "en"):
         check_projects(rep, lang)
     check_bilingual(rep)

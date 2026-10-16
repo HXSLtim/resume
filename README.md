@@ -78,12 +78,33 @@ Resume/
 
 - 自动加粗只认「数字 + 单位」，日期（`2026.02`）与版本号不动；`L1 章节简介` 这类要人工排除；
 - 每条 bullet 的强调点控制在 1–3 处 —— 全页都是重点等于没有重点；
+- ⚠️ **字体栈必须 `"STHeiti"` 排第一**，不要用 PingFang SC 打头：PingFang 是苹果受限字体，
+  Chrome 导出时无法内嵌，只能退化成 **Type3 轮廓**，反向映射会把「用 / 工 / 生 / 自 / 目 / 力」
+  这类常用字映射成**康熙部首码位**（`⽤` `⼯` `⽣`）—— 实测同一份简历 10 个 JD 高频词
+  （应用开发 / 工程师 / 生成 / 项目 / 能力…）**只有 1 个能被 ATS 搜到**，换成 STHeiti 后 10/10。
+  脚本的 `check_pdf_fonts` 会拦住这个改动；
 - 导出（本机 Chrome，无头、无页眉页脚；改完务必确认仍是 1 页）：
 
 ```bash
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
   --print-to-pdf="刘正硕-AI Agent开发.pdf" "file://$PWD/resume-aiagent.html"
+```
+
+- 导出后自查（页数 / 是否内嵌字体 / ATS 关键词能否搜到）：
+
+```bash
+python3 - <<'PY'
+import re
+from pathlib import Path
+from pdfminer.high_level import extract_text
+f = "刘正硕-AI Agent开发.pdf"
+d = Path(f).read_bytes(); t = extract_text(f)
+print("页数:", len(re.findall(rb"/Type\s*/Page[^s]", d)),
+      "| 内嵌字体:", len(re.findall(rb"/FontFile", d)),
+      "| 康熙部首:", sum(1 for c in t if 0x2E80 <= ord(c) <= 0x2FDF))
+print("关键词:", [k for k in ("应用开发","工程师","生成","项目","能力") if k in t])
+PY
 ```
 
 ## 本地预览
