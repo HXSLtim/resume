@@ -16,6 +16,18 @@
       Hunt/reports/ 里 6 份报告的「漏洞等级」是自评，不是平台给的；
       补天平台实际定级的只有 1 个（中危）。写「获平台定级确认（4 高危）」
       属于可被查证的虚假陈述。要写就写技术事实（JWT alg=none 会话伪造）。
+   5. 【墨枢口径 · 不要改回去】不写「RAG 混合检索」，也不写「Neo4j 知识图谱」：
+      当前实现是 Chroma 向量 + 元数据过滤（rag_service.hybrid_search 没有 BM25 分支），
+      Neo4j 属可选演进方向、仓库代码 0 引用。依据 Moshu/ARCHITECTURE.md 第 9、10 节
+      自述「hybrid 名不副实」「不能把 Compose 服务定义当作已经接入」——
+      面试官打开仓库就能推翻的两句话，比少写两条亮点贵得多。
+   6. 量化优先用可复现的工程事实（评测用例数 / 命中率 / 迁移数 / ADR 数 / 提交数），
+      而不是 star 数：star 每天都在变，投递前必须用 gh api 复核一次再定稿。
+      已有真实评测产物的位置：Moshu/evaluations/、listing/Third/evals/、nodeAdmin/ci.yml。
+   7. 【学历口径 · 不要改回去】education.verify.code 与 reportUrl 必须保持为空：
+      两者都会把在线验证码原文写进公开仓库与 GitHub Pages；备案表「出生日期」
+      栏可能显示 2007，与简历的「24 岁 · 2002」当场冲突。投递需要时临时填入 →
+      导出 PDF → 立即清空，且不要把带码的版本提交进 Git。
    ========================================================= */
 
 window.RESUME_DATA = {
@@ -29,12 +41,12 @@ window.RESUME_DATA = {
       { icon: '📱', text: '191-9581-9124' },
       { icon: '📧', text: 'a2778978136@163.com', href: 'mailto:a2778978136@163.com' },
       { icon: '💻', text: 'github.com/HXSLtim', href: 'https://github.com/HXSLtim' },
-      { icon: '📍', text: '现居江苏 · 期望杭州' },
+      { icon: '📍', text: '现居杭州余杭 · 期望杭州' },
     ],
 
     about:
       'AI Agent 工程 + 安全研究双背景，全栈落地能力。' +
-      '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 混合检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
+      '以 LangChain / LangGraph 编排多 Agent 系统，落地 ReAct 循环、Function Calling 工具链、分层记忆与 RAG 检索——是能跑、能评测、有失败兜底的工程件，不是 Demo。' +
       '企业 SRC 向 5 家企业报送过 6 个安全漏洞，含服务端验签缺失导致的会话伪造与内部系统未授权数据读取；攻防双视角让我把权限与数据护栏做进交付流程。',
 
     experiences: [
@@ -55,7 +67,7 @@ window.RESUME_DATA = {
         date: '2025 – 2026.07',
         points: [
           '工作室唯一 IT：远程承担全部技术 —— 后台管理系统、Web 前端、微信小程序，全栈一人负责；前端 Vue 主力开发，后端为存量 .NET Core（C#）系统，由我维护并二次开发',
-          '部署 Windows IIS + Nginx，数据库 SQL Server，独立负责环境配置与线上故障排查；将核心业务场景沉淀为开源项目 GameLink（Go + React，49 Star / 14 Fork）',
+          '部署 Windows IIS + Nginx，数据库 SQL Server，独立负责环境配置与线上故障排查；将核心业务场景沉淀为开源项目 GameLink（Go + React，54 Star / 16 Fork，343 次提交）：github.com/HXSLtim/GameLink',
         ],
       },
     ],
@@ -63,7 +75,7 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent 开发',
-        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作；ReAct 循环 + Function Calling / ToolNode 工具调用链；分层记忆（章级记忆 + 摘要抽取 + 上下文预算与压缩）；RAG 混合检索（向量库 + 元数据过滤 + 作用域鉴权）；MCP 服务开发（能力矩阵声明 + 调用审计）',
+        desc: 'LangChain / LangGraph 状态图编排多 Agent 协作；ReAct 循环 + Function Calling / ToolNode 工具调用链；分层记忆（L0-L3 四层 + 来源元数据 + 版本栅栏）；RAG 检索（向量库 + 元数据过滤 + 作用域受权）；评测与回归（自建用例集 + 人工判据 + 固定预算复现）；MCP 服务开发（能力矩阵声明 + 调用审计）',
       },
       {
         tag: 'LLM 工程',
@@ -89,14 +101,16 @@ window.RESUME_DATA = {
         tag: '开源 · Python',
         date: '2025.11 – 至今',
         link: 'https://github.com/HXSLtim/Moshu',
-        desc: '基于多 Agent 协作的智能小说创作平台，核心解决百万字长篇的世界观与角色一致性。',
+        desc: '面向百万字长篇的 AI 辅助创作系统，核心解决长篇世界观与角色一致性。',
         points: [
-          '基于 LangGraph 状态图编排创作 / 审核 / 编辑 / 一致性校验多 Agent，经 ToolNode 装配工具调用链，条件边控制循环与终止',
-          '分层记忆体系：章级记忆 + 剧情摘要抽取 + 上下文预算与压缩，把长篇一致性从「塞满上下文」变成可调度的记忆',
-          'RAG 混合检索：ChromaDB 向量库 + 元数据过滤 + 作品生命周期与作者作用域鉴权；Neo4j 知识图谱做角色关系抽取与冲突校验',
+          'LangGraph 编排三阶段生成工作流（统一上下文预算 + 有限重试）；常驻创作对话 Agent 经 ToolNode 装配只读检索工具与提案制能力工具，稿件类产出一律先出候选、经作者裁决后才落库',
+          '分层记忆（L0 原文 / L1 章节简介 / L2 结构化大纲 / L3 高频状态）：每层都是带来源元数据的记忆块（章节版本 + 起止偏移 + SHA-256 引用），可按目标章精确召回（L1 预算 最近 3 章 × 700 字符，历史总量 8000 字符 / 最近 20 轮），需要细节时再顺着出处回读原文',
+          '选型理由：数量、归属这类事实必须能引用 L0 原文或作者设定，不能靠多次摘要推断——所以刻意不做单表 memory(text, embedding)；事实 / 计划 / 讨论分域，跨层召回再加记忆快照版本栅栏，防止模型等待期间读到过期状态',
+          '检索为 Chroma 向量 + 元数据过滤（作品 / 作者 / 生命周期 / 章号边界），派生索引可重建、目标章之后不可见；当前未接 BM25 混合分支与图数据库，对外口径与实现保持一致',
           'MCP 服务开发：统一 MCP 控制中心以能力矩阵声明可用能力，调用全量审计，未实现能力显式失败而非返回占位结果',
+          '自建记忆质量评测集：12 例合成中文任务（续写 / 改写 / 事实查询 / 简介提取各 3 例）+ 2 例长章用例，固定输入与逐段 SHA-256、来源边界与 0/1/2 人工判据；已在真实模型上跑通 5 例简介提取，作者盲评与四组对照尚未执行',
         ],
-        result: '开源获 12 Star：github.com/HXSLtim/Moshu',
+        result: '开源获 12 Star，评测基线随仓库公开：github.com/HXSLtim/Moshu',
       },
       {
         name: 'AI Collab · 多 Agent 协同开发系统',
@@ -122,9 +136,9 @@ window.RESUME_DATA = {
           '多租户隔离下沉到数据库：由 PostgreSQL RLS 强制租户边界，而非只靠应用层；同一套代码经 TenantContext + SINGLE_TENANT_MODE 同时支持单租户与多租户部署',
           '事件一致性用 Outbox 模式：业务写入与 outbox 行在同一事务落库，Kafka 消费端按 eventId 幂等消费 —— 不双写、不丢消息',
           '插件市场：NestJS 模块与 React 页面以 dynamic import + importmap 共享依赖动态装载，插件安装 / 卸载 / 更新均无需重新部署',
-          '工程化基线：6 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / 镜像）；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测',
+          '工程化基线：7 段 CI（静态检查 / 单测 / 依赖审计 / 构建 / 集成 / E2E / 镜像）+ 24 条 ADR 决策日志 + 37 个数据库迁移；audit-ci 拦截高危依赖且白名单带强制过期时间；OpenTelemetry + Prometheus + Grafana 全链路可观测',
         ],
-        result: '公开仓库（MIT）：271 次提交全部由我完成，2026.02 起持续开发至今 —— github.com/DistroCore/nodeAdmin',
+        result: '公开仓库（MIT）：285 次提交全部由我完成（截至 2026.10），2026.02 起持续开发至今 —— github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI 自动上架工具 · LLM + RPA',
@@ -135,6 +149,7 @@ window.RESUME_DATA = {
           'LLM 按 JSON Schema 约束抽取与生成各平台商品字段（标题、卖点、规格属性），保证输出格式稳定可解析',
           'Function Calling 驱动 RPA 执行层完成各平台填表上架 —— LLM 做决策、RPA 做执行',
           '可靠性三件套：Schema 校验 + 失败重试防格式漂移；低置信字段标记转人工，不带病上架；每步结果机器可校验，不过不上传',
+          '离线评测：9 例字段抽取用例（replay 回放执行），字段命中 18/19（94.7%）、verify 通过率 100%、2 次修复尝试全部恢复、0 失败；评测脚本与报告随项目版本化',
         ],
         result: '在多平台上架场景持续落地使用，形成 LLM + RPA 混合架构的可复用实践。',
       },
@@ -185,13 +200,16 @@ window.RESUME_DATA = {
       degree: '本科',
       date: '2020.09 – 2024.06',
       // 学信网在线验证：code 是在线验证码，url 是官方查验入口，reportUrl 是学信档案直链。
-      // ⚠️ 备案表最长只能设 6 个月有效期，到期后 HR 会看到「验证码无效」——比不附更糟。
+      // ⚠️【口径 · 不要改回去】code 与 reportUrl 必须为空 —— reportUrl 里带 vcode 原文，
+      //    留着等于把验证码照样写进公开仓库。本站（GitHub Pages）是公开的，验证码会被爬虫抓走；
+      //    且备案表「出生日期」栏可能显示 2007，与简历的「24 岁 · 2002」当场冲突。
+      //    投递需要时：临时填入 → 导出 PDF → 立即清空，不要把带码的版本提交进 Git。
       //    续期流程与风险说明见 README「学历可验证」一节。
       verify: {
         label: '学信网在线验证码',
-        code: 'AQMFGXA77C3ZSJ1K',
+        code: '',
         url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
-        reportUrl: 'https://www.chsi.com.cn/xlcx/bg.do?vcode=AQMFGXA77C3ZSJ1K&trnd=15413612734840586422214423162101&srcid=archive',
+        reportUrl: '',
       },
     },
   },
@@ -206,12 +224,12 @@ window.RESUME_DATA = {
       { icon: '📱', text: '191-9581-9124' },
       { icon: '📧', text: 'a2778978136@163.com', href: 'mailto:a2778978136@163.com' },
       { icon: '💻', text: 'github.com/HXSLtim', href: 'https://github.com/HXSLtim' },
-      { icon: '📍', text: 'Based in Jiangsu · Open to Hangzhou' },
+      { icon: '📍', text: 'Based in Hangzhou (Yuhang) · Targeting Hangzhou' },
     ],
 
     about:
       'AI agent engineering plus hands-on security research, with full-stack delivery capability. ' +
-      'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and hybrid RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
+      'I orchestrate multi-agent systems with LangChain / LangGraph — ReAct loops, Function Calling tool chains, layered memory and RAG retrieval — shipping work that runs and gets evaluated, not demos. ' +
       'Six vulnerabilities disclosed to five companies on enterprise SRC programs, including session forgery from missing server-side signature verification and unauthorised reads of internal systems; an attacker-defender mindset means I build permission and data guardrails into delivery.',
 
     experiences: [
@@ -232,7 +250,7 @@ window.RESUME_DATA = {
         date: '2025 – 2026.07',
         points: [
           'Sole IT for the studio: remotely owned everything — admin backend, web frontend and WeChat mini program; I led the Vue frontend and maintain/extend the legacy .NET Core (C#) backend',
-          'Deployed on Windows IIS behind an Nginx reverse proxy with SQL Server, owning environment setup and production troubleshooting; distilled the core business scenarios into the open-source GameLink (Go + React, 49 stars / 14 forks)',
+          'Deployed on Windows IIS behind an Nginx reverse proxy with SQL Server, owning environment setup and production troubleshooting; distilled the core business scenarios into the open-source GameLink (Go + React, 54 stars / 16 forks, 343 commits): github.com/HXSLtim/GameLink',
         ],
       },
     ],
@@ -240,7 +258,7 @@ window.RESUME_DATA = {
     skills: [
       {
         tag: 'AI Agent Development',
-        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs; ReAct loops and Function Calling / ToolNode tool chains; layered memory (chapter-level + digest extraction + context budgeting and compression); hybrid RAG retrieval (vector store + metadata filtering + scope authorisation); MCP service development with capability-matrix declarations and full call auditing',
+        desc: 'Multi-agent orchestration via LangChain / LangGraph state graphs; ReAct loops and Function Calling / ToolNode tool chains; layered memory (L0-L3 with source metadata and version fencing); RAG retrieval (vector store + metadata filtering + scope authorisation); evaluation and regression (self-built case sets + human rubric + fixed-budget reproduction); MCP service development with capability-matrix declarations and full call auditing',
       },
       {
         tag: 'LLM Engineering',
@@ -266,14 +284,16 @@ window.RESUME_DATA = {
         tag: 'Open source · Python',
         date: 'Nov 2025 – Present',
         link: 'https://github.com/HXSLtim/Moshu',
-        desc: 'A multi-agent novel-writing platform whose core problem is keeping worldview and characters consistent across million-word novels.',
+        desc: 'An AI-assisted writing system for million-word novels, built around one problem: keeping worldview and characters consistent across the whole book.',
         points: [
-          'Orchestrates writing / review / editing / consistency agents as a LangGraph state graph, with tool chains assembled through ToolNode and conditional edges controlling the loop and its termination',
-          'Layered memory: chapter-level memory + plot digest extraction + context budgeting and compression — turning long-form consistency from a context-stuffing problem into schedulable memory',
-          'Hybrid RAG retrieval: ChromaDB vector store + metadata filtering + lifecycle and author scope authorisation; Neo4j knowledge graph for character-relation extraction and conflict validation',
+          'LangGraph orchestrates a three-stage generation workflow (shared context budget, bounded retries); the resident writing agent assembles read-only retrieval tools and proposal-based capability tools through ToolNode, and every draft is returned as a candidate for the author to accept or reject before it is persisted',
+          'Layered memory (L0 raw text / L1 chapter digests / L2 structured outline / L3 high-frequency state): every layer is a memory block carrying source metadata (chapter version, character offsets, SHA-256 reference), so recall is precise by target chapter (L1 budget: latest 3 chapters × 700 characters; 8,000 characters of history across the latest 20 turns) and details can be read back from the original text along that reference',
+          'Why this design: facts such as quantities and ownership must cite L0 text or author-confirmed settings rather than being inferred from repeated summaries — which is why there is deliberately no single memory(text, embedding) table; facts, plans and discussion live in separate domains, and cross-layer recall adds a memory snapshot version fence so a waiting model cannot read state that has already gone stale',
+          'Retrieval is Chroma vector search plus metadata filtering (novel / author / lifecycle / chapter boundary); the index is rebuildable derived data and anything past the target chapter stays invisible — no BM25 branch and no graph database are wired in, so the public wording matches the implementation',
           'MCP service development: a unified MCP control centre declaring its capability matrix, auditing every call, and failing explicitly on unimplemented capabilities instead of returning placeholder results',
+          'Self-built memory-quality evaluation set: 12 synthetic Chinese tasks (3 each for continuation, rewrite, fact query and digest extraction) plus 2 long-chapter cases, with fixed inputs, per-segment SHA-256, source boundaries and a 0/1/2 human rubric; 5 digest runs completed on a real model, while author blind review and the four comparison groups are not done yet',
         ],
-        result: '12 stars since open-sourcing: github.com/HXSLtim/Moshu',
+        result: '12 stars since open-sourcing, evaluation baseline public in-repo: github.com/HXSLtim/Moshu',
       },
       {
         name: 'AI Collab · Multi-Agent Collaborative Development System',
@@ -299,9 +319,9 @@ window.RESUME_DATA = {
           'Tenant isolation pushed down into the database: PostgreSQL RLS enforces tenant boundaries rather than relying on the application layer alone; one codebase serves single- and multi-tenant deployments via TenantContext + SINGLE_TENANT_MODE',
           'Event consistency via the outbox pattern: business writes and the outbox row commit in one transaction, and Kafka consumers are idempotent by eventId — no double writes, no lost messages',
           'Plugin marketplace: NestJS modules and React pages load dynamically via import() with importmap-shared dependencies, so plugins install, uninstall and update without a redeploy',
-          'Engineering baseline: six-job CI (static / unit / audit / build / integration / docker); an audit-ci gate blocking high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability',
+          'Engineering baseline: seven-job CI (static / unit / audit / build / integration / E2E / docker) plus a 24-entry ADR decision log and 37 database migrations; an audit-ci gate blocking high-severity advisories with expiring allowlist entries; full OpenTelemetry + Prometheus + Grafana observability',
         ],
-        result: 'Public repo (MIT): all 271 commits authored by me, in continuous development since Feb 2026 — github.com/DistroCore/nodeAdmin',
+        result: 'Public repo (MIT): all 285 commits authored by me (as of Oct 2026), in continuous development since Feb 2026 — github.com/DistroCore/nodeAdmin',
       },
       {
         name: 'AI Listing Automation · LLM + RPA',
@@ -312,6 +332,7 @@ window.RESUME_DATA = {
           'LLM output constrained by JSON Schema extracts and generates per-platform product fields (titles, selling points, spec attributes), keeping output stable and parseable',
           'Function Calling drives the RPA execution layer to fill and submit listings — the LLM decides, RPA executes',
           'Reliability triad: schema validation + retries against format drift; low-confidence fields flagged for humans so nothing broken is published; every step machine-verifiable — no pass, no upload',
+          'Offline evaluation: 9 field-extraction cases run in replay mode — 18/19 fields hit (94.7%), 100% verifier pass rate, 2/2 repairs recovered, zero failures; both the eval script and its report are versioned with the project',
         ],
         result: 'Continuously used for multi-platform listing, forming a reusable LLM + RPA hybrid pattern.',
       },
@@ -361,12 +382,12 @@ window.RESUME_DATA = {
       major: 'Network Engineering',
       degree: 'Bachelor',
       date: '2020.09 – 2024.06',
-      // See the zh block for the 6-month expiry caveat on the CHSI verification code.
+      // See the zh block: code and reportUrl stay empty on purpose (public site + birth-date risk).
       verify: {
         label: 'CHSI online verification code',
-        code: 'AQMFGXA77C3ZSJ1K',
+        code: '',
         url: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
-        reportUrl: 'https://www.chsi.com.cn/xlcx/bg.do?vcode=AQMFGXA77C3ZSJ1K&trnd=15413612734840586422214423162101&srcid=archive',
+        reportUrl: '',
       },
     },
   },
