@@ -63,8 +63,16 @@ Resume/
 └── README.md
 ```
 
-> **投递用的两版 PDF 不在本仓库**：源文件是 `documents/interview/resume-aiagent.html`
-> 与 `resume-fullstack.html`，改完 `data.js` 必须同步它们并重导 PDF（脚本会查漂移）。
+> **投递用的三版 PDF 不在本仓库**（源文件都在 `documents/interview/`）：
+>
+> | 版本 | HTML 源 | 导出 PDF | 内容来源 |
+> |---|---|---|---|
+> | AI Agent / LLM 应用 | `resume-aiagent.html` | `刘正硕-AI Agent开发.pdf` | 由 `data.js` 同步 |
+> | 全栈开发 | `resume-fullstack.html` | `刘正硕-全栈开发.pdf` | 由 `data.js` 同步 |
+> | 爬虫 / 自动化采集 | `resume-crawler.html` | `刘正硕-爬虫采集工程师.pdf` | **独立内容**（项目集换成采集 / 风控逆向 / SRC / MV3 插件） |
+>
+> 前两版改完 `data.js` 必须同步并重导 PDF（脚本查漂移）；第三版不依赖 `data.js`，
+> 但同样受口径守卫、字体栈与数字漂移检查约束（见 `STANDALONE_HTML`）。
 
 ### 投递 PDF 的排版规范（改 HTML 时不要破坏）
 

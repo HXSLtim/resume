@@ -37,7 +37,11 @@ INTERVIEW_DIR = ROOT.parents[2] / "documents" / "interview"
 HTML_FILES = [
     INTERVIEW_DIR / "resume-aiagent.html",
     INTERVIEW_DIR / "resume-fullstack.html",
+    INTERVIEW_DIR / "resume-crawler.html",
 ]
+# 内容独立于 data.js 的岗位版本：仍受口径守卫、字体栈与数字漂移检查约束，
+# 但不要求覆盖 data.js 里那批项目（它们换的是另一套项目集）。
+STANDALONE_HTML = {"resume-crawler.html"}
 
 # ---------------------------------------------------------------- 词表
 
@@ -309,6 +313,9 @@ def check_html_sync(rep: Report, raw: str) -> None:
                 "（确认是有意取舍，还是漏同步）"
             )
         # 项目名是否都进了投递版
+        # （内容独立于 data.js 的岗位版本不要求覆盖同一批项目 —— 它们本来就换了项目集）
+        if path.name in STANDALONE_HTML:
+            continue
         for p in DATA["zh"]["projects"]:
             key = re.split(r"[·（(]", p["name"])[0].strip()
             if key and key not in text:
